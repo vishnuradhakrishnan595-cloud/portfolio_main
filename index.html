@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vishnu Radhakrishnan Nair | Python Full Stack Developer Portfolio">
+    <title>Vishnu Radhakrishnan Nair | Full Stack Developer</title>
+
+    <!-- Google Fonts Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        karelia: {
+                            bg: '#141A1D',          /* Deep Nordic dark background */
+                            card: '#1D2529',        /* Slightly lighter charcoal card base */
+                            surface: '#293338',     /* Mid-tone slate surface */
+                            slate: '#43545B',       /* Earthy slate grey accent/card overlay */
+                            sage: '#4B594B',        /* Deep moss green */
+                            moss: '#5C6E5C',        /* Lighter sage accent green */
+                            border: '#2A353B',      /* Muted subtle border */
+                            text: '#DCE3E6',        /* Clean off-white body text */
+                            muted: '#8C9DA6',       /* Muted grey-blue text */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    </noscript>
+
+    <style>
+        .earth-glow-sage {
+            box-shadow: 0 4px 20px -2px rgba(92, 110, 92, 0.35);
+        }
+
+        .glow-slate {
+            box-shadow: 0 0 25px rgba(67, 84, 91, 0.4);
+        }
+
+        /* Entry Preloader Overlay Styling */
+        #preloader {
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #preloader.preloader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Ambient Subtle Forest Grid Background */
+        .bg-grid-animated {
+            background-size: 36px 36px;
+            background-image:
+                linear-gradient(to right, rgba(220, 227, 230, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(220, 227, 230, 0.03) 1px, transparent 1px);
+            animation: gridMove 30s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 36px 36px;
+            }
+        }
+
+        /* Atmospheric Ambient Floating Orbs Animation */
+        @keyframes floatSlow {
+
+            0%,
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -45px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-25px, 25px) scale(0.95);
+            }
+        }
+
+        @keyframes floatReverse {
+
+            0%,
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(-40px, 30px) scale(0.9);
+            }
+
+            66% {
+                transform: translate(30px, -35px) scale(1.05);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                opacity: 0.18;
+                filter: blur(100px);
+            }
+
+            50% {
+                opacity: 0.35;
+                filter: blur(120px);
+            }
+        }
+
+        .animate-blob-1 {
+            animation: floatSlow 20s ease-in-out infinite, pulseGlow 12s ease-in-out infinite;
+        }
+
+        .animate-blob-2 {
+            animation: floatReverse 24s ease-in-out infinite, pulseGlow 14s ease-in-out infinite;
+        }
+
+        .animate-blob-3 {
+            animation: floatSlow 28s ease-in-out infinite reverse, pulseGlow 16s ease-in-out infinite;
+        }
+
+        /* Button Spinner Animation */
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-fast {
+            animation: spin 0.6s linear infinite;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-karelia-bg bg-grid-animated text-karelia-text font-sans antialiased selection:bg-karelia-moss selection:text-white overflow-x-hidden relative">
+
+    <!-- SITE ENTRY PRELOADER SCREEN -->
+    <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-karelia-bg">
+        <div class="relative flex items-center justify-center">
+            <div class="absolute h-28 w-28 rounded-full bg-karelia-moss/20 blur-2xl animate-pulse"></div>
+            <div
+                class="h-16 w-16 animate-spin rounded-full border-4 border-karelia-border border-t-karelia-moss border-r-karelia-slate">
+            </div>
+            <span class="absolute font-mono text-xs font-bold tracking-widest text-karelia-text">V.DEV</span>
+        </div>
+        <p class="mt-5 font-mono text-[11px] font-semibold uppercase tracking-widest text-karelia-muted animate-pulse">
+            Initializing Portfolio...</p>
+    </div>
+
+    <!-- GLOBAL BACKGROUND AMBIENT LAYER -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <div class="animate-blob-1 absolute -top-20 -left-20 h-96 w-96 rounded-full bg-karelia-sage/25 blur-[100px]">
+        </div>
+        <div
+            class="animate-blob-2 absolute top-1/4 -right-20 h-[30rem] w-[30rem] rounded-full bg-karelia-slate/30 blur-[120px]">
+        </div>
+        <div
+            class="animate-blob-3 absolute top-1/2 -left-32 h-[28rem] w-[28rem] rounded-full bg-karelia-moss/20 blur-[110px]">
+        </div>
+        <div class="animate-blob-1 absolute bottom-10 right-10 h-96 w-96 rounded-full bg-karelia-slate/20 blur-[120px]">
+        </div>
+    </div>
+
+    <!-- MAIN WEBSITE CONTAINER -->
+    <main class="mx-auto max-w-7xl px-6 relative z-10">
+
+        <!-- FLOATING COMPACT NAVBAR -->
+        <header id="navbar" class="sticky top-4 z-50 my-4 mx-auto max-w-4xl px-2 transition-all duration-300">
+            <div
+                class="flex items-center justify-between rounded-full border border-karelia-border bg-karelia-card/90 px-4 py-2.5 backdrop-blur-md shadow-lg shadow-black/40">
+                <a href="#home"
+                    class="flex items-center gap-2 font-display text-sm font-bold tracking-wider text-white pl-2">
+                    <span
+                        class="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-tr from-karelia-slate to-karelia-moss text-[10px] text-white font-black">V</span>
+                    VISHNU<span class="text-karelia-moss">.DEV</span>
+                </a>
+
+                <nav
+                    class="hidden space-x-6 text-[11px] font-semibold uppercase tracking-widest text-karelia-muted md:flex md:items-center">
+                    <a href="#home" class="nav-link transition hover:text-white">Home</a>
+                    <a href="#about" class="nav-link transition hover:text-white">About</a>
+                    <a href="#services" class="nav-link transition hover:text-white">Services</a>
+                    <a href="#projects" class="nav-link transition hover:text-white">Work</a>
+                    <a href="#skills" class="nav-link transition hover:text-white">Tools</a>
+                    <a href="#contact" class="nav-link transition hover:text-white">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <a href="#contact"
+                        class="hidden sm:inline-flex rounded-full bg-karelia-moss/20 border border-karelia-moss/40 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-karelia-text transition hover:bg-karelia-moss hover:text-white hover:shadow-md">
+                        Let's Talk <i class="fa-regular fa-paper-plane ml-1"></i>
+                    </a>
+
+                    <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu"
+                        class="flex h-9 w-9 items-center justify-center rounded-full border border-karelia-border bg-karelia-bg text-karelia-muted transition hover:border-karelia-moss hover:text-white md:hidden focus:outline-none">
+                        <i id="menu-icon" class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu Dropdown -->
+            <div id="mobile-menu"
+                class="hidden mt-2 rounded-2xl border border-karelia-border bg-karelia-card/95 p-4 backdrop-blur-md md:hidden shadow-xl">
+                <nav class="flex flex-col space-y-3 font-mono text-xs uppercase tracking-widest text-karelia-muted">
+                    <a href="#home"
+                        class="mobile-nav-link p-2 rounded-lg transition hover:bg-karelia-surface hover:text-white">Home</a>
+                    <a href="#about"
+                        class="mobile-nav-link p-2 rounded-lg transition hover:bg-karelia-surface hover:text-white">About</a>
+                    <a href="#services"
+                        class="mobile-nav-link p-2 rounded-lg transition hover:bg-karelia-surface hover:text-white">Services</a>
+                    <a href="#projects"
+                        class="mobile-nav-link p-2 rounded-lg transition hover:bg-karelia-surface hover:text-white">Work</a>
+                    <a href="#skills"
+                        class="mobile-nav-link p-2 rounded-lg transition hover:bg-karelia-surface hover:text-white">Tools</a>
+                    <a href="#contact"
+                        class="mobile-nav-link p-2 rounded-lg transition hover:bg-karelia-surface hover:text-white">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section id="home" class="relative py-12 md:py-24">
+            <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+                <div class="space-y-6 lg:col-span-7">
+                    <p class="text-xs font-semibold uppercase tracking-widest text-karelia-moss font-mono">// Hi, I'm
+                        Vishnu</p>
+
+                    <h1
+                        class="font-display text-4xl font-extrabold uppercase leading-tight tracking-tight text-white sm:text-6xl">
+                        I build scalable <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-karelia-text via-karelia-moss to-karelia-slate">Full
+                            Stack</span>
+                        solutions.
+                    </h1>
+
+                    <p class="max-w-2xl text-sm leading-relaxed text-karelia-muted sm:text-base">
+                        Python Full Stack Developer crafting robust architectures with dynamic user experiences.
+                        Combining high-performance <strong class="text-karelia-text">Django & REST API</strong> backends
+                        with modern <strong class="text-karelia-text">React</strong> frontends.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="#projects"
+                            class="earth-glow-sage inline-flex items-center gap-2 rounded-lg bg-karelia-moss px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-opacity-90">
+                            View Work <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="assets/resume.pdf" download
+                            class="inline-flex items-center gap-2 rounded-lg border border-karelia-border bg-karelia-card px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-karelia-text shadow-sm transition hover:border-karelia-slate hover:text-white">
+                            <i class="fa-solid fa-download text-xs"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex justify-center lg:col-span-5">
+                    <div class="relative w-full max-w-xs sm:max-w-sm">
+                        <div
+                            class="absolute -inset-4 rounded-3xl border border-karelia-moss/30 bg-gradient-to-b from-karelia-moss/10 to-transparent">
+                        </div>
+                        <div
+                            class="relative overflow-hidden rounded-2xl border border-karelia-border bg-karelia-card p-2 shadow-xl">
+                            <img src="assets/img1.jpeg" alt="Vishnu Radhakrishnan Nair" loading="lazy"
+                                class="h-auto w-full rounded-xl object-cover transition duration-500 hover:scale-[1.02]">
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -right-6 rounded-2xl border border-karelia-border bg-karelia-card/95 p-4 shadow-xl backdrop-blur">
+                            <h3 class="font-display text-2xl font-bold text-karelia-text">PYTHON</h3>
+                            <p class="text-[10px] font-semibold uppercase tracking-wider text-karelia-muted">Full Stack
+                                Developer </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-20 border-t border-karelia-border">
+            <p class="text-xs font-semibold uppercase tracking-widest text-karelia-moss font-mono">// About Me</p>
+
+            <div class="mt-4 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-start">
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <h2 class="font-sans text-3xl font-extrabold uppercase text-white sm:text-4xl">
+                            Engineered for <span class="text-karelia-moss">Performance</span> & Reliability.
+                        </h2>
+                        <p class="mt-4 text-sm text-karelia-muted leading-relaxed">
+                            I am a passionate Python Full Stack Developer dedicated to building scalable,
+                            high-throughput web applications. With expertise in end-to-end web engineering, database
+                            architecture, and REST API design, I bridge complex business logic with modern,
+                            high-performance interfaces.
+                        </p>
+
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <span
+                                class="inline-flex items-center gap-1.5 rounded-lg border border-karelia-border bg-karelia-card px-3 py-1.5 text-xs font-mono text-karelia-text shadow-sm">
+                                <i class="fa-solid fa-code text-karelia-moss"></i> Full Stack Development
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-1.5 rounded-lg border border-karelia-border bg-karelia-card px-3 py-1.5 text-xs font-mono text-karelia-text shadow-sm">
+                                <i class="fa-solid fa-database text-karelia-slate"></i> Relational Databases
+                            </span>
+                            <span
+                                class="inline-flex items-center gap-1.5 rounded-lg border border-karelia-border bg-karelia-card px-3 py-1.5 text-xs font-mono text-karelia-text shadow-sm">
+                                <i class="fa-solid fa-gears text-karelia-muted"></i> RESTful Architecture
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Academic Background Timeline -->
+                    <div class="pt-6 border-t border-karelia-border">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3
+                                class="text-xs font-mono font-bold uppercase tracking-widest text-white flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-karelia-moss"></i> Education & Academic
+                                Background
+                            </h3>
+                            <span class="text-[10px] font-mono text-karelia-muted uppercase">Chronological Order</span>
+                        </div>
+
+                        <div
+                            class="relative pl-6 space-y-8 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-karelia-moss before:via-karelia-slate before:to-karelia-border">
+                            <!-- Graduation -->
+                            <div class="relative group">
+                                <span
+                                    class="absolute -left-[23px] top-1 h-3.5 w-3.5 rounded-full border-2 border-karelia-moss bg-karelia-bg group-hover:bg-karelia-moss transition"></span>
+                                <div class="flex flex-wrap items-baseline justify-between gap-1">
+                                    <h4 class="font-sans text-base font-bold text-white uppercase">Arafa College of Arts
+                                        and Science</h4>
+                                    <span class="text-[11px] font-mono text-karelia-muted">Muvattupuzha, Kerala</span>
+                                </div>
+                                <p class="text-xs text-karelia-moss font-mono font-medium mt-0.5">Bachelor's Degree /
+                                    Higher Education</p>
+                                <ul class="mt-2 text-xs text-karelia-muted space-y-1 list-disc list-inside">
+                                    <li>Focus on core computer applications, software engineering principles, and
+                                        database concepts.</li>
+                                    <li>Active participation in technical seminars, coding events, and campus project
+                                        exhibitions.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Secondary School -->
+                            <div class="relative group">
+                                <span
+                                    class="absolute -left-[23px] top-1 h-3.5 w-3.5 rounded-full border-2 border-karelia-slate bg-karelia-bg group-hover:bg-karelia-slate transition"></span>
+                                <div class="flex flex-wrap items-baseline justify-between gap-1">
+                                    <h4 class="font-sans text-sm font-bold text-white uppercase">St. Mary's Higher
+                                        Secondary School</h4>
+                                    <span class="text-[11px] font-mono text-karelia-muted">Kerala State Board</span>
+                                </div>
+                                <p class="text-xs text-karelia-muted font-mono font-medium mt-0.5">Higher Secondary
+                                    Education (12th Standard)</p>
+                                <p class="mt-1 text-xs text-karelia-muted">
+                                    Completed higher secondary coursework emphasizing analytical thinking, mathematics,
+                                    and foundational science/computer concepts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strengths Column -->
+                <div class="space-y-4 lg:col-span-5">
+                    <h3
+                        class="text-xs font-mono font-bold uppercase tracking-widest text-karelia-muted mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-microchip text-karelia-moss"></i> Development Pillars
+                    </h3>
+
+                    <div
+                        class="rounded-2xl border border-karelia-border bg-karelia-card p-6 shadow-sm transition hover:border-karelia-moss">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-karelia-moss/20 text-karelia-text">
+                                <i class="fa-solid fa-bolt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-sans text-sm font-bold uppercase text-white">Fast & Efficient</h4>
+                                <p class="mt-1 text-xs text-karelia-muted leading-relaxed">
+                                    Writing clean Python logic and optimizing database ORM queries for minimal response
+                                    times.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="rounded-2xl border border-karelia-border bg-karelia-card p-6 shadow-sm transition hover:border-karelia-moss">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-karelia-slate/30 text-karelia-text">
+                                <i class="fa-solid fa-layer-group text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-sans text-sm font-bold uppercase text-white">Scalable Architecture</h4>
+                                <p class="mt-1 text-xs text-karelia-muted leading-relaxed">
+                                    Modular Django application structure designed for maintainability, testing, and
+                                    seamless expansion.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="rounded-2xl border border-karelia-border bg-karelia-card p-6 shadow-sm transition hover:border-karelia-moss">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-karelia-surface text-karelia-text">
+                                <i class="fa-solid fa-bullseye text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-sans text-sm font-bold uppercase text-white">Detail Oriented UI/UX</h4>
+                                <p class="mt-1 text-xs text-karelia-muted leading-relaxed">
+                                    Connecting stateful React interfaces with robust REST APIs to ensure intuitive user
+                                    experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="py-20 border-t border-karelia-border">
+            <p class="text-xs font-semibold uppercase tracking-widest text-karelia-moss font-mono">// Services</p>
+            <h2 class="mt-2 font-display text-3xl font-bold uppercase text-white">What I Deliver</h2>
+
+            <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+                <!-- Service Card 1 -->
+                <div
+                    class="group rounded-2xl border border-karelia-border bg-karelia-card p-8 shadow-sm transition duration-300 hover:border-karelia-moss">
+                    <div
+                        class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-karelia-moss/20 text-karelia-text group-hover:bg-karelia-moss transition">
+                        <i class="fa-solid fa-server text-xl"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold uppercase text-white">Backend Web Engineering</h3>
+                    <p class="mt-3 text-xs leading-relaxed text-karelia-muted">
+                        Designing high-performance server logic using Django and Python, managing authentication
+                        systems, database structures, and backend business logic.
+                    </p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="group rounded-2xl border border-karelia-border bg-karelia-card p-8 shadow-sm transition duration-300 hover:border-karelia-moss">
+                    <div
+                        class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-karelia-slate/30 text-karelia-text group-hover:bg-karelia-slate transition">
+                        <i class="fa-solid fa-code-branch text-xl"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold uppercase text-white">RESTful API Design</h3>
+                    <p class="mt-3 text-xs leading-relaxed text-karelia-muted">
+                        Developing secure, token-authenticated REST microservices using Django REST Framework for web,
+                        mobile, and third-party platform integration.
+                    </p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="group rounded-2xl border border-karelia-border bg-karelia-card p-8 shadow-sm transition duration-300 hover:border-karelia-moss">
+                    <div
+                        class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-karelia-surface text-karelia-text group-hover:bg-karelia-sage transition">
+                        <i class="fa-solid fa-desktop text-xl"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold uppercase text-white">Frontend Web UI/UX</h3>
+                    <p class="mt-3 text-xs leading-relaxed text-karelia-muted">
+                        Building responsive, highly interactive frontend applications utilizing React, HTML5, CSS3,
+                        JavaScript, and modern CSS frameworks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS / WORK SECTION -->
+        <section id="projects" class="py-20 border-t border-karelia-border">
+            <p class="text-xs font-semibold uppercase tracking-widest text-karelia-moss font-mono">// Featured Work</p>
+            <h2 class="mt-2 font-display text-3xl font-bold uppercase text-white">Selected Projects</h2>
+
+            <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+                <!-- Project Card 1 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl border border-karelia-border bg-karelia-card p-6 transition duration-300 hover:border-karelia-moss/60">
+                    <div class="h-48 w-full overflow-hidden rounded-xl bg-karelia-surface relative">
+                        <img src="assets/project1.png" alt="Full Stack Web Platform" loading="lazy"
+                            class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-karelia-card via-transparent to-transparent opacity-90">
+                        </div>
+                    </div>
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-display text-xl font-bold text-white">Full Stack Web Platform</h3>
+                            <div class="flex gap-3 text-karelia-muted">
+                                <a href="#" class="hover:text-white transition"><i
+                                        class="fa-brands fa-github text-lg"></i></a>
+                                <a href="#" class="hover:text-white transition"><i
+                                        class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-xs text-karelia-muted leading-relaxed">
+                            Robust full-stack application leveraging Django REST framework endpoints integrated
+                            seamlessly with a responsive React frontend interface.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span
+                                class="rounded-md bg-karelia-bg px-2.5 py-1 text-[10px] font-mono font-medium text-karelia-moss">Django</span>
+                            <span
+                                class="rounded-md bg-karelia-bg px-2.5 py-1 text-[10px] font-mono font-medium text-karelia-text">React</span>
+                            <span
+                                class="rounded-md bg-karelia-bg px-2.5 py-1 text-[10px] font-mono font-medium text-karelia-muted">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl border border-karelia-border bg-karelia-card p-6 transition duration-300 hover:border-karelia-moss/60">
+                    <div class="h-48 w-full overflow-hidden rounded-xl bg-karelia-surface relative">
+                        <img src="assets/project2.png" alt="REST API Service Engine" loading="lazy"
+                            class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-karelia-card via-transparent to-transparent opacity-90">
+                        </div>
+                    </div>
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-display text-xl font-bold text-white">REST API Service Engine</h3>
+                            <div class="flex gap-3 text-karelia-muted">
+                                <a href="#" class="hover:text-white transition"><i
+                                        class="fa-brands fa-github text-lg"></i></a>
+                                <a href="#" class="hover:text-white transition"><i
+                                        class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-xs text-karelia-muted leading-relaxed">
+                            Scalable microservices engine providing secure token-based access, data validation, and
+                            efficient relational database query optimization.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span
+                                class="rounded-md bg-karelia-bg px-2.5 py-1 text-[10px] font-mono font-medium text-karelia-moss">Python</span>
+                            <span
+                                class="rounded-md bg-karelia-bg px-2.5 py-1 text-[10px] font-mono font-medium text-karelia-text">REST
+                                API</span>
+                            <span
+                                class="rounded-md bg-karelia-bg px-2.5 py-1 text-[10px] font-mono font-medium text-karelia-muted">SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS / TECH STACK SECTION -->
+        <section id="skills" class="py-20 border-t border-karelia-border">
+            <p class="text-xs font-semibold uppercase tracking-widest text-karelia-moss font-mono">// Tech Stack</p>
+            <h2 class="mt-2 font-display text-3xl font-bold uppercase text-white">Tools & Technologies</h2>
+
+            <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
+                <div
+                    class="flex flex-col items-center justify-center rounded-xl border border-karelia-border bg-karelia-card p-4 transition hover:border-karelia-moss">
+                    <i class="fa-brands fa-python text-3xl text-karelia-moss"></i>
+                    <span class="mt-2 text-xs font-mono font-medium text-karelia-text">Python</span>
+                </div>
+                <div
+                    class="flex flex-col items-center justify-center rounded-xl border border-karelia-border bg-karelia-card p-4 transition hover:border-karelia-moss">
+                    <i class="fa-solid fa-server text-3xl text-karelia-slate"></i>
+                    <span class="mt-2 text-xs font-mono font-medium text-karelia-text">Django</span>
+                </div>
+                <div
+                    class="flex flex-col items-center justify-center rounded-xl border border-karelia-border bg-karelia-card p-4 transition hover:border-karelia-moss">
+                    <i class="fa-brands fa-react text-3xl text-karelia-muted"></i>
+                    <span class="mt-2 text-xs font-mono font-medium text-karelia-text">React</span>
+                </div>
+                <div
+                    class="flex flex-col items-center justify-center rounded-xl border border-karelia-border bg-karelia-card p-4 transition hover:border-karelia-moss">
+                    <i class="fa-brands fa-js text-3xl text-karelia-moss"></i>
+                    <span class="mt-2 text-xs font-mono font-medium text-karelia-text">JavaScript</span>
+                </div>
+                <div
+                    class="flex flex-col items-center justify-center rounded-xl border border-karelia-border bg-karelia-card p-4 transition hover:border-karelia-moss">
+                    <i class="fa-solid fa-database text-3xl text-karelia-slate"></i>
+                    <span class="mt-2 text-xs font-mono font-medium text-karelia-text">PostgreSQL</span>
+                </div>
+                <div
+                    class="flex flex-col items-center justify-center rounded-xl border border-karelia-border bg-karelia-card p-4 transition hover:border-karelia-moss">
+                    <i class="fa-brands fa-git-alt text-3xl text-karelia-muted"></i>
+                    <span class="mt-2 text-xs font-mono font-medium text-karelia-text">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 border-t border-karelia-border">
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="text-xs font-semibold uppercase tracking-widest text-karelia-moss font-mono">// Get In Touch
+                </p>
+                <h2 class="mt-2 font-display text-3xl font-bold uppercase text-white">Let's Work Together</h2>
+                <p class="mt-3 text-sm text-karelia-muted">
+                    Have a project in mind or looking for a full stack developer to join your team? Send a message and
+                    let's connect.
+                </p>
+
+                <!-- Form & Details Container -->
+                <div
+                    class="mt-10 rounded-2xl border border-karelia-border bg-karelia-card p-6 text-left shadow-lg sm:p-8">
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name"
+                                class="block font-mono text-xs font-semibold uppercase text-karelia-text mb-1.5">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name"
+                                class="w-full rounded-lg border border-karelia-border bg-karelia-bg px-4 py-2.5 text-xs text-white placeholder-karelia-muted/50 focus:border-karelia-moss focus:outline-none focus:ring-1 focus:ring-karelia-moss transition">
+                        </div>
+                        <div>
+                            <label for="email"
+                                class="block font-mono text-xs font-semibold uppercase text-karelia-text mb-1.5">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com"
+                                class="w-full rounded-lg border border-karelia-border bg-karelia-bg px-4 py-2.5 text-xs text-white placeholder-karelia-muted/50 focus:border-karelia-moss focus:outline-none focus:ring-1 focus:ring-karelia-moss transition">
+                        </div>
+                        <div>
+                            <label for="message"
+                                class="block font-mono text-xs font-semibold uppercase text-karelia-text mb-1.5">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                placeholder="Tell me about your project..."
+                                class="w-full rounded-lg border border-karelia-border bg-karelia-bg px-4 py-2.5 text-xs text-white placeholder-karelia-muted/50 focus:border-karelia-moss focus:outline-none focus:ring-1 focus:ring-karelia-moss transition"></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn"
+                            class="earth-glow-sage w-full rounded-lg bg-karelia-moss py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-opacity-90 flex items-center justify-center gap-2">
+                            <span>Send Message</span> <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                    <div id="form-response" class="hidden mt-4 text-center font-mono text-xs"></div>
+
+                    <!-- Direct Contact Methods -->
+                    <div
+                        class="mt-8 pt-6 border-t border-karelia-border flex flex-wrap justify-around items-center gap-4 text-xs font-mono text-karelia-muted">
+                        <a href="mailto:vishnu.rnair.dev@gmail.com"
+                            class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-envelope text-karelia-moss"></i> vishnu.rnair.dev@gmail.com
+                        </a>
+                        <span class="hidden sm:inline text-karelia-border">•</span>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-karelia-slate"></i> Kerala, India
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER SECTION -->
+
+        <footer class="border-t border-karelia-border pt-10 pb-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+
+                <!-- Brand / About -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-3">
+                        Vishnu<span class="text-karelia-accent">.</span>
+                    </h3>
+
+                    <p class="text-sm leading-6 text-karelia-muted max-w-sm">
+                        Python Full Stack Developer focused on building clean,
+                        scalable and user-friendly web experiences.
+                    </p>
+
+                    <div class="flex items-center gap-2 mt-4 text-xs font-mono text-karelia-muted">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        Available for opportunities
+                    </div>
+                </div>
+
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">
+                        Explore
+                    </h4>
+
+                    <div class="grid grid-cols-2 gap-y-3 text-xs font-mono">
+                        <a href="#home" class="text-karelia-muted hover:text-white transition">
+                            /home
+                        </a>
+
+                        <a href="#about" class="text-karelia-muted hover:text-white transition">
+                            /about
+                        </a>
+
+                        <a href="#skills" class="text-karelia-muted hover:text-white transition">
+                            /skills
+                        </a>
+
+                        <a href="#projects" class="text-karelia-muted hover:text-white transition">
+                            /projects
+                        </a>
+
+                        <a href="#experience" class="text-karelia-muted hover:text-white transition">
+                            /experience
+                        </a>
+
+                        <a href="#contact" class="text-karelia-muted hover:text-white transition">
+                            /contact
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Contact / Social -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">
+                        Let's Connect
+                    </h4>
+
+                    <p class="text-xs text-karelia-muted mb-4">
+                        Have an idea, project, or opportunity?
+                        Let's build something meaningful.
+                    </p>
+
+                    <a href="mailto:vishnuradhakrishnan595@gmail.com" class="inline-flex items-center gap-2 text-xs font-mono
+                      text-karelia-muted hover:text-white transition">
+                        <i class="fa-solid fa-envelope"></i>
+                        vishnuradhakrishnan595@gmail.com
+                    </a>
+
+                    <div class="flex items-center gap-5 mt-5">
+
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub Profile" class="text-karelia-muted hover:text-white
+                          hover:-translate-y-1 transition-all duration-300">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </a>
+
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile" class="text-karelia-muted hover:text-white
+                          hover:-translate-y-1 transition-all duration-300">
+                            <i class="fa-brands fa-linkedin text-lg"></i>
+                        </a>
+
+                        <a href="mailto:vishnuradhakrishnan595@gmail.com" aria-label="Email Me" class="text-karelia-muted hover:text-white
+                          hover:-translate-y-1 transition-all duration-300">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </a>
+
+                        <a href="#contact" aria-label="Contact Me" class="text-karelia-muted hover:text-white
+                          hover:-translate-y-1 transition-all duration-300">
+                            <i class="fa-solid fa-paper-plane text-lg"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-karelia-border pt-5
+                flex flex-col sm:flex-row items-center
+                justify-between gap-4">
+
+                <p class="text-xs font-mono text-karelia-muted">
+                    &copy; 2026 Vishnu Radhakrishnan Nair.
+                    <span class="hidden sm:inline">All rights reserved.</span>
+                </p>
+
+                <div class="flex items-center gap-4 text-xs font-mono text-karelia-muted">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot mr-1"></i>
+                        Kerala, India
+                    </span>
+
+                    <span class="hidden sm:inline">•</span>
+
+
+
+                </div>
+
+                <a href="#home" class="group flex items-center gap-2 text-xs font-mono
+                  text-karelia-muted hover:text-white transition">
+
+                    Back to top
+
+                    <span class="w-7 h-7 flex items-center justify-center
+                         border border-karelia-border rounded-full
+                         group-hover:-translate-y-1 transition-transform">
+
+                        <i class="fa-solid fa-arrow-up"></i>
+
+                    </span>
+                </a>
+
+            </div>
+
+        </footer>
+        ```
+
+
+    </main>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Hide preloader when window loads fully
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('preloader-hidden');
+            }
+        });
+
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            });
+
+            // Close mobile menu when clicking menu links
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Handle Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const formResponse = document.getElementById('form-response');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Show Loading State
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin-fast text-xs"></i> <span>Sending...</span>`;
+
+                // Simulate submission delay
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = `<span>Send Message</span> <i class="fa-solid fa-paper-plane text-xs"></i>`;
+
+                    formResponse.classList.remove('hidden', 'text-red-400');
+                    formResponse.classList.add('text-karelia-moss');
+                    formResponse.textContent = 'Thank you! Your message has been sent successfully.';
+
+                    contactForm.reset();
+                }, 1200);
+            });
+        }
+    </script>
+</body>
+
+</html>
