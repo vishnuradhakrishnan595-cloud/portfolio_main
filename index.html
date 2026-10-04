@@ -1,81 +1,55 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Vishnu Radhakrishnan Nair — BCA Graduate and Python Full Stack Developer building modern web applications with Python, Django, React and REST APIs."
-    >
+    <meta name="description"
+        content="Vishnu Radhakrishnan Nair — Python Full Stack Developer portfolio">
 
-    <meta name="theme-color" content="#f7f3ea">
+    <meta name="theme-color" content="#08090b">
 
     <title>Vishnu.dev — Python Full Stack Developer</title>
 
     <!-- =========================================================
          FONTS
     ========================================================== -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- =========================================================
          TAILWIND
     ========================================================== -->
-
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-
                     fontFamily: {
-                        sans: ["Manrope", "DM Sans", "sans-serif"],
-                        body: ["DM Sans", "sans-serif"],
+                        sans: ["DM Sans", "sans-serif"],
                         mono: ["JetBrains Mono", "monospace"]
                     },
 
                     colors: {
-
-                        cream: "#F7F3EA",
-                        cream2: "#EFE8DA",
-
-                        ink: "#111318",
-                        ink2: "#191C22",
-
-                        navy: "#182A4A",
-                        blue: "#2F5BFF",
-                        blue2: "#6C8CFF",
-
-                        green: "#3B7A57",
-
-                        muted: "#687080",
-                        muted2: "#9097A5",
-
-                        line: "#DCD6CA",
-                        white2: "#FCFBF8"
+                        ink: "#08090b",
+                        panel: "#101114",
+                        panel2: "#15171b",
+                        line: "#272a30",
+                        muted: "#8c919c",
+                        orange: "#ff6b3d",
+                        orange2: "#ff8d68"
                     },
 
                     boxShadow: {
-
-                        soft:
-                            "0 20px 60px rgba(24,42,74,.08)",
-
-                        card:
-                            "0 25px 80px rgba(17,19,24,.10)",
-
-                        blue:
-                            "0 20px 60px rgba(47,91,255,.18)"
+                        glow: "0 0 70px rgba(255,107,61,.13)",
+                        card: "0 25px 90px rgba(0,0,0,.42)"
                     }
                 }
             }
@@ -83,22 +57,17 @@
     </script>
 
     <!-- =========================================================
-         ICONS
+         FONT AWESOME
     ========================================================== -->
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    >
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- =========================================================
          CUSTOM CSS
     ========================================================== -->
-
     <style>
-
         :root {
-            color-scheme: light;
+            color-scheme: dark;
         }
 
         * {
@@ -111,55 +80,40 @@
 
         body {
             margin: 0;
-
             background:
                 radial-gradient(
-                    circle at 50% -10%,
-                    rgba(47, 91, 255, .08),
-                    transparent 32rem
+                    circle at 50% -5%,
+                    rgba(255, 107, 61, .13),
+                    transparent 34rem
                 ),
-
                 radial-gradient(
-                    circle at 100% 35%,
-                    rgba(59, 122, 87, .06),
-                    transparent 25rem
+                    circle at 100% 40%,
+                    rgba(255, 255, 255, .035),
+                    transparent 28rem
                 ),
+                #08090b;
 
-                #F7F3EA;
-
-            color: #111318;
-
+            color: #f5f5f5;
             font-family: "DM Sans", sans-serif;
-
             overflow-x: hidden;
         }
 
-        /* Background grid */
-
         body::before {
-
             content: "";
-
             position: fixed;
-
             inset: 0;
-
             pointer-events: none;
-
             z-index: -1;
-
-            opacity: .42;
+            opacity: .32;
 
             background-image:
-
                 linear-gradient(
-                    rgba(24,42,74,.035) 1px,
+                    rgba(255, 255, 255, .025) 1px,
                     transparent 1px
                 ),
-
                 linear-gradient(
                     90deg,
-                    rgba(24,42,74,.035) 1px,
+                    rgba(255, 255, 255, .025) 1px,
                     transparent 1px
                 );
 
@@ -169,49 +123,40 @@
                 linear-gradient(
                     to bottom,
                     black 0%,
-                    transparent 80%
+                    transparent 85%
                 );
         }
 
         ::selection {
-            background: rgba(47,91,255,.18);
-            color: #111318;
+            background: rgba(255, 107, 61, .35);
+            color: white;
         }
 
-        /* Glass navigation */
+        /* =====================================================
+           GLASS
+        ====================================================== */
 
         .glass {
+            background: rgba(14, 15, 18, .78);
+            border: 1px solid rgba(255, 255, 255, .09);
 
-            background:
-                rgba(252,251,248,.82);
-
-            border:
-                1px solid rgba(17,19,24,.08);
-
-            backdrop-filter:
-                blur(20px);
-
-            -webkit-backdrop-filter:
-                blur(20px);
-
-            box-shadow:
-                0 10px 40px rgba(17,19,24,.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
-        /* Hero grid */
+        /* =====================================================
+           HERO GRID
+        ====================================================== */
 
         .hero-grid {
-
             background-image:
-
                 linear-gradient(
-                    rgba(24,42,74,.055) 1px,
+                    rgba(255, 255, 255, .035) 1px,
                     transparent 1px
                 ),
-
                 linear-gradient(
                     90deg,
-                    rgba(24,42,74,.055) 1px,
+                    rgba(255, 255, 255, .035) 1px,
                     transparent 1px
                 );
 
@@ -221,110 +166,172 @@
                 radial-gradient(
                     circle at center,
                     black 0%,
-                    transparent 72%
+                    transparent 74%
                 );
         }
 
-        /* Gradient text */
+        /* =====================================================
+           GLOW
+        ====================================================== */
 
-        .gradient-text {
+        .orange-ring {
+            box-shadow:
+                0 0 0 1px rgba(255, 107, 61, .12),
+                0 0 65px rgba(255, 107, 61, .11);
+        }
+
+        /* =====================================================
+           CARDS
+        ====================================================== */
+
+        .tool-card,
+        .project-card,
+        .service-card,
+        .skill-card {
+            transition:
+                transform .35s ease,
+                border-color .35s ease,
+                background .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .tool-card:hover,
+        .project-card:hover,
+        .service-card:hover,
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 107, 61, .42);
+            background: #131519;
+            box-shadow: 0 25px 75px rgba(0, 0, 0, .30);
+        }
+
+        .tool-card:hover .tool-icon,
+        .skill-card:hover .skill-icon {
+            transform: scale(1.08);
+            color: #ff8d68;
+        }
+
+        .tool-icon,
+        .skill-icon {
+            transition:
+                transform .3s ease,
+                color .3s ease;
+        }
+
+        /* =====================================================
+           CODE WINDOW
+        ====================================================== */
+
+        .code-window {
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255, 107, 61, .12),
+                    transparent 15rem
+                ),
+                linear-gradient(
+                    145deg,
+                    #15171a,
+                    #0c0d0f
+                );
+
+            border: 1px solid #2a2d33;
+
+            box-shadow:
+                0 40px 110px rgba(0, 0, 0, .48);
+        }
+
+        /* =====================================================
+           PROJECT PREVIEW
+        ====================================================== */
+
+        .project-preview {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-preview::after {
+            content: "";
+            position: absolute;
+            inset: 0;
 
             background:
                 linear-gradient(
                     120deg,
-                    #182A4A,
-                    #2F5BFF,
-                    #3B7A57
+                    transparent 30%,
+                    rgba(255, 255, 255, .04),
+                    transparent 70%
                 );
 
-            -webkit-background-clip: text;
-
-            background-clip: text;
-
-            color: transparent;
+            transform: translateX(-100%);
+            transition: transform .7s ease;
         }
 
-        /* Cards */
-
-        .card {
-
-            transition:
-                transform .35s ease,
-                border-color .35s ease,
-                box-shadow .35s ease,
-                background .35s ease;
+        .project-card:hover .project-preview::after {
+            transform: translateX(100%);
         }
 
-        .card:hover {
+        /* =====================================================
+           LIVE BUTTON
+        ====================================================== */
 
-            transform:
-                translateY(-7px);
-
-            border-color:
-                rgba(47,91,255,.28);
-
-            box-shadow:
-                0 25px 70px rgba(17,19,24,.10);
-        }
-
-        /* Technology cards */
-
-        .tech-card {
-
+        .live-btn {
+            position: relative;
+            overflow: hidden;
             transition:
                 transform .3s ease,
                 background .3s ease,
-                border-color .3s ease,
                 box-shadow .3s ease;
         }
 
-        .tech-card:hover {
-
-            transform:
-                translateY(-5px);
-
-            background:
-                #FCFBF8;
-
-            border-color:
-                rgba(47,91,255,.28);
-
+        .live-btn:hover {
+            transform: translateY(-2px);
+            background: #ff8d68;
             box-shadow:
-                0 18px 50px rgba(17,19,24,.07);
+                0 12px 35px rgba(255, 107, 61, .22);
         }
 
-        .tech-icon {
-
-            transition:
-                transform .3s ease;
+        .live-btn i {
+            transition: transform .3s ease;
         }
 
-        .tech-card:hover .tech-icon {
-
-            transform:
-                scale(1.12)
-                rotate(-3deg);
+        .live-btn:hover i {
+            transform: translate(2px, -2px);
         }
 
-        /* Terminal */
+        /* =====================================================
+           TERMINAL ANIMATION
+        ====================================================== */
 
-        .terminal {
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #171B23,
-                    #0F1218
-                );
-
-            box-shadow:
-                0 40px 100px rgba(17,19,24,.22);
-
-            animation:
-                terminalFloat 6s ease-in-out infinite;
+        .terminal-line {
+            animation: terminalIn .8s ease both;
         }
 
-        @keyframes terminalFloat {
+        @keyframes terminalIn {
+            from {
+                opacity: 0;
+                transform: translateX(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* =====================================================
+           FLOAT
+        ====================================================== */
+
+        .float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .float-delay {
+            animation: float 6s ease-in-out 1s infinite;
+        }
+
+        @keyframes float {
 
             0%,
             100% {
@@ -336,136 +343,55 @@
             }
         }
 
-        /* Terminal glow */
+        /* =====================================================
+           PULSE
+        ====================================================== */
 
-        .terminal::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 180px;
-
-            height: 180px;
-
-            right: -60px;
-
-            top: -60px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(47,91,255,.18);
-
-            filter:
-                blur(45px);
-
-            pointer-events:
-                none;
+        .pulse-dot {
+            animation: pulseDot 2s infinite;
         }
 
-        /* Code line animation */
-
-        .code-line {
-
-            opacity: 0;
-
-            transform:
-                translateX(-10px);
-
-            animation:
-                codeReveal .7s ease forwards;
-        }
-
-        .code-line:nth-child(1) {
-            animation-delay: .2s;
-        }
-
-        .code-line:nth-child(2) {
-            animation-delay: .4s;
-        }
-
-        .code-line:nth-child(3) {
-            animation-delay: .6s;
-        }
-
-        .code-line:nth-child(4) {
-            animation-delay: .8s;
-        }
-
-        .code-line:nth-child(5) {
-            animation-delay: 1s;
-        }
-
-        @keyframes codeReveal {
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateX(0);
-            }
-        }
-
-        /* Floating badges */
-
-        .floating {
-
-            animation:
-                floating 5s ease-in-out infinite;
-        }
-
-        .floating-delay {
-
-            animation:
-                floating 6s ease-in-out 1.2s infinite;
-        }
-
-        @keyframes floating {
+        @keyframes pulseDot {
 
             0%,
             100% {
-                transform: translateY(0);
+                box-shadow:
+                    0 0 0 0 rgba(255, 107, 61, .4);
             }
 
             50% {
-                transform: translateY(-10px);
+                box-shadow:
+                    0 0 0 8px rgba(255, 107, 61, 0);
             }
         }
 
-        /* Scroll reveal */
+        /* =====================================================
+           REVEAL
+        ====================================================== */
 
         .reveal {
-
             opacity: 0;
-
-            transform:
-                translateY(24px);
+            transform: translateY(22px);
 
             transition:
-                opacity .75s ease,
-                transform .75s ease;
+                opacity .7s ease,
+                transform .7s ease;
         }
 
         .reveal.show {
-
             opacity: 1;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
-        /* Marquee */
+        /* =====================================================
+           MARQUEE
+        ====================================================== */
 
         .marquee {
-
-            animation:
-                marquee 25s linear infinite;
+            animation: marquee 24s linear infinite;
         }
 
         @keyframes marquee {
-
             from {
                 transform: translateX(0);
             }
@@ -475,1920 +401,554 @@
             }
         }
 
-        /* Status pulse */
+        /* =====================================================
+           BAR
+        ====================================================== */
 
-        .status-dot {
-
-            animation:
-                statusPulse 2s infinite;
+        .bar {
+            animation: barGrow 1.1s ease both;
+            transform-origin: bottom;
         }
 
-        @keyframes statusPulse {
-
-            0%,
-            100% {
-
-                box-shadow:
-                    0 0 0 0 rgba(59,122,87,.30);
+        @keyframes barGrow {
+            from {
+                transform: scaleY(0);
             }
 
-            50% {
-
-                box-shadow:
-                    0 0 0 7px rgba(59,122,87,0);
+            to {
+                transform: scaleY(1);
             }
         }
 
-        /* Project browser */
-
-        .browser {
-
-            background:
-                #F1EEE6;
-
-            border:
-                1px solid #D9D2C5;
-        }
-
-        .browser-content {
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #182A4A,
-                    #243E6B
-                );
-        }
-
-        /* Project cards */
-
-        .project-card {
-
-            transition:
-                transform .4s ease,
-                box-shadow .4s ease,
-                border-color .4s ease;
-        }
-
-        .project-card:hover {
-
-            transform:
-                translateY(-8px);
-
-            box-shadow:
-                0 30px 90px rgba(17,19,24,.12);
-
-            border-color:
-                rgba(47,91,255,.3);
-        }
-
-        .project-card:hover .project-image {
-
-            transform:
-                scale(1.025);
-        }
-
-        .project-image {
-
-            transition:
-                transform .5s ease;
-        }
-
-        /* Buttons */
-
-        .primary-btn {
-
-            transition:
-                transform .25s ease,
-                box-shadow .25s ease,
-                background .25s ease;
-        }
-
-        .primary-btn:hover {
-
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 15px 40px rgba(47,91,255,.22);
-        }
-
-        /* Nav active */
+        /* =====================================================
+           NAV
+        ====================================================== */
 
         .nav-link.active {
-
-            color:
-                #2F5BFF;
-
-            font-weight:
-                600;
+            color: #ff8d68;
         }
 
-        /* Tags */
+        /* =====================================================
+           TAG
+        ====================================================== */
 
         .tag {
-
-            background:
-                rgba(24,42,74,.045);
-
-            border:
-                1px solid rgba(24,42,74,.08);
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .035);
         }
 
-        /* Section label */
-
-        .section-label {
-
-            color:
-                #2F5BFF;
+        .number {
+            font-variant-numeric: tabular-nums;
         }
 
-        /* Skill progress */
+        /* =====================================================
+           PROJECT NUMBER
+        ====================================================== */
 
-        .skill-bar {
-
-            height:
-                5px;
-
-            border-radius:
-                999px;
-
-            background:
-                #E5E0D6;
-
-            overflow:
-                hidden;
+        .project-number {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 9px;
+            letter-spacing: .18em;
+            color: #60656f;
         }
 
-        .skill-progress {
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
 
-            height:
-                100%;
-
-            border-radius:
-                inherit;
-
-            transform-origin:
-                left;
-
-            transform:
-                scaleX(0);
-
-            transition:
-                transform 1.2s cubic-bezier(.2,.8,.2,1);
-        }
-
-        .reveal.show .skill-progress {
-            transform:
-                scaleX(1);
-        }
-
-        /* Mobile */
-
-        @media (max-width: 768px) {
-
-            .terminal {
-                animation: none;
-            }
-
-            .hero-grid {
-                opacity: .55;
+        @media (max-width: 640px) {
+            .project-card:hover {
+                transform: translateY(-3px);
             }
         }
 
-        /* Reduced motion */
+        /* =====================================================
+           REDUCED MOTION
+        ====================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
             *,
             *::before,
             *::after {
-
-                animation-duration:
-                    .01ms !important;
-
-                animation-iteration-count:
-                    1 !important;
-
-                scroll-behavior:
-                    auto !important;
-
-                transition-duration:
-                    .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
             }
         }
-
     </style>
-
 </head>
 
 
 <body>
 
-<!-- =========================================================
-     NAVIGATION
-========================================================== -->
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
 
-<header class="fixed left-0 right-0 top-0 z-50 px-4 pt-4">
+    <header class="fixed left-0 right-0 top-0 z-50 px-4 pt-4">
 
-    <nav
-        class="glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3"
-    >
+        <nav
+            class="glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3">
 
-        <!-- Logo -->
-
-        <a
-            href="#home"
-            class="group flex items-center gap-3"
-        >
-
-            <div
-                class="flex h-9 w-9 items-center justify-center rounded-xl bg-ink text-sm font-extrabold text-white shadow-soft transition group-hover:bg-blue"
-            >
-                VR
-            </div>
-
-            <div>
-
-                <div
-                    class="font-mono text-sm font-semibold tracking-tight"
-                >
-                    vishnu<span class="text-blue">.dev</span>
-                </div>
-
-                <div
-                    class="hidden text-[9px] uppercase tracking-[.18em] text-muted2 sm:block"
-                >
-                    Software Developer
-                </div>
-
-            </div>
-
-        </a>
-
-
-        <!-- Desktop navigation -->
-
-        <div
-            class="hidden items-center gap-7 text-xs text-muted md:flex"
-        >
-
-            <a
-                class="nav-link transition hover:text-ink"
-                href="#home"
-            >
-                Home
-            </a>
-
-            <a
-                class="nav-link transition hover:text-ink"
-                href="#about"
-            >
-                About
-            </a>
-
-            <a
-                class="nav-link transition hover:text-ink"
-                href="#services"
-            >
-                Services
-            </a>
-
-            <a
-                class="nav-link transition hover:text-ink"
-                href="#stack"
-            >
-                Stack
-            </a>
-
-            <a
-                class="nav-link transition hover:text-ink"
-                href="#work"
-            >
-                Work
-            </a>
-
-            <a
-                class="nav-link transition hover:text-ink"
-                href="#contact"
-            >
-                Contact
-            </a>
-
-        </div>
-
-
-        <!-- CTA -->
-
-        <a
-            href="#contact"
-            class="primary-btn hidden rounded-xl bg-ink px-4 py-2.5 text-xs font-bold text-white sm:inline-flex"
-        >
-            Let's Talk
-            <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-[9px]"></i>
-        </a>
-
-
-        <!-- Mobile menu -->
-
-        <button
-            id="menuBtn"
-            class="flex h-9 w-9 items-center justify-center rounded-xl border border-line text-ink md:hidden"
-            aria-label="Toggle menu"
-        >
-
-            <i
-                id="menuIcon"
-                class="fa-solid fa-bars"
-            ></i>
-
-        </button>
-
-    </nav>
-
-
-    <div
-        id="mobileMenu"
-        class="glass mx-auto mt-2 hidden max-w-6xl rounded-2xl p-3 md:hidden"
-    >
-
-        <div class="grid gap-1 text-sm">
-
-            <a
-                href="#home"
-                class="rounded-xl px-4 py-3 hover:bg-black/5"
-            >
-                Home
-            </a>
-
-            <a
-                href="#about"
-                class="rounded-xl px-4 py-3 hover:bg-black/5"
-            >
-                About
-            </a>
-
-            <a
-                href="#services"
-                class="rounded-xl px-4 py-3 hover:bg-black/5"
-            >
-                Services
-            </a>
-
-            <a
-                href="#stack"
-                class="rounded-xl px-4 py-3 hover:bg-black/5"
-            >
-                Stack
-            </a>
-
-            <a
-                href="#work"
-                class="rounded-xl px-4 py-3 hover:bg-black/5"
-            >
-                Work
-            </a>
-
-            <a
-                href="#contact"
-                class="rounded-xl px-4 py-3 font-semibold text-blue hover:bg-black/5"
-            >
-                Contact
-            </a>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<main class="mx-auto max-w-6xl px-4">
-
-
-<!-- =========================================================
-     HERO
-========================================================== -->
-
-<section
-    id="home"
-    class="relative min-h-screen pt-36 pb-20"
->
-
-    <div
-        class="hero-grid pointer-events-none absolute inset-x-0 top-16 h-[680px]"
-    ></div>
-
-
-    <div
-        class="relative grid items-center gap-14 lg:grid-cols-12"
-    >
-
-        <!-- Hero content -->
-
-        <div class="reveal lg:col-span-7">
-
-            <div
-                class="mb-6 inline-flex items-center gap-2 rounded-full border border-green/20 bg-green/5 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[.16em] text-green"
-            >
+            <a href="#home"
+                class="flex items-center gap-2 font-mono text-sm font-bold">
 
                 <span
-                    class="status-dot h-1.5 w-1.5 rounded-full bg-green"
-                ></span>
-
-                Available for opportunities
-
-            </div>
-
-
-            <h1
-                class="max-w-4xl font-sans text-5xl font-extrabold leading-[.98] tracking-[-.055em] sm:text-6xl lg:text-7xl"
-            >
-
-                I build
-
-                <span class="text-muted2">
-                    digital products
+                    class="flex h-8 w-8 items-center justify-center rounded-lg bg-orange text-white shadow-glow">
+                    V
                 </span>
 
-                with
-
-                <span class="gradient-text">
-                    Python & React.
+                <span>
+                    vishnu<span class="text-orange">.dev</span>
                 </span>
 
-            </h1>
+            </a>
 
 
-            <p
-                class="mt-7 max-w-2xl text-sm leading-7 text-muted sm:text-base"
-            >
+            <div
+                class="hidden items-center gap-7 text-xs text-zinc-400 md:flex">
 
-                I'm
-                <strong class="font-semibold text-ink">
-                    Vishnu Radhakrishnan Nair
-                </strong>,
-                a BCA graduate and Python Full Stack Developer focused on
-                building reliable backend systems, REST APIs, responsive
-                interfaces and database-driven applications.
-
-            </p>
-
-
-            <!-- CTA -->
-
-            <div class="mt-8 flex flex-wrap gap-3">
-
-                <a
-                    href="#work"
-                    class="primary-btn inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-3 text-xs font-bold text-white"
-                >
-
-                    View projects
-
-                    <i
-                        class="fa-solid fa-arrow-right text-[10px]"
-                    ></i>
-
+                <a class="nav-link transition hover:text-white"
+                    href="#home">
+                    Home
                 </a>
 
+                <a class="nav-link transition hover:text-white"
+                    href="#about">
+                    About
+                </a>
 
-                <a
-                    href="#contact"
-                    class="inline-flex items-center gap-2 rounded-xl border border-line bg-white2 px-5 py-3 text-xs font-bold text-ink transition hover:border-blue hover:text-blue"
-                >
+                <a class="nav-link transition hover:text-white"
+                    href="#services">
+                    Services
+                </a>
 
-                    <i class="fa-regular fa-paper-plane"></i>
+                <a class="nav-link transition hover:text-white"
+                    href="#stack">
+                    Stack
+                </a>
 
-                    Contact me
+                <a class="nav-link transition hover:text-white"
+                    href="#work">
+                    Work
+                </a>
 
+                <a class="nav-link transition hover:text-white"
+                    href="#contact">
+                    Contact
                 </a>
 
             </div>
 
 
-            <!-- Social -->
+            <a href="#contact"
+                class="hidden rounded-xl bg-white px-4 py-2 text-xs font-bold text-black transition hover:bg-orange hover:text-white sm:inline-flex">
+                Let's Talk
+            </a>
 
-            <div
-                class="mt-9 flex flex-wrap items-center gap-5 text-muted"
-            >
 
-                <a
-                    href="https://github.com/vishnuradhakrishnan595-cloud"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="transition hover:text-ink"
-                    aria-label="GitHub"
-                >
+            <button id="menuBtn"
+                class="flex h-9 w-9 items-center justify-center rounded-xl border border-line text-zinc-300 md:hidden"
+                aria-label="Toggle menu">
 
-                    <i class="fa-brands fa-github text-xl"></i>
+                <i id="menuIcon"
+                    class="fa-solid fa-bars">
+                </i>
 
+            </button>
+
+        </nav>
+
+
+        <div id="mobileMenu"
+            class="glass mx-auto mt-2 hidden max-w-6xl rounded-2xl p-3 md:hidden">
+
+            <div class="grid gap-1 text-sm text-zinc-300">
+
+                <a href="#home"
+                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    Home
                 </a>
 
-
-                <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="transition hover:text-blue"
-                    aria-label="LinkedIn"
-                >
-
-                    <i class="fa-brands fa-linkedin text-xl"></i>
-
+                <a href="#about"
+                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    About
                 </a>
 
-
-                <a
-                    href="mailto:vishnuradhakrishnan595@gmail.com"
-                    class="transition hover:text-blue"
-                    aria-label="Email"
-                >
-
-                    <i class="fa-solid fa-envelope text-lg"></i>
-
+                <a href="#services"
+                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    Services
                 </a>
 
+                <a href="#stack"
+                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    Stack
+                </a>
 
-                <span class="h-5 w-px bg-line"></span>
+                <a href="#work"
+                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    Work
+                </a>
 
-
-                <span
-                    class="font-mono text-[10px] uppercase tracking-widest text-muted2"
-                >
-                    Kerala · India
-                </span>
+                <a href="#contact"
+                    class="rounded-xl px-4 py-3 text-orange hover:bg-white/5">
+                    Contact
+                </a>
 
             </div>
 
         </div>
 
+    </header>
 
-        <!-- Terminal -->
 
-        <div
-            class="reveal relative lg:col-span-5"
-        >
+
+    <main class="mx-auto max-w-6xl px-4">
+
+        <!-- =========================================================
+             HERO
+        ========================================================== -->
+
+        <section id="home"
+            class="relative min-h-screen pt-36 pb-20">
 
             <div
-                class="terminal relative overflow-hidden rounded-3xl border border-white/10 p-5 text-white"
-            >
-
-                <!-- Browser header -->
-
-                <div
-                    class="flex items-center justify-between border-b border-white/10 pb-4"
-                >
-
-                    <div class="flex gap-1.5">
-
-                        <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
-
-                        <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
-
-                        <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
-
-                    </div>
-
-                    <span
-                        class="font-mono text-[9px] text-white/40"
-                    >
-                        vishnu@dev ~
-                    </span>
-
-                    <i
-                        class="fa-solid fa-terminal text-xs text-white/40"
-                    ></i>
-
-                </div>
-
-
-                <!-- Terminal body -->
-
-                <div
-                    class="relative z-10 mt-6 font-mono text-[11px] leading-7"
-                >
-
-                    <div class="code-line">
-
-                        <span class="text-green-400">$</span>
-
-                        <span class="text-white/80">
-                            whoami
-                        </span>
-
-                    </div>
-
-                    <div class="code-line text-white/45">
-                        → Python Full Stack Developer
-                    </div>
-
-
-                    <div class="code-line mt-2">
-
-                        <span class="text-green-400">$</span>
-
-                        <span class="text-white/80">
-                            stack --show
-                        </span>
-
-                    </div>
-
-                    <div class="code-line text-white/45">
-                        → Python · Django · DRF · React
-                    </div>
-
-                    <div class="code-line text-white/45">
-                        → PostgreSQL · MySQL · MongoDB
-                    </div>
-
-
-                    <div class="code-line mt-2">
-
-                        <span class="text-green-400">$</span>
-
-                        <span class="text-white/80">
-                            status
-                        </span>
-
-                    </div>
-
-                    <div class="code-line">
-
-                        <span class="text-green-400">
-                            ✓
-                        </span>
-
-                        <span class="text-white/60">
-                            Ready to build
-                        </span>
-
-                    </div>
-
-
-                    <div class="code-line mt-4 text-blue2">
-
-                        <span class="text-white/40">
-                            const
-                        </span>
-
-                        developer = {
-
-                    </div>
-
-                    <div class="code-line pl-5 text-white/60">
-                        backend: "Django",
-                    </div>
-
-                    <div class="code-line pl-5 text-white/60">
-                        frontend: "React",
-                    </div>
-
-                    <div class="code-line pl-5 text-white/60">
-                        database: "SQL / NoSQL",
-                    </div>
-
-                    <div class="code-line pl-5 text-white/60">
-                        mindset: "build & improve"
-                    </div>
-
-                    <div class="code-line text-blue2">
-                        };
-                    </div>
-
-                </div>
-
-
-                <!-- Floating badge -->
-
-                <div
-                    class="floating absolute -bottom-5 -left-5 z-20 hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl sm:block"
-                >
-
-                    <div
-                        class="flex items-center gap-2"
-                    >
-
-                        <i class="fa-brands fa-python text-blue2"></i>
-
-                        <span class="font-mono text-[9px]">
-                            Python focused
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="floating-delay absolute -right-4 top-24 z-20 hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl sm:block"
-                >
-
-                    <div
-                        class="flex items-center gap-2"
-                    >
-
-                        <i class="fa-solid fa-code text-green-400"></i>
-
-                        <span class="font-mono text-[9px]">
-                            API ready
-                        </span>
-
-                    </div>
-
-                </div>
-
+                class="hero-grid pointer-events-none absolute inset-x-0 top-12 h-[700px]">
             </div>
 
-        </div>
-
-    </div>
-
-
-    <!-- Tech ticker -->
-
-    <div
-        class="mt-24 overflow-hidden border-y border-line py-5"
-    >
-
-        <div
-            class="marquee flex w-max gap-12 whitespace-nowrap font-mono text-[10px] uppercase tracking-[.2em] text-muted2"
-        >
-
-            <span>Python</span>
-            <span>Django</span>
-            <span>Django REST Framework</span>
-            <span>React</span>
-            <span>JavaScript</span>
-            <span>Tailwind CSS</span>
-            <span>PostgreSQL</span>
-            <span>MySQL</span>
-            <span>MongoDB</span>
-            <span>REST APIs</span>
-            <span>JWT</span>
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>Docker</span>
-            <span>Postman</span>
-
-            <span>Python</span>
-            <span>Django</span>
-            <span>Django REST Framework</span>
-            <span>React</span>
-            <span>JavaScript</span>
-            <span>Tailwind CSS</span>
-            <span>PostgreSQL</span>
-            <span>MySQL</span>
-            <span>MongoDB</span>
-            <span>REST APIs</span>
-            <span>JWT</span>
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>Docker</span>
-            <span>Postman</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     ABOUT
-========================================================== -->
-
-<section
-    id="about"
-    class="border-t border-line py-24"
->
-
-    <div
-        class="grid gap-12 lg:grid-cols-12"
-    >
-
-        <div class="reveal lg:col-span-5">
-
-            <p
-                class="section-label font-mono text-[10px] uppercase tracking-[.2em]"
-            >
-                // About me
-            </p>
-
-            <h2
-                class="mt-3 font-sans text-4xl font-extrabold tracking-tight sm:text-5xl"
-            >
-                Building software with
-                <span class="text-muted2">
-                    purpose.
-                </span>
-            </h2>
-
-            <p
-                class="mt-6 text-sm leading-7 text-muted"
-            >
-
-                I enjoy turning ideas into working software —
-                from database design and backend architecture
-                to responsive interfaces and deployment.
-
-            </p>
-
-        </div>
-
-
-        <div class="reveal lg:col-span-7">
 
             <div
-                class="card rounded-3xl border border-line bg-white2 p-7 shadow-soft sm:p-8"
-            >
+                class="relative grid items-center gap-14 lg:grid-cols-12">
 
-                <div
-                    class="flex items-start justify-between gap-5"
-                >
+                <!-- HERO COPY -->
 
-                    <div>
+                <div class="reveal lg:col-span-6">
 
-                        <p
-                            class="font-mono text-[9px] uppercase tracking-widest text-blue"
-                        >
-                            Developer profile
-                        </p>
+                    <div
+                        class="mb-6 inline-flex items-center gap-2 rounded-full border border-orange/20 bg-orange/5 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[.18em] text-orange">
 
-                        <h3
-                            class="mt-2 text-xl font-bold"
-                        >
-                            Backend-first. Full-stack mindset.
-                        </h3>
+                        <span
+                            class="pulse-dot h-1.5 w-1.5 rounded-full bg-orange">
+                        </span>
+
+                        Python Full Stack Developer
+
+                    </div>
+
+
+                    <h1
+                        class="max-w-3xl text-5xl font-bold leading-[.96] tracking-[-.055em] sm:text-6xl lg:text-7xl">
+
+                        I build
+
+                        <span class="text-zinc-500">
+                            web products
+                        </span>
+
+                        that are
+
+                        <span class="text-orange">
+                            built to last.
+                        </span>
+
+                    </h1>
+
+
+                    <p
+                        class="mt-7 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">
+
+                        I'm
+                        <strong class="text-white">
+                            Vishnu Radhakrishnan Nair
+                        </strong>,
+
+                        a BCA graduate and Python Full Stack Developer
+                        focused on Django, REST APIs, React, databases
+                        and production-ready application development.
+
+                    </p>
+
+
+                    <div class="mt-8 flex flex-wrap gap-3">
+
+                        <a href="#work"
+                            class="inline-flex items-center gap-2 rounded-xl bg-orange px-5 py-3 text-xs font-bold text-white transition hover:bg-orange2 hover:shadow-glow">
+
+                            View my work
+
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]">
+                            </i>
+
+                        </a>
+
+
+                        <a href="#stack"
+                            class="inline-flex items-center gap-2 rounded-xl border border-line bg-panel px-5 py-3 text-xs font-bold text-zinc-300 transition hover:border-zinc-500 hover:text-white">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                            Explore my stack
+
+                        </a>
 
                     </div>
 
 
                     <div
-                        class="hidden h-11 w-11 items-center justify-center rounded-xl bg-blue/10 text-blue sm:flex"
-                    >
+                        class="mt-9 flex flex-wrap items-center gap-5 text-zinc-500">
 
-                        <i class="fa-solid fa-code"></i>
+                        <a href="https://github.com/vishnuradhakrishnan595-cloud"
+                            target="_blank"
+                            rel="noopener"
+                            class="transition hover:text-white"
+                            aria-label="GitHub">
+
+                            <i class="fa-brands fa-github text-xl"></i>
+
+                        </a>
+
+
+                        <a href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener"
+                            class="transition hover:text-white"
+                            aria-label="LinkedIn">
+
+                            <i class="fa-brands fa-linkedin text-xl"></i>
+
+                        </a>
+
+
+                        <a href="mailto:vishnuradhakrishnan595@gmail.com"
+                            class="transition hover:text-white"
+                            aria-label="Email">
+
+                            <i class="fa-solid fa-envelope text-lg"></i>
+
+                        </a>
+
+
+                        <span class="h-5 w-px bg-line"></span>
+
+
+                        <span
+                            class="font-mono text-[10px] uppercase tracking-widest">
+
+                            Kerala · India
+
+                        </span>
 
                     </div>
 
                 </div>
 
+            </div>
 
-                <p
-                    class="mt-5 text-sm leading-7 text-muted"
-                >
 
-                    My primary focus is Python and Django development,
-                    supported by React, REST APIs, authentication,
-                    SQL/NoSQL databases and modern development workflows.
+            <!-- TECHNOLOGY TICKER -->
 
-                </p>
-
+            <div class="mt-20 overflow-hidden border-y border-line py-5">
 
                 <div
-                    class="mt-7 grid gap-3 sm:grid-cols-3"
-                >
+                    class="marquee flex w-max gap-12 whitespace-nowrap font-mono text-[10px] uppercase tracking-[.2em] text-zinc-600">
 
-                    <!-- Backend -->
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>Flask</span>
+                    <span>REST API</span>
+                    <span>JWT</span>
+                    <span>React</span>
+                    <span>PostgreSQL</span>
+                    <span>MongoDB</span>
+                    <span>Redis</span>
+                    <span>Celery</span>
+                    <span>Docker</span>
+                    <span>GitHub</span>
+                    <span>Postman</span>
+                    <span>Firebase</span>
+                    <span>Render</span>
+                    <span>Vercel</span>
+
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>Flask</span>
+                    <span>REST API</span>
+                    <span>JWT</span>
+                    <span>React</span>
+                    <span>PostgreSQL</span>
+                    <span>MongoDB</span>
+                    <span>Redis</span>
+                    <span>Celery</span>
+                    <span>Docker</span>
+                    <span>GitHub</span>
+                    <span>Postman</span>
+                    <span>Firebase</span>
+                    <span>Render</span>
+                    <span>Vercel</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+             ABOUT
+        ========================================================== -->
+
+        <section id="about"
+            class="border-t border-line py-24">
+
+            <div class="grid gap-12 lg:grid-cols-12">
+
+                <div class="reveal lg:col-span-5">
+
+                    <p
+                        class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                        // About me
+                    </p>
+
+                    <h2
+                        class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+
+                        Engineering with
+                        <span class="text-zinc-500">
+                            purpose.
+                        </span>
+
+                    </h2>
+
+                    <p
+                        class="mt-6 text-sm leading-7 text-zinc-500">
+
+                        I enjoy taking an idea from requirements to
+                        a working application: designing APIs,
+                        modelling data, implementing business logic,
+                        building responsive interfaces and getting
+                        the product deployed.
+
+                    </p>
+
+                </div>
+
+
+                <div class="reveal lg:col-span-7">
 
                     <div
-                        class="card rounded-2xl border border-line p-4"
-                    >
+                        class="rounded-3xl border border-line bg-panel p-7 sm:p-8">
 
                         <div
-                            class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue/10 text-blue"
-                        >
-
-                            <i class="fa-solid fa-server"></i>
-
-                        </div>
-
-                        <h4
-                            class="mt-4 text-sm font-bold"
-                        >
-                            Backend
-                        </h4>
-
-                        <p
-                            class="mt-1 text-[10px] leading-5 text-muted2"
-                        >
-                            Python · Django · DRF
-                        </p>
-
-                    </div>
-
-
-                    <!-- Frontend -->
-
-                    <div
-                        class="card rounded-2xl border border-line p-4"
-                    >
-
-                        <div
-                            class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600"
-                        >
-
-                            <i class="fa-brands fa-react"></i>
-
-                        </div>
-
-                        <h4
-                            class="mt-4 text-sm font-bold"
-                        >
-                            Frontend
-                        </h4>
-
-                        <p
-                            class="mt-1 text-[10px] leading-5 text-muted2"
-                        >
-                            React · JS · Tailwind
-                        </p>
-
-                    </div>
-
-
-                    <!-- Data -->
-
-                    <div
-                        class="card rounded-2xl border border-line p-4"
-                    >
-
-                        <div
-                            class="flex h-10 w-10 items-center justify-center rounded-xl bg-green/10 text-green"
-                        >
-
-                            <i class="fa-solid fa-database"></i>
-
-                        </div>
-
-                        <h4
-                            class="mt-4 text-sm font-bold"
-                        >
-                            Data
-                        </h4>
-
-                        <p
-                            class="mt-1 text-[10px] leading-5 text-muted2"
-                        >
-                            PostgreSQL · MySQL · MongoDB
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     SERVICES
-========================================================== -->
-
-<section
-    id="services"
-    class="border-t border-line py-24"
->
-
-    <div class="reveal">
-
-        <p
-            class="section-label font-mono text-[10px] uppercase tracking-[.2em]"
-        >
-            // What I do
-        </p>
-
-        <h2
-            class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl"
-        >
-            From backend to interface.
-        </h2>
-
-        <p
-            class="mt-4 max-w-2xl text-sm leading-7 text-muted"
-        >
-
-            I focus on building practical applications with
-            clean architecture, reliable APIs and polished interfaces.
-
-        </p>
-
-    </div>
-
-
-    <div
-        class="mt-12 grid gap-5 md:grid-cols-3"
-    >
-
-        <!-- Service 1 -->
-
-        <article
-            class="card reveal rounded-3xl border border-line bg-white2 p-7"
-        >
-
-            <div
-                class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue/10 text-blue"
-            >
-
-                <i class="fa-solid fa-server"></i>
-
-            </div>
-
-            <h3
-                class="mt-6 text-lg font-bold"
-            >
-                Backend Development
-            </h3>
-
-            <p
-                class="mt-3 text-sm leading-6 text-muted"
-            >
-
-                Django and REST APIs with authentication,
-                business logic, database integration and
-                maintainable project architecture.
-
-            </p>
-
-        </article>
-
-
-        <!-- Service 2 -->
-
-        <article
-            class="card reveal rounded-3xl border border-line bg-white2 p-7"
-        >
-
-            <div
-                class="flex h-12 w-12 items-center justify-center rounded-2xl bg-green/10 text-green"
-            >
-
-                <i class="fa-solid fa-plug"></i>
-
-            </div>
-
-            <h3
-                class="mt-6 text-lg font-bold"
-            >
-                API & Authentication
-            </h3>
-
-            <p
-                class="mt-3 text-sm leading-6 text-muted"
-            >
-
-                RESTful APIs, JWT authentication, protected
-                routes, API testing and integration-ready
-                backend services.
-
-            </p>
-
-        </article>
-
-
-        <!-- Service 3 -->
-
-        <article
-            class="card reveal rounded-3xl border border-line bg-white2 p-7"
-        >
-
-            <div
-                class="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-100 text-purple-600"
-            >
-
-                <i class="fa-brands fa-react"></i>
-
-            </div>
-
-            <h3
-                class="mt-6 text-lg font-bold"
-            >
-                Frontend Development
-            </h3>
-
-            <p
-                class="mt-3 text-sm leading-6 text-muted"
-            >
-
-                Responsive React interfaces with reusable
-                components, dashboards, forms and modern
-                user interactions.
-
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     STACK
-========================================================== -->
-
-<section
-    id="stack"
-    class="border-t border-line py-24"
->
-
-    <div class="reveal">
-
-        <p
-            class="section-label font-mono text-[10px] uppercase tracking-[.2em]"
-        >
-            // Technologies
-        </p>
-
-        <h2
-            class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl"
-        >
-            My development stack.
-        </h2>
-
-        <p
-            class="mt-4 max-w-2xl text-sm leading-7 text-muted"
-        >
-
-            Tools I use to design, build, test and ship
-            full-stack applications.
-
-        </p>
-
-    </div>
-
-
-    <!-- Technology cards -->
-
-    <div
-        class="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
-    >
-
-        <!-- Python -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-brands fa-python text-3xl"
-                style="color:#3776AB"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                Python
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                Programming
-            </p>
-
-        </div>
-
-
-        <!-- Django -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-solid fa-layer-group text-3xl"
-                style="color:#092E20"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                Django
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                Web framework
-            </p>
-
-        </div>
-
-
-        <!-- DRF -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-solid fa-code text-3xl"
-                style="color:#A30000"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                DRF
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                REST APIs
-            </p>
-
-        </div>
-
-
-        <!-- React -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-brands fa-react text-3xl"
-                style="color:#61DAFB"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                React
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                Frontend
-            </p>
-
-        </div>
-
-
-        <!-- JavaScript -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-brands fa-js text-3xl"
-                style="color:#F7DF1E"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                JavaScript
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                Web
-            </p>
-
-        </div>
-
-
-        <!-- Tailwind -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-solid fa-wind text-3xl"
-                style="color:#06B6D4"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                Tailwind
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                UI
-            </p>
-
-        </div>
-
-
-        <!-- PostgreSQL -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-solid fa-database text-3xl"
-                style="color:#336791"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                PostgreSQL
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                Database
-            </p>
-
-        </div>
-
-
-        <!-- MySQL -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-solid fa-table text-3xl"
-                style="color:#4479A1"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                MySQL
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                Database
-            </p>
-
-        </div>
-
-
-        <!-- MongoDB -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-solid fa-leaf text-3xl"
-                style="color:#47A248"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                MongoDB
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                NoSQL
-            </p>
-
-        </div>
-
-
-        <!-- Git -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-brands fa-git-alt text-3xl"
-                style="color:#F05032"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                Git
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                Version control
-            </p>
-
-        </div>
-
-
-        <!-- GitHub -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-brands fa-github text-3xl"
-                style="color:#181717"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                GitHub
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                Code hosting
-            </p>
-
-        </div>
-
-
-        <!-- Docker -->
-
-        <div
-            class="tech-card reveal rounded-2xl border border-line bg-white2 p-5"
-        >
-
-            <i
-                class="tech-icon fa-brands fa-docker text-3xl"
-                style="color:#2496ED"
-            ></i>
-
-            <h3 class="mt-4 text-sm font-bold">
-                Docker
-            </h3>
-
-            <p class="mt-1 text-[9px] text-muted2">
-                Containers
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- Skill levels -->
-
-    <div
-        class="reveal mt-12 rounded-3xl border border-line bg-white2 p-7 shadow-soft sm:p-8"
-    >
-
-        <div
-            class="grid gap-8 md:grid-cols-2"
-        >
-
-            <!-- Skill 1 -->
-
-            <div>
-
-                <div
-                    class="mb-2 flex justify-between text-xs"
-                >
-
-                    <span class="font-semibold">
-                        Python / Django
-                    </span>
-
-                    <span class="text-muted2">
-                        Core
-                    </span>
-
-                </div>
-
-                <div class="skill-bar">
-
-                    <div
-                        class="skill-progress bg-blue"
-                        style="width:90%"
-                    ></div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Skill 2 -->
-
-            <div>
-
-                <div
-                    class="mb-2 flex justify-between text-xs"
-                >
-
-                    <span class="font-semibold">
-                        REST APIs
-                    </span>
-
-                    <span class="text-muted2">
-                        Core
-                    </span>
-
-                </div>
-
-                <div class="skill-bar">
-
-                    <div
-                        class="skill-progress bg-green"
-                        style="width:88%"
-                    ></div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Skill 3 -->
-
-            <div>
-
-                <div
-                    class="mb-2 flex justify-between text-xs"
-                >
-
-                    <span class="font-semibold">
-                        React / JavaScript
-                    </span>
-
-                    <span class="text-muted2">
-                        Full-stack
-                    </span>
-
-                </div>
-
-                <div class="skill-bar">
-
-                    <div
-                        class="skill-progress bg-purple-500"
-                        style="width:80%"
-                    ></div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Skill 4 -->
-
-            <div>
-
-                <div
-                    class="mb-2 flex justify-between text-xs"
-                >
-
-                    <span class="font-semibold">
-                        SQL / Databases
-                    </span>
-
-                    <span class="text-muted2">
-                        Data
-                    </span>
-
-                </div>
-
-                <div class="skill-bar">
-
-                    <div
-                        class="skill-progress bg-indigo-500"
-                        style="width:82%"
-                    ></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     PROJECTS
-========================================================== -->
-
-<section
-    id="work"
-    class="border-t border-line py-24"
->
-
-    <div
-        class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"
-    >
-
-        <div class="reveal">
-
-            <p
-                class="section-label font-mono text-[10px] uppercase tracking-[.2em]"
-            >
-                // Selected work
-            </p>
-
-            <h2
-                class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl"
-            >
-                Projects I've built.
-            </h2>
-
-            <p
-                class="mt-4 max-w-2xl text-sm leading-7 text-muted"
-            >
-
-                A selection of full-stack applications and development
-                projects focused on practical business problems.
-
-            </p>
-
-        </div>
-
-
-        <a
-            href="https://github.com/vishnuradhakrishnan595-cloud"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="reveal inline-flex items-center gap-2 text-xs font-bold text-muted transition hover:text-blue"
-        >
-
-            View GitHub
-
-            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-
-        </a>
-
-    </div>
-
-
-    <div
-        class="mt-12 grid gap-6 md:grid-cols-2"
-    >
-
-
-        <!-- =====================================================
-             PROJECT 01 — POS
-        ====================================================== -->
-
-        <article
-            class="project-card reveal overflow-hidden rounded-3xl border border-line bg-white2"
-        >
-
-            <!-- Preview -->
-
-            <div class="browser relative m-4 overflow-hidden rounded-2xl">
-
-                <div
-                    class="flex items-center gap-1.5 border-b border-line px-4 py-3"
-                >
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
-
-                    <span
-                        class="ml-auto font-mono text-[8px] text-muted2"
-                    >
-                        POSFLOW
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="project-image browser-content relative min-h-[220px] p-5"
-                >
-
-                    <div class="grid grid-cols-3 gap-3">
-
-                        <div
-                            class="rounded-xl bg-white/10 p-4 text-white backdrop-blur"
-                        >
-
-                            <p class="text-[8px] text-white/50">
-                                Products
-                            </p>
-
-                            <p class="mt-2 text-lg font-bold">
-                                Inventory
-                            </p>
-
-                        </div>
-
-
-                        <div
-                            class="rounded-xl bg-white/10 p-4 text-white backdrop-blur"
-                        >
-
-                            <p class="text-[8px] text-white/50">
-                                Sales
-                            </p>
-
-                            <p class="mt-2 text-lg font-bold">
-                                Billing
-                            </p>
-
-                        </div>
-
-
-                        <div
-                            class="rounded-xl bg-white/10 p-4 text-white backdrop-blur"
-                        >
-
-                            <p class="text-[8px] text-white/50">
-                                Reports
-                            </p>
-
-                            <p class="mt-2 text-lg font-bold">
-                                Analytics
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        class="mt-4 rounded-xl bg-white/10 p-4"
-                    >
-
-                        <div
-                            class="flex h-16 items-end gap-2"
-                        >
-
-                            <span class="h-6 flex-1 rounded-t bg-blue2/50"></span>
-
-                            <span class="h-9 flex-1 rounded-t bg-blue2/60"></span>
-
-                            <span class="h-7 flex-1 rounded-t bg-blue2/70"></span>
-
-                            <span class="h-12 flex-1 rounded-t bg-blue2/80"></span>
-
-                            <span class="h-10 flex-1 rounded-t bg-blue2/90"></span>
-
-                            <span class="h-14 flex-1 rounded-t bg-blue2"></span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Details -->
-
-            <div class="p-7">
-
-                <div
-                    class="flex items-start justify-between gap-4"
-                >
-
-                    <div>
-
-                        <p
-                            class="font-mono text-[9px] uppercase tracking-widest text-blue"
-                        >
-                            01 · Retail management
-                        </p>
-
-                        <h3
-                            class="mt-2 text-xl font-bold"
-                        >
-                            POS Billing Software
-                        </h3>
-
-                    </div>
-
-
-                    <i
-                        class="fa-solid fa-cart-shopping mt-1 text-muted2"
-                    ></i>
-
-                </div>
-
-
-                <p
-                    class="mt-4 text-sm leading-6 text-muted"
-                >
-
-                    Full-stack retail POS platform for product management,
-                    inventory, billing, staff roles, transactions and reports.
-
-                </p>
-
-
-                <!-- Technologies -->
-
-                <div class="mt-5 flex flex-wrap gap-2">
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        Django
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        DRF
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        React
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        JWT
-                    </span>
-
-                </div>
-
-
-                <!-- Buttons -->
-
-                <div class="mt-6 flex flex-wrap gap-3">
-
-                    <!-- Replace with actual deployed POS URL -->
-
-                    <a
-                        href="#"
-                        onclick="return projectUnavailable(event)"
-                        class="primary-btn inline-flex items-center gap-2 rounded-xl bg-ink px-4 py-2.5 text-[11px] font-bold text-white"
-                    >
-
-                        <i class="fa-solid fa-globe"></i>
-
-                        Live website
-
-                    </a>
-
-
-                    <a
-                        href="https://github.com/vishnuradhakrishnan595-cloud"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-[11px] font-bold text-ink transition hover:border-blue hover:text-blue"
-                    >
-
-                        <i class="fa-brands fa-github"></i>
-
-                        GitHub
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- =====================================================
-             PROJECT 02 — INTERVUE
-        ====================================================== -->
-
-        <article
-            class="project-card reveal overflow-hidden rounded-3xl border border-line bg-white2"
-        >
-
-            <div class="browser relative m-4 overflow-hidden rounded-2xl">
-
-                <div
-                    class="flex items-center gap-1.5 border-b border-line px-4 py-3"
-                >
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
-
-                    <span
-                        class="ml-auto font-mono text-[8px] text-muted2"
-                    >
-                        INTERVUE
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="project-image browser-content min-h-[220px] p-5"
-                >
-
-                    <div
-                        class="rounded-2xl bg-white/10 p-5"
-                    >
-
-                        <div class="flex items-center justify-between">
+                            class="flex items-center justify-between gap-4">
 
                             <div>
 
-                                <p class="text-[8px] text-white/50">
-                                    Recruitment workspace
+                                <p
+                                    class="font-mono text-[9px] uppercase tracking-widest text-orange">
+                                    Developer profile
                                 </p>
 
-                                <p class="mt-2 text-xl font-bold text-white">
-                                    Interview Pipeline
-                                </p>
+                                <h3 class="mt-2 text-xl font-bold">
+                                    Backend-first. Full-stack mindset.
+                                </h3>
 
                             </div>
+
 
                             <div
-                                class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white"
-                            >
+                                class="hidden h-10 w-10 items-center justify-center rounded-xl bg-orange/10 text-orange sm:flex">
 
-                                <i class="fa-solid fa-user-tie"></i>
+                                <i class="fa-solid fa-terminal"></i>
 
                             </div>
 
                         </div>
 
 
-                        <div class="mt-5 grid grid-cols-3 gap-2">
+                        <p
+                            class="mt-5 text-sm leading-7 text-zinc-500">
 
-                            <div class="h-12 rounded-lg bg-white/10"></div>
+                            My primary focus is Python and Django
+                            development, with experience building REST
+                            APIs, authentication flows, database-backed
+                            systems, React frontends and deployment
+                            workflows.
 
-                            <div class="h-12 rounded-lg bg-white/15"></div>
-
-                            <div class="h-12 rounded-lg bg-white/10"></div>
-
-                        </div>
+                        </p>
 
 
-                        <div class="mt-3 space-y-2">
+                        <div class="mt-7 grid gap-3 sm:grid-cols-3">
 
-                            <div class="h-3 rounded bg-white/10"></div>
+                            <div
+                                class="rounded-2xl border border-line p-4">
 
-                            <div class="h-3 w-4/5 rounded bg-white/15"></div>
+                                <p class="font-mono text-[9px] text-zinc-600">
+                                    01
+                                </p>
 
-                            <div class="h-3 w-3/5 rounded bg-white/10"></div>
+                                <i
+                                    class="fa-solid fa-server mt-4 text-orange">
+                                </i>
+
+                                <h4 class="mt-3 text-sm font-bold">
+                                    Backend
+                                </h4>
+
+                                <p
+                                    class="mt-1 text-[10px] leading-5 text-zinc-600">
+                                    Django · Flask · DRF
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                class="rounded-2xl border border-line p-4">
+
+                                <p class="font-mono text-[9px] text-zinc-600">
+                                    02
+                                </p>
+
+                                <i
+                                    class="fa-solid fa-code mt-4 text-orange">
+                                </i>
+
+                                <h4 class="mt-3 text-sm font-bold">
+                                    Frontend
+                                </h4>
+
+                                <p
+                                    class="mt-1 text-[10px] leading-5 text-zinc-600">
+                                    React · JavaScript · Tailwind
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                class="rounded-2xl border border-line p-4">
+
+                                <p class="font-mono text-[9px] text-zinc-600">
+                                    03
+                                </p>
+
+                                <i
+                                    class="fa-solid fa-cloud mt-4 text-orange">
+                                </i>
+
+                                <h4 class="mt-3 text-sm font-bold">
+                                    Deployment
+                                </h4>
+
+                                <p
+                                    class="mt-1 text-[10px] leading-5 text-zinc-600">
+                                    Docker · Render · Vercel
+                                </p>
+
+                            </div>
 
                         </div>
 
@@ -2398,1009 +958,2550 @@
 
             </div>
 
+        </section>
 
-            <div class="p-7">
+
+
+        <!-- =========================================================
+             SERVICES
+        ========================================================== -->
+
+        <section id="services"
+            class="border-t border-line py-24">
+
+            <div class="reveal">
+
+                <p
+                    class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                    // What I do
+                </p>
+
+                <h2
+                    class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+                    From API to interface.
+                </h2>
+
+                <p
+                    class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
+
+                    A practical full-stack workflow focused on
+                    maintainability, clean architecture and useful
+                    user experiences.
+
+                </p>
+
+            </div>
+
+
+            <div class="mt-12 grid gap-5 md:grid-cols-3">
+
+                <article
+                    class="service-card reveal rounded-3xl border border-line bg-panel p-7">
+
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange/10 text-orange">
+
+                        <i class="fa-solid fa-server"></i>
+
+                    </div>
+
+                    <h3 class="mt-6 text-lg font-bold">
+                        Backend Development
+                    </h3>
+
+                    <p
+                        class="mt-3 text-sm leading-6 text-zinc-500">
+
+                        Django, Flask and REST APIs with authentication,
+                        business logic, database integration and scalable
+                        application structure.
+
+                    </p>
+
+                </article>
+
+
+                <article
+                    class="service-card reveal rounded-3xl border border-line bg-panel p-7">
+
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange/10 text-orange">
+
+                        <i class="fa-solid fa-code-branch"></i>
+
+                    </div>
+
+                    <h3 class="mt-6 text-lg font-bold">
+                        API & Authentication
+                    </h3>
+
+                    <p
+                        class="mt-3 text-sm leading-6 text-zinc-500">
+
+                        RESTful services, JWT authentication,
+                        protected routes, API testing and integration-ready
+                        backend systems.
+
+                    </p>
+
+                </article>
+
+
+                <article
+                    class="service-card reveal rounded-3xl border border-line bg-panel p-7">
+
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange/10 text-orange">
+
+                        <i class="fa-solid fa-display"></i>
+
+                    </div>
+
+                    <h3 class="mt-6 text-lg font-bold">
+                        Frontend Development
+                    </h3>
+
+                    <p
+                        class="mt-3 text-sm leading-6 text-zinc-500">
+
+                        Responsive React interfaces with clean layouts,
+                        reusable components, forms, dashboards and
+                        modern interactions.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+             STACK
+        ========================================================== -->
+
+        <section id="stack"
+            class="border-t border-line py-24">
+
+            <div class="reveal">
+
+                <p
+                    class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                    // Tools & technologies
+                </p>
+
+                <h2
+                    class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+                    The stack I work with.
+                </h2>
+
+                <p
+                    class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
+
+                    A broader toolkit covering development, APIs,
+                    databases, background jobs, containers, testing,
+                    authentication and deployment.
+
+                </p>
+
+            </div>
+
+
+            <!-- CORE -->
+
+            <div class="mt-12">
+
+                <div class="mb-5 flex items-center gap-3">
+
+                    <span class="h-px flex-1 bg-line"></span>
+
+                    <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-zinc-600">
+                        Core development
+                    </span>
+
+                    <span class="h-px flex-1 bg-line"></span>
+
+                </div>
+
 
                 <div
-                    class="flex items-start justify-between gap-4"
-                >
+                    class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-brands fa-python text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Python
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Programming
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-layer-group text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Django
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Web framework
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-flask text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Flask
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Micro framework
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-plug text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            REST API
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            API architecture
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-key text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            JWT
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Authentication
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-brands fa-react text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            React
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Frontend
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATABASE -->
+
+            <div class="mt-12">
+
+                <div class="mb-5 flex items-center gap-3">
+
+                    <span class="h-px flex-1 bg-line"></span>
+
+                    <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-zinc-600">
+                        Data & backend infrastructure
+                    </span>
+
+                    <span class="h-px flex-1 bg-line"></span>
+
+                </div>
+
+
+                <div
+                    class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-database text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            PostgreSQL
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Relational DB
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-leaf text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            MongoDB
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            NoSQL database
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-bolt text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Redis
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Cache / broker
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-gears text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Celery
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Background tasks
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-brands fa-google text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Firebase
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Cloud services
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-table text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            MySQL
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Relational DB
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEVOPS -->
+
+            <div class="mt-12">
+
+                <div class="mb-5 flex items-center gap-3">
+
+                    <span class="h-px flex-1 bg-line"></span>
+
+                    <span
+                        class="font-mono text-[9px] uppercase tracking-widest text-zinc-600">
+                        DevOps, testing & deployment
+                    </span>
+
+                    <span class="h-px flex-1 bg-line"></span>
+
+                </div>
+
+
+                <div
+                    class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-brands fa-git-alt text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Git
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Version control
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-brands fa-github text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            GitHub
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Code hosting
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-paper-plane text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Postman
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            API testing
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-brands fa-docker text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Docker
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Containers
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-cloud-arrow-up text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Render
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Deployment
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+
+                        <i
+                            class="tool-icon fa-solid fa-triangle-exclamation text-2xl text-orange">
+                        </i>
+
+                        <h3 class="mt-4 text-sm font-bold">
+                            Vercel
+                        </h3>
+
+                        <p class="mt-1 text-[9px] text-zinc-600">
+                            Frontend deploy
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WORKFLOW -->
+
+            <div
+                class="reveal mt-8 rounded-3xl border border-line bg-panel p-6 sm:p-8">
+
+                <div
+                    class="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
 
                     <div>
 
                         <p
-                            class="font-mono text-[9px] uppercase tracking-widest text-blue"
-                        >
-                            02 · Recruitment platform
+                            class="font-mono text-[9px] uppercase tracking-widest text-orange">
+                            Workflow
                         </p>
 
-                        <h3
-                            class="mt-2 text-xl font-bold"
-                        >
+                        <h3 class="mt-2 text-lg font-bold">
+                            Plan → Build → Test → Ship
+                        </h3>
+
+                    </div>
+
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span
+                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                            VS Code
+                        </span>
+
+                        <span
+                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                            Git
+                        </span>
+
+                        <span
+                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                            GitHub
+                        </span>
+
+                        <span
+                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                            Postman
+                        </span>
+
+                        <span
+                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                            Docker
+                        </span>
+
+                        <span
+                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                            Render
+                        </span>
+
+                        <span
+                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                            Vercel
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+             WORK / PROJECTS
+        ========================================================== -->
+
+        <section id="work"
+            class="border-t border-line py-24">
+
+            <!-- PROJECT HEADER -->
+
+            <div
+                class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+
+                <div class="reveal">
+
+                    <p
+                        class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                        // Selected work
+                    </p>
+
+                    <h2
+                        class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+
+                        Projects that ship.
+
+                    </h2>
+
+                    <p
+                        class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
+
+                        A selection of applications, dashboards and
+                        full-stack projects I've built while exploring
+                        modern web development.
+
+                    </p>
+
+                </div>
+
+
+                <a href="https://github.com/vishnuradhakrishnan595-cloud"
+                    target="_blank"
+                    rel="noopener"
+                    class="reveal inline-flex items-center gap-2 text-xs font-bold text-zinc-400 transition hover:text-orange">
+
+                    Explore GitHub
+
+                    <i
+                        class="fa-solid fa-arrow-up-right-from-square text-[9px]">
+                    </i>
+
+                </a>
+
+            </div>
+
+
+            <!-- =====================================================
+                 PROJECT GRID
+            ====================================================== -->
+
+            <div
+                class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+
+
+                <!-- =================================================
+                     01 POSFLOW
+                ================================================== -->
+
+                <article
+                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+
+                    <!-- PREVIEW -->
+
+                    <div
+                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+
+                        <div
+                            class="code-window h-full rounded-2xl p-4">
+
+                            <div
+                                class="flex items-center justify-between">
+
+                                <span
+                                    class="font-mono text-[8px] text-zinc-600">
+                                    POSFLOW / RETAIL
+                                </span>
+
+                                <span
+                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                    FULL STACK
+                                </span>
+
+                            </div>
+
+
+                            <div class="mt-5 grid grid-cols-3 gap-2">
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-3">
+
+                                    <p
+                                        class="text-[7px] text-zinc-600">
+                                        Sales
+                                    </p>
+
+                                    <p class="mt-2 text-sm font-semibold">
+                                        ₹68.9K
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-orange/10 p-3">
+
+                                    <p class="text-[7px] text-orange">
+                                        Orders
+                                    </p>
+
+                                    <p class="mt-2 text-sm font-semibold">
+                                        124
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-3">
+
+                                    <p
+                                        class="text-[7px] text-zinc-600">
+                                        Stock
+                                    </p>
+
+                                    <p class="mt-2 text-sm font-semibold">
+                                        840
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="mt-4 flex h-12 items-end gap-2">
+
+                                <span
+                                    class="bar h-5 w-full rounded-t bg-orange/30">
+                                </span>
+
+                                <span
+                                    class="bar h-8 w-full rounded-t bg-orange/40">
+                                </span>
+
+                                <span
+                                    class="bar h-6 w-full rounded-t bg-orange/50">
+                                </span>
+
+                                <span
+                                    class="bar h-10 w-full rounded-t bg-orange/60">
+                                </span>
+
+                                <span
+                                    class="bar h-12 w-full rounded-t bg-orange/80">
+                                </span>
+
+                                <span
+                                    class="bar h-14 w-full rounded-t bg-orange">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTENT -->
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <span class="project-number">
+                            01 · RETAIL MANAGEMENT
+                        </span>
+
+
+                        <h3 class="mt-3 text-xl font-bold">
+                            POS Billing Software
+                        </h3>
+
+
+                        <p
+                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+
+                            Retail POS platform with product management,
+                            billing, inventory, staff roles, sales
+                            transactions, reports and JWT authentication.
+
+                        </p>
+
+
+                        <!-- TECH -->
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                Django
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                DRF
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                React
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                JWT
+                            </span>
+
+                        </div>
+
+
+                        <!-- ACTIONS -->
+
+                        <div
+                            class="mt-6 grid grid-cols-2 gap-2">
+
+                            <a
+                                href="https://github.com/vishnuradhakrishnan595-cloud"
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+
+                                <i class="fa-brands fa-github"></i>
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Live Website
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     02 INTERVUE
+                ================================================== -->
+
+                <article
+                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+
+                    <div
+                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+
+                        <div
+                            class="code-window h-full rounded-2xl p-4">
+
+                            <div
+                                class="flex items-center justify-between">
+
+                                <span
+                                    class="font-mono text-[8px] text-zinc-600">
+                                    INTERVUE / RECRUITMENT
+                                </span>
+
+                                <span
+                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                    AI PLATFORM
+                                </span>
+
+                            </div>
+
+
+                            <div class="mt-5 grid grid-cols-2 gap-3">
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-3">
+
+                                    <p
+                                        class="text-[7px] text-zinc-600">
+                                        Candidates
+                                    </p>
+
+                                    <p class="mt-2 text-xl font-semibold">
+                                        1,248
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-orange/10 p-3">
+
+                                    <p class="text-[7px] text-orange">
+                                        Matches
+                                    </p>
+
+                                    <p class="mt-2 text-xl font-semibold">
+                                        86%
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-3 space-y-2">
+
+                                <div
+                                    class="h-5 rounded-lg bg-white/5">
+                                </div>
+
+                                <div
+                                    class="h-5 w-4/5 rounded-lg bg-orange/10">
+                                </div>
+
+                                <div
+                                    class="h-5 w-3/5 rounded-lg bg-white/5">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <span class="project-number">
+                            02 · RECRUITMENT PLATFORM
+                        </span>
+
+
+                        <h3 class="mt-3 text-xl font-bold">
                             INTERVUE
                         </h3>
 
-                    </div>
-
-
-                    <i
-                        class="fa-solid fa-robot mt-1 text-muted2"
-                    ></i>
-
-                </div>
-
-
-                <p
-                    class="mt-4 text-sm leading-6 text-muted"
-                >
-
-                    Intelligent recruitment and interview platform
-                    designed around company, recruiter, interviewer
-                    and candidate workflows.
-
-                </p>
-
-
-                <div class="mt-5 flex flex-wrap gap-2">
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        Django
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        React
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        PostgreSQL
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        REST
-                    </span>
-
-                </div>
-
-
-                <div class="mt-6 flex flex-wrap gap-3">
-
-                    <!-- Replace with actual deployed INTERVUE URL -->
-
-                    <a
-                        href="#"
-                        onclick="return projectUnavailable(event)"
-                        class="primary-btn inline-flex items-center gap-2 rounded-xl bg-ink px-4 py-2.5 text-[11px] font-bold text-white"
-                    >
-
-                        <i class="fa-solid fa-globe"></i>
-
-                        Live website
-
-                    </a>
-
-
-                    <a
-                        href="https://github.com/vishnuradhakrishnan595-cloud"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-[11px] font-bold text-ink transition hover:border-blue hover:text-blue"
-                    >
-
-                        <i class="fa-brands fa-github"></i>
-
-                        GitHub
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- =====================================================
-             PROJECT 03 — STOCKEDGE
-        ====================================================== -->
-
-        <article
-            class="project-card reveal overflow-hidden rounded-3xl border border-line bg-white2"
-        >
-
-            <div class="browser relative m-4 overflow-hidden rounded-2xl">
-
-                <div
-                    class="flex items-center gap-1.5 border-b border-line px-4 py-3"
-                >
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
-
-                    <span
-                        class="ml-auto font-mono text-[8px] text-muted2"
-                    >
-                        STOCKEDGE
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="project-image browser-content min-h-[220px] p-5"
-                >
-
-                    <div class="grid grid-cols-3 gap-3">
-
-                        <div
-                            class="rounded-xl bg-white/10 p-4"
-                        >
-
-                            <p class="text-[8px] text-white/50">
-                                Market
-                            </p>
-
-                            <p class="mt-2 text-sm font-bold text-white">
-                                Analytics
-                            </p>
-
-                        </div>
-
-                        <div
-                            class="rounded-xl bg-white/10 p-4"
-                        >
-
-                            <p class="text-[8px] text-white/50">
-                                Data
-                            </p>
-
-                            <p class="mt-2 text-sm font-bold text-white">
-                                Insights
-                            </p>
-
-                        </div>
-
-                        <div
-                            class="rounded-xl bg-white/10 p-4"
-                        >
-
-                            <p class="text-[8px] text-white/50">
-                                API
-                            </p>
-
-                            <p class="mt-2 text-sm font-bold text-white">
-                                REST
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="mt-4 rounded-xl bg-white/10 p-4">
-
-                        <div class="flex h-16 items-end gap-1.5">
-
-                            <span class="h-6 flex-1 rounded-t bg-green-300/50"></span>
-
-                            <span class="h-8 flex-1 rounded-t bg-green-300/60"></span>
-
-                            <span class="h-5 flex-1 rounded-t bg-green-300/70"></span>
-
-                            <span class="h-11 flex-1 rounded-t bg-green-300/80"></span>
-
-                            <span class="h-9 flex-1 rounded-t bg-green-300/90"></span>
-
-                            <span class="h-14 flex-1 rounded-t bg-green-300"></span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="p-7">
-
-                <div
-                    class="flex items-start justify-between gap-4"
-                >
-
-                    <div>
 
                         <p
-                            class="font-mono text-[9px] uppercase tracking-widest text-blue"
-                        >
-                            03 · Financial application
+                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+
+                            Intelligent recruitment and interview
+                            platform concept with company, recruiter,
+                            interviewer and candidate workflows.
+
                         </p>
 
-                        <h3
-                            class="mt-2 text-xl font-bold"
-                        >
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                Django
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                React
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                PostgreSQL
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                REST
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mt-6 grid grid-cols-2 gap-2">
+
+                            <a
+                                href="https://github.com/vishnuradhakrishnan595-cloud"
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+
+                                <i class="fa-brands fa-github"></i>
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Live Website
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     03 STOCKEDGE
+                ================================================== -->
+
+                <article
+                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+
+                    <div
+                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+
+                        <div
+                            class="code-window h-full rounded-2xl p-4">
+
+                            <div
+                                class="flex items-center justify-between">
+
+                                <span
+                                    class="font-mono text-[8px] text-zinc-600">
+                                    STOCKEDGE / ANALYTICS
+                                </span>
+
+                                <span
+                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                    FINANCE
+                                </span>
+
+                            </div>
+
+
+                            <div class="mt-5 grid grid-cols-3 gap-2">
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-3">
+
+                                    <p
+                                        class="text-[7px] text-zinc-600">
+                                        Portfolio
+                                    </p>
+
+                                    <p class="mt-2 text-sm font-semibold">
+                                        $689K
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-orange/10 p-3">
+
+                                    <p class="text-[7px] text-orange">
+                                        Growth
+                                    </p>
+
+                                    <p class="mt-2 text-sm font-semibold">
+                                        +18.4%
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-3">
+
+                                    <p
+                                        class="text-[7px] text-zinc-600">
+                                        API
+                                    </p>
+
+                                    <p class="mt-2 text-sm font-semibold">
+                                        REST
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="mt-5 flex h-10 items-end gap-1.5">
+
+                                <span
+                                    class="h-4 w-full rounded-sm bg-orange/30">
+                                </span>
+
+                                <span
+                                    class="h-7 w-full rounded-sm bg-orange/40">
+                                </span>
+
+                                <span
+                                    class="h-5 w-full rounded-sm bg-orange/50">
+                                </span>
+
+                                <span
+                                    class="h-9 w-full rounded-sm bg-orange/70">
+                                </span>
+
+                                <span
+                                    class="h-11 w-full rounded-sm bg-orange">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <span class="project-number">
+                            03 · FINANCIAL APPLICATION
+                        </span>
+
+
+                        <h3 class="mt-3 text-xl font-bold">
                             STOCKEDGE
                         </h3>
 
-                    </div>
-
-
-                    <i
-                        class="fa-solid fa-chart-line mt-1 text-muted2"
-                    ></i>
-
-                </div>
-
-
-                <p
-                    class="mt-4 text-sm leading-6 text-muted"
-                >
-
-                    Full-stack financial application focused on
-                    API-driven data handling, analytics and responsive
-                    dashboard experiences.
-
-                </p>
-
-
-                <div class="mt-5 flex flex-wrap gap-2">
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        Django
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        React
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        REST API
-                    </span>
-
-                </div>
-
-
-                <div class="mt-6 flex flex-wrap gap-3">
-
-                    <!-- Replace with actual deployed URL -->
-
-                    <a
-                        href="#"
-                        onclick="return projectUnavailable(event)"
-                        class="primary-btn inline-flex items-center gap-2 rounded-xl bg-ink px-4 py-2.5 text-[11px] font-bold text-white"
-                    >
-
-                        <i class="fa-solid fa-globe"></i>
-
-                        Live website
-
-                    </a>
-
-
-                    <a
-                        href="https://github.com/vishnuradhakrishnan595-cloud/STOCKEDGE-v2"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-[11px] font-bold text-ink transition hover:border-blue hover:text-blue"
-                    >
-
-                        <i class="fa-brands fa-github"></i>
-
-                        GitHub
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- =====================================================
-             PROJECT 04 — DJANGO DEMO
-        ====================================================== -->
-
-        <article
-            class="project-card reveal overflow-hidden rounded-3xl border border-line bg-white2"
-        >
-
-            <div class="browser relative m-4 overflow-hidden rounded-2xl">
-
-                <div
-                    class="flex items-center gap-1.5 border-b border-line px-4 py-3"
-                >
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
-
-                    <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
-
-                    <span
-                        class="ml-auto font-mono text-[8px] text-muted2"
-                    >
-                        DJANGO WEB
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="project-image browser-content min-h-[220px] p-5"
-                >
-
-                    <div
-                        class="rounded-xl bg-[#0E1512] p-5 font-mono text-[10px] leading-6 text-white"
-                    >
-
-                        <div>
-
-                            <span class="text-green-400">
-                                class
-                            </span>
-
-                            <span class="text-white">
-                                Product(models.Model):
-                            </span>
-
-                        </div>
-
-                        <div class="pl-5 text-white/50">
-                            name = models.CharField(...)
-                        </div>
-
-                        <div class="pl-5 text-white/50">
-                            price = models.DecimalField(...)
-                        </div>
-
-                        <div class="pl-5 text-white/50">
-                            stock = models.IntegerField(...)
-                        </div>
-
-                        <div class="mt-3 text-green-400">
-                            → database connected
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="p-7">
-
-                <div
-                    class="flex items-start justify-between gap-4"
-                >
-
-                    <div>
 
                         <p
-                            class="font-mono text-[9px] uppercase tracking-widest text-blue"
-                        >
-                            04 · Django application
+                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+
+                            Full-stack financial application built around
+                            backend APIs, data handling and responsive
+                            dashboard interfaces.
+
                         </p>
 
-                        <h3
-                            class="mt-2 text-xl font-bold"
-                        >
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                Django
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                React
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                REST API
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mt-6 grid grid-cols-2 gap-2">
+
+                            <a
+                                href="https://github.com/vishnuradhakrishnan595-cloud/STOCKEDGE-v2"
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+
+                                <i class="fa-brands fa-github"></i>
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Live Website
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     04 DJANGO DEMO
+                ================================================== -->
+
+                <article
+                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+
+                    <div
+                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+
+                        <div
+                            class="code-window h-full rounded-2xl p-4">
+
+                            <div
+                                class="flex items-center justify-between">
+
+                                <span
+                                    class="font-mono text-[8px] text-zinc-600">
+                                    DJANGO / BACKEND
+                                </span>
+
+                                <span
+                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                    PYTHON
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="mt-5 rounded-xl bg-black/30 p-4 font-mono text-[9px] leading-6">
+
+                                <div>
+
+                                    <span class="text-orange">
+                                        class
+                                    </span>
+
+                                    <span class="text-zinc-200">
+                                        Product(models.Model):
+                                    </span>
+
+                                </div>
+
+                                <div class="pl-4 text-zinc-600">
+                                    name = models.CharField(...)
+                                </div>
+
+                                <div class="pl-4 text-zinc-600">
+                                    price = models.DecimalField(...)
+                                </div>
+
+                                <div class="pl-4 text-zinc-600">
+                                    stock = models.IntegerField(...)
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-4 flex gap-2">
+
+                                <span
+                                    class="h-2 w-20 rounded bg-orange/40">
+                                </span>
+
+                                <span
+                                    class="h-2 w-12 rounded bg-white/10">
+                                </span>
+
+                                <span
+                                    class="h-2 w-16 rounded bg-white/10">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <span class="project-number">
+                            04 · BACKEND ENGINEERING
+                        </span>
+
+
+                        <h3 class="mt-3 text-xl font-bold">
                             Django Demo Web
                         </h3>
 
+
+                        <p
+                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+
+                            Django practice application demonstrating
+                            models, routing, views, templates, database
+                            operations and server-side architecture.
+
+                        </p>
+
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                Python
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                Django
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                SQL
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mt-6 grid grid-cols-2 gap-2">
+
+                            <a
+                                href="https://github.com/vishnuradhakrishnan595-cloud"
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+
+                                <i class="fa-brands fa-github"></i>
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="https://django-demo-web-1.onrender.com"
+                                target="_blank"
+                                rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Live Website
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     05 PAYPILOT
+                ================================================== -->
+
+                <article
+                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+
+                    <div
+                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+
+                        <div
+                            class="code-window h-full rounded-2xl p-4">
+
+                            <div
+                                class="flex items-center justify-between">
+
+                                <span
+                                    class="font-mono text-[8px] text-zinc-600">
+                                    PAYPILOT / PAYROLL
+                                </span>
+
+                                <span
+                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                    MANAGEMENT
+                                </span>
+
+                            </div>
+
+
+                            <div class="mt-5 grid grid-cols-2 gap-3">
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-4">
+
+                                    <p
+                                        class="text-[7px] text-zinc-600">
+                                        Payroll
+                                    </p>
+
+                                    <p
+                                        class="mt-2 text-xl font-semibold">
+                                        ₹2.4M
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-orange/10 p-4">
+
+                                    <p class="text-[7px] text-orange">
+                                        Employees
+                                    </p>
+
+                                    <p
+                                        class="mt-2 text-xl font-semibold">
+                                        248
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-4 space-y-2">
+
+                                <div
+                                    class="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2">
+
+                                    <span
+                                        class="text-[8px] text-zinc-500">
+                                        Payroll processed
+                                    </span>
+
+                                    <span
+                                        class="text-[8px] text-orange">
+                                        92%
+                                    </span>
+
+                                </div>
+
+
+                                <div
+                                    class="h-1.5 overflow-hidden rounded-full bg-white/5">
+
+                                    <div
+                                        class="h-full w-[92%] rounded-full bg-orange">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
 
-                    <i
-                        class="fa-brands fa-python mt-1 text-muted2"
-                    ></i>
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <span class="project-number">
+                            05 · PAYROLL MANAGEMENT
+                        </span>
+
+
+                        <h3 class="mt-3 text-xl font-bold">
+                            PayPilot
+                        </h3>
+
+
+                        <p
+                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+
+                            Payroll management dashboard designed to
+                            manage employees, payroll workflows and
+                            business administration.
+
+                        </p>
+
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                HTML
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                CSS
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                JavaScript
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mt-6 grid grid-cols-2 gap-2">
+
+                            <a
+                                href="https://github.com/vishnuradhakrishnan595-cloud"
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+
+                                <i class="fa-brands fa-github"></i>
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="https://vishnuradhakrishnan595-cloud.github.io/Payroll-Management-System/#dashboard"
+                                target="_blank"
+                                rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Live Website
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     06 F1 GAMEZONE
+                ================================================== -->
+
+                <article
+                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+
+                    <div
+                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+
+                        <div
+                            class="code-window h-full rounded-2xl p-4">
+
+                            <div
+                                class="flex items-center justify-between">
+
+                                <span
+                                    class="font-mono text-[8px] text-zinc-600">
+                                    F1 GAMEZONE / GRAND PRIX
+                                </span>
+
+                                <span
+                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                    GAMING
+                                </span>
+
+                            </div>
+
+
+                            <div class="mt-5 grid grid-cols-3 gap-2">
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-3">
+
+                                    <p
+                                        class="text-[7px] text-zinc-600">
+                                        Race
+                                    </p>
+
+                                    <p class="mt-2 text-sm font-semibold">
+                                        24
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-orange/10 p-3">
+
+                                    <p class="text-[7px] text-orange">
+                                        Laps
+                                    </p>
+
+                                    <p class="mt-2 text-sm font-semibold">
+                                        57
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-3">
+
+                                    <p
+                                        class="text-[7px] text-zinc-600">
+                                        Speed
+                                    </p>
+
+                                    <p class="mt-2 text-sm font-semibold">
+                                        320
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="mt-5 flex items-center gap-2">
+
+                                <span
+                                    class="h-2 w-2 rounded-full bg-orange">
+                                </span>
+
+                                <span
+                                    class="h-px flex-1 bg-orange/30">
+                                </span>
+
+                                <span
+                                    class="h-2 w-2 rounded-full bg-white/20">
+                                </span>
+
+                                <span
+                                    class="h-px flex-1 bg-white/10">
+                                </span>
+
+                                <span
+                                    class="h-2 w-2 rounded-full bg-white/20">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <span class="project-number">
+                            06 · GAMING EXPERIENCE
+                        </span>
+
+
+                        <h3 class="mt-3 text-xl font-bold">
+                            F1 GameZone
+                        </h3>
+
+
+                        <p
+                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+
+                            Formula 1 inspired gaming website with
+                            Grand Prix focused layouts, responsive
+                            sections and an engaging visual interface.
+
+                        </p>
+
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                HTML
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                CSS
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                Bootstrap
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mt-6 grid grid-cols-2 gap-2">
+
+                            <a
+                                href="https://github.com/vishnuradhakrishnan595-cloud"
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+
+                                <i class="fa-brands fa-github"></i>
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="https://vishnuradhakrishnan595-cloud.github.io/BootStrap_Project/"
+                                target="_blank"
+                                rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Live Website
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     07 HEALTH CONNECT
+                ================================================== -->
+
+                <article
+                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+
+                    <div
+                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+
+                        <div
+                            class="code-window h-full rounded-2xl p-4">
+
+                            <div
+                                class="flex items-center justify-between">
+
+                                <span
+                                    class="font-mono text-[8px] text-zinc-600">
+                                    HEALTH CONNECT
+                                </span>
+
+                                <span
+                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                    HEALTHCARE
+                                </span>
+
+                            </div>
+
+
+                            <div class="mt-5 grid grid-cols-2 gap-3">
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-4">
+
+                                    <i
+                                        class="fa-solid fa-heart-pulse text-lg text-orange">
+                                    </i>
+
+                                    <p
+                                        class="mt-3 text-[8px] text-zinc-500">
+                                        Health Connect
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-orange/10 p-4">
+
+                                    <i
+                                        class="fa-solid fa-user-doctor text-lg text-orange">
+                                    </i>
+
+                                    <p
+                                        class="mt-3 text-[8px] text-zinc-500">
+                                        Doctors
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-4 space-y-2">
+
+                                <div
+                                    class="h-3 rounded bg-white/5">
+                                </div>
+
+                                <div
+                                    class="h-3 w-4/5 rounded bg-orange/10">
+                                </div>
+
+                                <div
+                                    class="h-3 w-2/3 rounded bg-white/5">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <span class="project-number">
+                            07 · HEALTHCARE PLATFORM
+                        </span>
+
+
+                        <h3 class="mt-3 text-xl font-bold">
+                            Health Connect
+                        </h3>
+
+
+                        <p
+                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+
+                            Healthcare-focused web interface designed
+                            to provide an organized and accessible
+                            digital experience for health-related
+                            services.
+
+                        </p>
+
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                HTML
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                CSS
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                Bootstrap
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mt-6 grid grid-cols-2 gap-2">
+
+                            <a
+                                href="https://github.com/vishnuradhakrishnan595-cloud"
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+
+                                <i class="fa-brands fa-github"></i>
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="https://vishnuradhakrishnan595-cloud.github.io/Health_Connect_v2/"
+                                target="_blank"
+                                rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Live Website
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     08 SHOPEASE
+                ================================================== -->
+
+                <article
+                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+
+                    <div
+                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+
+                        <div
+                            class="code-window h-full rounded-2xl p-4">
+
+                            <div
+                                class="flex items-center justify-between">
+
+                                <span
+                                    class="font-mono text-[8px] text-zinc-600">
+                                    SHOPEASE / E-COMMERCE
+                                </span>
+
+                                <span
+                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                    SHOPPING
+                                </span>
+
+                            </div>
+
+
+                            <div class="mt-5 grid grid-cols-3 gap-2">
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-3">
+
+                                    <i
+                                        class="fa-solid fa-bag-shopping text-orange">
+                                    </i>
+
+                                    <p
+                                        class="mt-3 text-[7px] text-zinc-600">
+                                        Products
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-orange/10 p-3">
+
+                                    <i
+                                        class="fa-solid fa-cart-shopping text-orange">
+                                    </i>
+
+                                    <p
+                                        class="mt-3 text-[7px] text-orange">
+                                        Cart
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="rounded-xl bg-white/5 p-3">
+
+                                    <i
+                                        class="fa-solid fa-credit-card text-orange">
+                                    </i>
+
+                                    <p
+                                        class="mt-3 text-[7px] text-zinc-600">
+                                        Checkout
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="mt-4 flex items-center gap-2">
+
+                                <div
+                                    class="h-8 w-8 rounded-lg bg-orange/20">
+                                </div>
+
+                                <div class="flex-1 space-y-2">
+
+                                    <div
+                                        class="h-2 w-4/5 rounded bg-white/10">
+                                    </div>
+
+                                    <div
+                                        class="h-2 w-2/5 rounded bg-orange/30">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-1 flex-col p-6">
+
+                        <span class="project-number">
+                            08 · E-COMMERCE EXPERIENCE
+                        </span>
+
+
+                        <h3 class="mt-3 text-xl font-bold">
+                            ShopEase
+                        </h3>
+
+
+                        <p
+                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+
+                            Modern shopping interface focused on product
+                            discovery, responsive layouts and a clean
+                            e-commerce user experience.
+
+                        </p>
+
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                HTML
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                CSS
+                            </span>
+
+                            <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-zinc-400">
+                                JavaScript
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mt-6 grid grid-cols-2 gap-2">
+
+                            <a
+                                href="https://github.com/vishnuradhakrishnan595-cloud"
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+
+                                <i class="fa-brands fa-github"></i>
+
+                                GitHub
+
+                            </a>
+
+
+                            <a
+                                href="https://vishnuradhakrishnan595-cloud.github.io/Shop_Ease/"
+                                target="_blank"
+                                rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Live Website
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- PROJECT FOOTER -->
+
+            <div
+                class="reveal mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-line bg-panel/50 px-5 py-4 text-center sm:flex-row sm:text-left">
+
+                <div>
+
+                    <p
+                        class="font-mono text-[9px] uppercase tracking-widest text-zinc-600">
+                        08 projects
+                    </p>
+
+                    <p class="mt-1 text-xs text-zinc-500">
+                        More projects and experiments available on GitHub.
+                    </p>
 
                 </div>
-
-
-                <p
-                    class="mt-4 text-sm leading-6 text-muted"
-                >
-
-                    Django application demonstrating models, routing,
-                    views, templates, database operations and
-                    server-side application architecture.
-
-                </p>
-
-
-                <div class="mt-5 flex flex-wrap gap-2">
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        Python
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        Django
-                    </span>
-
-                    <span class="tag rounded-lg px-3 py-1.5 font-mono text-[9px] text-muted">
-                        SQL
-                    </span>
-
-                </div>
-
-
-                <div class="mt-6 flex flex-wrap gap-3">
-
-                    <!-- Replace with actual deployed URL -->
-
-                    <a
-                        href="https://django-demo-web-1.onrender.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="primary-btn inline-flex items-center gap-2 rounded-xl bg-ink px-4 py-2.5 text-[11px] font-bold text-white"
-                    >
-
-                        <i class="fa-solid fa-globe"></i>
-
-                        Live website
-
-                    </a>
-
-
-                    <a
-                        href="https://github.com/vishnuradhakrishnan595-cloud"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-[11px] font-bold text-ink transition hover:border-blue hover:text-blue"
-                    >
-
-                        <i class="fa-brands fa-github"></i>
-
-                        GitHub
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     DEVELOPMENT FLOW
-========================================================== -->
-
-<section
-    class="border-t border-line py-24"
->
-
-    <div class="reveal text-center">
-
-        <p
-            class="section-label font-mono text-[10px] uppercase tracking-[.2em]"
-        >
-            // Workflow
-        </p>
-
-        <h2
-            class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl"
-        >
-            How I build software.
-        </h2>
-
-    </div>
-
-
-    <div
-        class="mt-12 grid gap-3 md:grid-cols-4"
-    >
-
-        <div
-            class="card reveal rounded-3xl border border-line bg-white2 p-6"
-        >
-
-            <span class="font-mono text-xs text-blue">
-                01
-            </span>
-
-            <div
-                class="mt-6 flex h-10 w-10 items-center justify-center rounded-xl bg-blue/10 text-blue"
-            >
-
-                <i class="fa-solid fa-lightbulb"></i>
-
-            </div>
-
-            <h3 class="mt-4 font-bold">
-                Plan
-            </h3>
-
-            <p class="mt-2 text-xs leading-6 text-muted">
-                Understand requirements, data and application flow.
-            </p>
-
-        </div>
-
-
-        <div
-            class="card reveal rounded-3xl border border-line bg-white2 p-6"
-        >
-
-            <span class="font-mono text-xs text-blue">
-                02
-            </span>
-
-            <div
-                class="mt-6 flex h-10 w-10 items-center justify-center rounded-xl bg-green/10 text-green"
-            >
-
-                <i class="fa-solid fa-code"></i>
-
-            </div>
-
-            <h3 class="mt-4 font-bold">
-                Build
-            </h3>
-
-            <p class="mt-2 text-xs leading-6 text-muted">
-                Develop APIs, database models and frontend interfaces.
-            </p>
-
-        </div>
-
-
-        <div
-            class="card reveal rounded-3xl border border-line bg-white2 p-6"
-        >
-
-            <span class="font-mono text-xs text-blue">
-                03
-            </span>
-
-            <div
-                class="mt-6 flex h-10 w-10 items-center justify-center rounded-xl bg-purple-100 text-purple-600"
-            >
-
-                <i class="fa-solid fa-vial-circle-check"></i>
-
-            </div>
-
-            <h3 class="mt-4 font-bold">
-                Test
-            </h3>
-
-            <p class="mt-2 text-xs leading-6 text-muted">
-                Validate APIs, authentication, data and application behaviour.
-            </p>
-
-        </div>
-
-
-        <div
-            class="card reveal rounded-3xl border border-line bg-white2 p-6"
-        >
-
-            <span class="font-mono text-xs text-blue">
-                04
-            </span>
-
-            <div
-                class="mt-6 flex h-10 w-10 items-center justify-center rounded-xl bg-orange-100 text-orange-600"
-            >
-
-                <i class="fa-solid fa-rocket"></i>
-
-            </div>
-
-            <h3 class="mt-4 font-bold">
-                Ship
-            </h3>
-
-            <p class="mt-2 text-xs leading-6 text-muted">
-                Deploy, monitor and keep improving the product.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     CONTACT
-========================================================== -->
-
-<section
-    id="contact"
-    class="border-t border-line py-24"
->
-
-    <div
-        class="reveal relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-blue/15 bg-white2 p-8 text-center shadow-soft sm:p-12"
-    >
-
-        <div
-            class="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-blue/10 blur-3xl"
-        ></div>
-
-
-        <div
-            class="relative"
-        >
-
-            <div
-                class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-ink text-white shadow-soft"
-            >
-
-                <i class="fa-solid fa-paper-plane"></i>
-
-            </div>
-
-
-            <p
-                class="mt-6 font-mono text-[10px] uppercase tracking-[.2em] text-blue"
-            >
-                // Let's build
-            </p>
-
-
-            <h2
-                class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl"
-            >
-
-                Have an idea?
-
-                <span class="text-muted2">
-                    Let's build it.
-                </span>
-
-            </h2>
-
-
-            <p
-                class="mx-auto mt-5 max-w-xl text-sm leading-7 text-muted"
-            >
-
-                I'm open to software development opportunities,
-                internships, freelance projects and meaningful
-                collaborations.
-
-            </p>
-
-
-            <div
-                class="mt-8 flex flex-wrap justify-center gap-3"
-            >
-
-                <a
-                    href="mailto:vishnuradhakrishnan595@gmail.com"
-                    class="primary-btn inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-3 text-xs font-bold text-white"
-                >
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    Email me
-
-                </a>
 
 
                 <a
                     href="https://github.com/vishnuradhakrishnan595-cloud"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-xs font-bold text-ink transition hover:border-blue hover:text-blue"
-                >
+                    rel="noopener"
+                    class="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
 
-                    <i class="fa-brands fa-github"></i>
+                    View GitHub Profile
 
-                    GitHub
-
-                </a>
-
-
-                <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-xs font-bold text-ink transition hover:border-blue hover:text-blue"
-                >
-
-                    <i class="fa-brands fa-linkedin"></i>
-
-                    LinkedIn
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[9px]">
+                    </i>
 
                 </a>
 
             </div>
 
-        </div>
-
-    </div>
-
-</section>
+        </section>
 
 
-<!-- =========================================================
-     FOOTER
-========================================================== -->
 
-<footer class="py-10">
+        <!-- =========================================================
+             DEVELOPMENT FLOW
+        ========================================================== -->
 
-    <div
-        class="flex flex-col items-center justify-between gap-5 border-t border-line pt-7 text-center sm:flex-row sm:text-left"
-    >
+        <section class="border-t border-line py-24">
 
-        <div>
+            <div class="reveal text-center">
 
-            <p class="font-mono text-sm font-bold">
+                <p
+                    class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                    // Development workflow
+                </p>
 
-                vishnu<span class="text-blue">.dev</span>
+                <h2
+                    class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
 
-            </p>
+                    How I turn ideas into software.
 
-            <p class="mt-1 text-xs text-muted2">
-                Python Full Stack Developer
-            </p>
+                </h2>
 
-        </div>
-
-
-        <div
-            class="flex items-center gap-5 text-muted2"
-        >
-
-            <a
-                href="https://github.com/vishnuradhakrishnan595-cloud"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="transition hover:text-ink"
-                aria-label="GitHub"
-            >
-                <i class="fa-brands fa-github"></i>
-            </a>
+            </div>
 
 
-            <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="transition hover:text-blue"
-                aria-label="LinkedIn"
-            >
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
+            <div class="mt-12 grid gap-3 md:grid-cols-4">
+
+                <div
+                    class="reveal rounded-3xl border border-line bg-panel p-6">
+
+                    <span class="font-mono text-xs text-orange">
+                        01
+                    </span>
+
+                    <i
+                        class="fa-solid fa-lightbulb mt-6 text-xl text-zinc-400">
+                    </i>
+
+                    <h3 class="mt-4 font-bold">
+                        Plan
+                    </h3>
+
+                    <p
+                        class="mt-2 text-xs leading-6 text-zinc-600">
+
+                        Understand requirements, data and application flow.
+
+                    </p>
+
+                </div>
 
 
-            <a
-                href="mailto:vishnuradhakrishnan595@gmail.com"
-                class="transition hover:text-blue"
-                aria-label="Email"
-            >
-                <i class="fa-solid fa-envelope"></i>
-            </a>
+                <div
+                    class="reveal rounded-3xl border border-line bg-panel p-6">
 
-        </div>
+                    <span class="font-mono text-xs text-orange">
+                        02
+                    </span>
 
+                    <i
+                        class="fa-solid fa-code mt-6 text-xl text-zinc-400">
+                    </i>
 
-        <p
-            class="font-mono text-[9px] uppercase tracking-widest text-muted2"
-        >
-            © 2026 Vishnu Radhakrishnan Nair
-        </p>
+                    <h3 class="mt-4 font-bold">
+                        Build
+                    </h3>
 
-    </div>
+                    <p
+                        class="mt-2 text-xs leading-6 text-zinc-600">
 
-</footer>
+                        Develop backend APIs, database models and frontend UI.
 
-</main>
+                    </p>
 
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================== -->
-
-<script>
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================== */
-
-    const menuBtn =
-        document.getElementById("menuBtn");
-
-    const mobileMenu =
-        document.getElementById("mobileMenu");
-
-    const menuIcon =
-        document.getElementById("menuIcon");
+                </div>
 
 
-    menuBtn.addEventListener("click", () => {
+                <div
+                    class="reveal rounded-3xl border border-line bg-panel p-6">
 
-        mobileMenu.classList.toggle("hidden");
+                    <span class="font-mono text-xs text-orange">
+                        03
+                    </span>
 
-        const isOpen =
-            !mobileMenu.classList.contains("hidden");
+                    <i
+                        class="fa-solid fa-vial-circle-check mt-6 text-xl text-zinc-400">
+                    </i>
 
-        menuIcon.className =
-            isOpen
+                    <h3 class="mt-4 font-bold">
+                        Test
+                    </h3>
+
+                    <p
+                        class="mt-2 text-xs leading-6 text-zinc-600">
+
+                        Validate APIs, authentication, data and application behaviour.
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="reveal rounded-3xl border border-line bg-panel p-6">
+
+                    <span class="font-mono text-xs text-orange">
+                        04
+                    </span>
+
+                    <i
+                        class="fa-solid fa-rocket mt-6 text-xl text-zinc-400">
+                    </i>
+
+                    <h3 class="mt-4 font-bold">
+                        Ship
+                    </h3>
+
+                    <p
+                        class="mt-2 text-xs leading-6 text-zinc-600">
+
+                        Containerize, deploy and keep improving the product.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+             CONTACT
+        ========================================================== -->
+
+        <section id="contact"
+            class="border-t border-line py-24">
+
+            <div
+                class="reveal mx-auto max-w-4xl overflow-hidden rounded-3xl border border-orange/20 bg-gradient-to-br from-orange/10 via-panel to-panel p-8 text-center sm:p-12">
+
+                <div
+                    class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-orange text-white shadow-glow">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </div>
+
+
+                <p
+                    class="mt-6 font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                    // Let's build
+                </p>
+
+
+                <h2
+                    class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+
+                    Have an idea?
+
+                    <span class="text-zinc-500">
+                        Let's make it real.
+                    </span>
+
+                </h2>
+
+
+                <p
+                    class="mx-auto mt-5 max-w-xl text-sm leading-7 text-zinc-500">
+
+                    Open to software development opportunities,
+                    internships, freelance projects and meaningful
+                    collaborations.
+
+                </p>
+
+
+                <div
+                    class="mt-8 flex flex-wrap justify-center gap-3">
+
+                    <a
+                        href="mailto:vishnuradhakrishnan595@gmail.com"
+                        class="inline-flex items-center gap-2 rounded-xl bg-orange px-5 py-3 text-xs font-bold text-white transition hover:bg-orange2">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        Email me
+
+                    </a>
+
+
+                    <a
+                        href="https://github.com/vishnuradhakrishnan595-cloud"
+                        target="_blank"
+                        rel="noopener"
+                        class="inline-flex items-center gap-2 rounded-xl border border-line bg-panel px-5 py-3 text-xs font-bold text-zinc-300 transition hover:border-zinc-500 hover:text-white">
+
+                        <i class="fa-brands fa-github"></i>
+
+                        GitHub
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+             FOOTER
+        ========================================================== -->
+
+        <footer class="py-10">
+
+            <div
+                class="flex flex-col items-center justify-between gap-5 border-t border-line pt-7 text-center sm:flex-row sm:text-left">
+
+                <div>
+
+                    <p class="font-mono text-sm font-bold">
+
+                        vishnu<span class="text-orange">
+                            .dev
+                        </span>
+
+                    </p>
+
+                    <p class="mt-1 text-xs text-zinc-600">
+                        Python Full Stack Developer
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="flex items-center gap-5 text-zinc-600">
+
+                    <a
+                        href="https://github.com/vishnuradhakrishnan595-cloud"
+                        target="_blank"
+                        rel="noopener"
+                        class="transition hover:text-white"
+                        aria-label="GitHub">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        rel="noopener"
+                        class="transition hover:text-white"
+                        aria-label="LinkedIn">
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                    </a>
+
+
+                    <a
+                        href="mailto:vishnuradhakrishnan595@gmail.com"
+                        class="transition hover:text-white"
+                        aria-label="Email">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
+
+                <p
+                    class="font-mono text-[9px] uppercase tracking-widest text-zinc-700">
+
+                    © 2026 Vishnu Radhakrishnan Nair
+
+                </p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuIcon = document.getElementById("menuIcon");
+
+        menuBtn.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("hidden");
+
+            const isOpen =
+                !mobileMenu.classList.contains("hidden");
+
+            menuIcon.className = isOpen
                 ? "fa-solid fa-xmark"
                 : "fa-solid fa-bars";
 
-    });
-
-
-    document
-        .querySelectorAll("#mobileMenu a")
-        .forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                mobileMenu.classList.add("hidden");
-
-                menuIcon.className =
-                    "fa-solid fa-bars";
-
-            });
-
         });
 
 
-    /* =========================================================
-       SCROLL REVEAL
-    ========================================================== */
+        document
+            .querySelectorAll("#mobileMenu a")
+            .forEach(link => {
 
-    const observer =
-        new IntersectionObserver(
+                link.addEventListener("click", () => {
 
-            entries => {
+                    mobileMenu.classList.add("hidden");
 
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("show");
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
+                    menuIcon.className =
+                        "fa-solid fa-bars";
 
                 });
 
-            },
-
-            {
-                threshold: .12
-            }
-
-        );
+            });
 
 
-    document
-        .querySelectorAll(".reveal")
-        .forEach(element => {
 
-            observer.observe(element);
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
 
-        });
+        const observer =
+            new IntersectionObserver(
+                entries => {
 
+                    entries.forEach(entry => {
 
-    /* =========================================================
-       ACTIVE NAVIGATION
-    ========================================================== */
+                        if (entry.isIntersecting) {
 
-    const sections =
-        document.querySelectorAll(
-            "main section[id]"
-        );
+                            entry.target.classList.add("show");
 
-    const navLinks =
-        document.querySelectorAll(
-            ".nav-link"
-        );
+                            observer.unobserve(
+                                entry.target
+                            );
 
+                        }
 
-    function updateActiveNav() {
+                    });
 
-        let current =
-            "home";
-
-        const scrollPosition =
-            window.scrollY + 180;
-
-
-        sections.forEach(section => {
-
-            if (
-                scrollPosition >=
-                section.offsetTop
-            ) {
-
-                current =
-                    section.id;
-
-            }
-
-        });
-
-
-        navLinks.forEach(link => {
-
-            link.classList.toggle(
-
-                "active",
-
-                link.getAttribute("href") ===
-                "#" + current
-
+                },
+                {
+                    threshold: 0.1
+                }
             );
 
-        });
 
-    }
+        document
+            .querySelectorAll(".reveal")
+            .forEach(element => {
 
+                observer.observe(element);
 
-    window.addEventListener(
-        "scroll",
-        updateActiveNav,
-        { passive: true }
-    );
+            });
 
 
-    window.addEventListener(
-        "load",
-        updateActiveNav
-    );
+
+        /* =====================================================
+           ACTIVE NAVIGATION
+        ====================================================== */
+
+        const sections =
+            document.querySelectorAll(
+                "main section[id]"
+            );
+
+        const navLinks =
+            document.querySelectorAll(".nav-link");
 
 
-    /* =========================================================
-       PROJECT LIVE DEMO FALLBACK
-    ========================================================== */
+        function updateActiveNav() {
 
-    function projectUnavailable(event) {
+            let current = "home";
 
-        event.preventDefault();
-
-        alert(
-            "Live deployment coming soon. Please use the GitHub repository to explore this project."
-        );
-
-        return false;
-
-    }
+            const scrollPosition =
+                window.scrollY + 180;
 
 
-    /* =========================================================
-       SMOOTH MOBILE MENU
-    ========================================================== */
+            sections.forEach(section => {
 
-    document.addEventListener(
-        "click",
-        event => {
+                if (
+                    scrollPosition >=
+                    section.offsetTop
+                ) {
 
-            if (
-                !mobileMenu.contains(event.target) &&
-                !menuBtn.contains(event.target)
-            ) {
+                    current = section.id;
 
-                mobileMenu.classList.add("hidden");
+                }
 
-                menuIcon.className =
-                    "fa-solid fa-bars";
+            });
 
-            }
+
+            navLinks.forEach(link => {
+
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href")
+                    === "#" + current
+                );
+
+            });
 
         }
-    );
 
-</script>
+
+        window.addEventListener(
+            "scroll",
+            updateActiveNav
+        );
+
+        window.addEventListener(
+            "load",
+            updateActiveNav
+        );
+
+    </script>
 
 </body>
 
