@@ -1,3265 +1,4641 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Vishnu Radhakrishnan — Python Full Stack Developer building modern digital products with React, Django and REST APIs."
-    >
+<meta
+    name="description"
+    content="Vishnu Radhakrishnan — Python Full Stack Developer building modern web applications, REST APIs and AI-powered digital products."
+>
 
-    <title>vishnu.dev / engineering</title>
+<meta name="theme-color" content="#05070a">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>vishnu.dev / engineering</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+<!-- =====================================================
+     FONTS
+====================================================== -->
 
-    <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* =====================================================
-           VARIABLES
-        ===================================================== */
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
 
-        :root {
-            --cream: #f6f0e5;
-            --cream-light: #fbf8f2;
-            --cream-dark: #e9dfcf;
+<!-- =====================================================
+     FONT AWESOME
+====================================================== -->
 
-            --blue: #174ea6;
-            --blue-dark: #0d2f6b;
-            --blue-light: #e8f0ff;
-            --blue-soft: #d8e6ff;
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
 
-            --white: #ffffff;
+<style>
 
-            --ink: #10213d;
-            --text: #34445d;
-            --muted: #697589;
-            --muted-light: #8a94a6;
+    /* =====================================================
+       ROOT
+    ====================================================== */
 
-            --border: #ddd5c7;
-            --border-blue: #c8d8f5;
+    :root {
 
-            --green: #18864b;
+        --black: #05070a;
+        --black-2: #080b10;
+        --black-3: #0d1117;
+        --panel: #10151c;
+        --panel-2: #131a22;
 
-            --shadow:
-                0 25px 70px rgba(22, 43, 76, 0.10);
+        --blue: #3b82f6;
+        --blue-bright: #60a5fa;
+        --blue-dark: #1d4ed8;
+        --blue-soft: rgba(59,130,246,0.12);
 
-            --shadow-small:
-                0 10px 30px rgba(22, 43, 76, 0.08);
+        --green: #39d98a;
+        --green-bright: #63f0a7;
+        --green-soft: rgba(57,217,138,0.10);
 
-            --radius-xl: 28px;
-            --radius-lg: 20px;
-            --radius-md: 14px;
+        --white: #ffffff;
+        --text: #dbe4ef;
+        --muted: #8995a5;
+        --muted-2: #5f6b7a;
 
-            --sans: "Inter", sans-serif;
-            --mono: "DM Mono", monospace;
+        --border: rgba(255,255,255,0.09);
+        --border-blue: rgba(59,130,246,0.25);
+        --border-green: rgba(57,217,138,0.20);
+
+        --sans: "Inter", sans-serif;
+        --mono: "DM Mono", monospace;
+
+        --shadow:
+            0 30px 90px rgba(0,0,0,0.40);
+
+        --shadow-blue:
+            0 20px 60px rgba(37,99,235,0.12);
+
+        --radius-xl: 28px;
+        --radius-lg: 20px;
+        --radius-md: 14px;
+    }
+
+
+    /* =====================================================
+       RESET
+    ====================================================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-height: 100vh;
+
+        font-family: var(--sans);
+
+        background:
+            radial-gradient(
+                circle at 10% 10%,
+                rgba(37,99,235,0.08),
+                transparent 28%
+            ),
+            radial-gradient(
+                circle at 90% 30%,
+                rgba(57,217,138,0.05),
+                transparent 25%
+            ),
+            var(--black);
+
+        color: var(--text);
+
+        line-height: 1.6;
+
+        overflow-x: hidden;
+    }
+
+    body::selection {
+        background: var(--blue);
+        color: white;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    button {
+        font-family: inherit;
+    }
+
+
+    /* =====================================================
+       ANIMATED BACKGROUND
+    ====================================================== */
+
+    .background {
+        position: fixed;
+        inset: 0;
+
+        overflow: hidden;
+
+        pointer-events: none;
+
+        z-index: -10;
+
+        background:
+            linear-gradient(
+                rgba(255,255,255,0.018) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                90deg,
+                rgba(255,255,255,0.018) 1px,
+                transparent 1px
+            );
+
+        background-size: 50px 50px;
+    }
+
+
+    .background::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+            radial-gradient(
+                circle at center,
+                transparent 0%,
+                rgba(5,7,10,0.15) 55%,
+                rgba(5,7,10,0.70) 100%
+            );
+    }
+
+
+    .orb {
+        position: absolute;
+
+        border-radius: 50%;
+
+        filter: blur(90px);
+
+        opacity: 0.35;
+
+        animation:
+            floatOrb 14s ease-in-out infinite;
+    }
+
+
+    .orb-blue {
+        width: 420px;
+        height: 420px;
+
+        top: -160px;
+        right: -100px;
+
+        background: rgba(37,99,235,0.20);
+    }
+
+
+    .orb-green {
+        width: 330px;
+        height: 330px;
+
+        left: -130px;
+        top: 42%;
+
+        background: rgba(16,185,129,0.13);
+
+        animation-delay: -5s;
+    }
+
+
+    .orb-small {
+        width: 220px;
+        height: 220px;
+
+        right: 20%;
+        bottom: -80px;
+
+        background: rgba(59,130,246,0.12);
+
+        animation-delay: -9s;
+    }
+
+
+    @keyframes floatOrb {
+
+        0%,
+        100% {
+            transform:
+                translate3d(0,0,0)
+                scale(1);
         }
 
+        50% {
+            transform:
+                translate3d(35px,-25px,0)
+                scale(1.08);
+        }
+    }
 
-        /* =====================================================
-           RESET
-        ===================================================== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    /* =====================================================
+       SCAN LINE
+    ====================================================== */
+
+    .scanline {
+        position: fixed;
+
+        left: 0;
+        right: 0;
+
+        height: 1px;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                rgba(59,130,246,0.25),
+                transparent
+            );
+
+        box-shadow:
+            0 0 20px rgba(59,130,246,0.15);
+
+        opacity: 0.35;
+
+        pointer-events: none;
+
+        z-index: -1;
+
+        animation:
+            scan 9s linear infinite;
+    }
+
+
+    @keyframes scan {
+
+        from {
+            top: -5%;
         }
 
-        html {
-            scroll-behavior: smooth;
+        to {
+            top: 105%;
         }
 
-        body {
-            font-family: var(--sans);
-            background: var(--cream);
-            color: var(--ink);
-            line-height: 1.6;
-            overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       NAVBAR
+    ====================================================== */
+
+    .navbar {
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 1000;
+
+        background:
+            rgba(5,7,10,0.78);
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+
+    .nav {
+
+        width:
+            min(1180px, calc(100% - 40px));
+
+        min-height: 76px;
+
+        margin: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 20px;
+    }
+
+
+    .brand {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        flex-shrink: 0;
+    }
+
+
+    .brand-logo {
+
+        width: 40px;
+        height: 40px;
+
+        display: grid;
+
+        place-items: center;
+
+        border-radius: 11px;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--blue),
+                var(--blue-dark)
+            );
+
+        color: white;
+
+        font-family: var(--mono);
+
+        font-size: 12px;
+
+        font-weight: 500;
+
+        box-shadow:
+            0 0 25px rgba(59,130,246,0.20);
+    }
+
+
+    .brand-name {
+
+        font-family: var(--mono);
+
+        font-size: 13px;
+
+        color: white;
+    }
+
+
+    .brand-name span {
+
+        color: var(--muted);
+    }
+
+
+    .nav-links {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 25px;
+    }
+
+
+    .nav-links a {
+
+        color: var(--muted);
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        transition:
+            color 0.25s ease,
+            transform 0.25s ease;
+    }
+
+
+    .nav-links a:hover {
+
+        color: white;
+
+        transform:
+            translateY(-1px);
+    }
+
+
+    .nav-button {
+
+        padding:
+            10px 15px;
+
+        border:
+            1px solid
+            rgba(59,130,246,0.30);
+
+        background:
+            rgba(59,130,246,0.10);
+
+        color:
+            var(--blue-bright) !important;
+
+        border-radius: 9px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+
+        width:
+            min(1180px, calc(100% - 40px));
+
+        min-height:
+            calc(100vh - 76px);
+
+        margin: auto;
+
+        display: grid;
+
+        grid-template-columns:
+            1.05fr 0.95fr;
+
+        align-items: center;
+
+        gap: 70px;
+
+        padding:
+            80px 0;
+    }
+
+
+    .hero-content {
+
+        animation:
+            fadeUp 0.8s ease both;
+    }
+
+
+    .eyebrow {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        padding:
+            8px 13px;
+
+        margin-bottom: 25px;
+
+        border:
+            1px solid var(--border-green);
+
+        border-radius: 999px;
+
+        background:
+            rgba(57,217,138,0.05);
+
+        color:
+            var(--green-bright);
+
+        font-family: var(--mono);
+
+        font-size: 9px;
+    }
+
+
+    .eyebrow-dot {
+
+        width: 7px;
+        height: 7px;
+
+        border-radius: 50%;
+
+        background:
+            var(--green);
+
+        box-shadow:
+            0 0 0 4px
+            rgba(57,217,138,0.10),
+            0 0 15px
+            rgba(57,217,138,0.45);
+
+        animation:
+            pulse 2s ease-in-out infinite;
+    }
+
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+        50% {
+            opacity: 0.45;
         }
 
-        button {
-            font-family: inherit;
+    }
+
+
+    .hero h1 {
+
+        max-width: 760px;
+
+        font-size:
+            clamp(52px, 7vw, 88px);
+
+        line-height: 0.98;
+
+        letter-spacing: -5px;
+
+        font-weight: 800;
+
+        color: white;
+
+        margin-bottom: 28px;
+    }
+
+
+    .hero h1 span {
+
+        color:
+            var(--blue);
+
+        text-shadow:
+            0 0 40px
+            rgba(59,130,246,0.18);
+    }
+
+
+    .hero-description {
+
+        max-width: 610px;
+
+        color:
+            var(--muted);
+
+        font-size: 15px;
+
+        line-height: 1.9;
+
+        margin-bottom: 34px;
+    }
+
+
+    .buttons {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+
+    .btn {
+
+        min-height: 48px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 9px;
+
+        padding:
+            0 19px;
+
+        border-radius: 10px;
+
+        font-size: 11px;
+
+        font-weight: 700;
+
+        transition:
+            transform 0.25s ease,
+            background 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+
+    .btn-primary {
+
+        background:
+            var(--blue);
+
+        color: white;
+
+        box-shadow:
+            0 12px 30px
+            rgba(37,99,235,0.20);
+    }
+
+
+    .btn-primary:hover {
+
+        transform:
+            translateY(-3px);
+
+        background:
+            var(--blue-dark);
+
+        box-shadow:
+            0 16px 35px
+            rgba(37,99,235,0.30);
+    }
+
+
+    .btn-secondary {
+
+        border:
+            1px solid var(--border);
+
+        background:
+            rgba(255,255,255,0.025);
+
+        color:
+            var(--text);
+    }
+
+
+    .btn-secondary:hover {
+
+        transform:
+            translateY(-3px);
+
+        border-color:
+            var(--border-blue);
+
+        color:
+            var(--blue-bright);
+    }
+
+
+    .btn-cv {
+
+        border:
+            1px solid var(--border-green);
+
+        background:
+            rgba(57,217,138,0.06);
+
+        color:
+            var(--green-bright);
+    }
+
+
+    .btn-cv:hover {
+
+        transform:
+            translateY(-3px);
+
+        background:
+            rgba(57,217,138,0.12);
+
+        box-shadow:
+            0 12px 30px
+            rgba(57,217,138,0.08);
+    }
+
+
+    /* =====================================================
+       WORKSPACE
+    ====================================================== */
+
+    .workspace {
+
+        background:
+            rgba(10,14,19,0.88);
+
+        border:
+            1px solid var(--border-blue);
+
+        border-radius:
+            var(--radius-xl);
+
+        overflow: hidden;
+
+        box-shadow:
+            var(--shadow),
+            var(--shadow-blue);
+
+        transform:
+            rotate(1deg);
+
+        transition:
+            transform 0.4s ease;
+
+        animation:
+            fadeUp 0.9s 0.1s ease both;
+    }
+
+
+    .workspace:hover {
+
+        transform:
+            rotate(0deg)
+            translateY(-6px);
+    }
+
+
+    .window-bar {
+
+        height: 49px;
+
+        padding:
+            0 17px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        background:
+            rgba(255,255,255,0.025);
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+
+    .dot {
+
+        width: 8px;
+        height: 8px;
+
+        border-radius: 50%;
+
+        background:
+            #3b4653;
+    }
+
+
+    .dot:nth-child(1) {
+        background: #ef4444;
+    }
+
+    .dot:nth-child(2) {
+        background: #eab308;
+    }
+
+    .dot:nth-child(3) {
+        background: #22c55e;
+    }
+
+
+    .window-title {
+
+        margin-left: 8px;
+
+        color:
+            var(--muted-2);
+
+        font-family:
+            var(--mono);
+
+        font-size: 9px;
+    }
+
+
+    .workspace-body {
+
+        padding: 27px;
+    }
+
+
+    .workspace-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        margin-bottom: 23px;
+    }
+
+
+    .workspace-header strong {
+
+        color: white;
+
+        font-size: 13px;
+    }
+
+
+    .ready {
+
+        padding:
+            6px 9px;
+
+        border:
+            1px solid
+            rgba(57,217,138,0.20);
+
+        border-radius: 7px;
+
+        background:
+            rgba(57,217,138,0.07);
+
+        color:
+            var(--green);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+    }
+
+
+    .label {
+
+        margin-bottom: 9px;
+
+        color:
+            var(--muted-2);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.08em;
+    }
+
+
+    .mode {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding:
+            12px 14px;
+
+        margin-bottom: 20px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 10px;
+
+        background:
+            rgba(255,255,255,0.025);
+    }
+
+
+    .mode-left {
+
+        color:
+            var(--muted);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+    }
+
+
+    .mode-right {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        color:
+            var(--green-bright);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+    }
+
+
+    .mode-right::before {
+
+        content: "";
+
+        width: 6px;
+        height: 6px;
+
+        border-radius: 50%;
+
+        background:
+            var(--green);
+
+        box-shadow:
+            0 0 10px
+            rgba(57,217,138,0.5);
+    }
+
+
+    .architecture {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 9px;
+
+        margin-bottom: 19px;
+    }
+
+
+    .architecture-item {
+
+        min-height: 73px;
+
+        padding: 13px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 11px;
+
+        background:
+            rgba(255,255,255,0.018);
+
+        transition:
+            border-color 0.25s ease,
+            transform 0.25s ease;
+    }
+
+
+    .architecture-item:hover {
+
+        transform:
+            translateY(-3px);
+
+        border-color:
+            var(--border-blue);
+    }
+
+
+    .architecture-item small {
+
+        display: block;
+
+        margin-bottom: 6px;
+
+        color:
+            var(--muted-2);
+
+        font-family:
+            var(--mono);
+
+        font-size: 7px;
+    }
+
+
+    .architecture-item strong {
+
+        color:
+            white;
+
+        font-size: 11px;
+    }
+
+
+    .architecture-item strong span {
+
+        color:
+            var(--blue-bright);
+    }
+
+
+    .terminal {
+
+        padding:
+            16px;
+
+        border:
+            1px solid rgba(255,255,255,0.05);
+
+        border-radius: 12px;
+
+        background:
+            #030507;
+
+        color:
+            #d6e0eb;
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+
+        line-height: 2.15;
+    }
+
+
+    .terminal-line {
+
+        display: flex;
+
+        gap: 8px;
+    }
+
+
+    .prompt {
+
+        color:
+            var(--blue-bright);
+    }
+
+
+    .success {
+
+        color:
+            var(--green);
+    }
+
+
+    .arrow {
+
+        color:
+            var(--muted-2);
+    }
+
+
+    /* =====================================================
+       SECTIONS
+    ====================================================== */
+
+    .section {
+
+        width:
+            min(1180px, calc(100% - 40px));
+
+        margin: auto;
+
+        padding:
+            110px 0;
+    }
+
+
+    .section-header {
+
+        display: flex;
+
+        align-items: end;
+
+        justify-content: space-between;
+
+        gap: 30px;
+
+        margin-bottom: 45px;
+    }
+
+
+    .section-number {
+
+        margin-bottom: 10px;
+
+        color:
+            var(--blue-bright);
+
+        font-family:
+            var(--mono);
+
+        font-size: 9px;
+
+        letter-spacing: 0.08em;
+    }
+
+
+    .section-title {
+
+        color:
+            white;
+
+        font-size:
+            clamp(34px, 5vw, 50px);
+
+        line-height: 1.04;
+
+        letter-spacing: -2.5px;
+
+        font-weight: 800;
+    }
+
+
+    .section-description {
+
+        max-width: 430px;
+
+        color:
+            var(--muted);
+
+        font-size: 12px;
+
+        line-height: 1.85;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ====================================================== */
+
+    .about-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            0.8fr 1.2fr;
+
+        gap: 32px;
+    }
+
+
+    .profile-card {
+
+        padding: 28px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,0.035),
+                rgba(255,255,255,0.015)
+            );
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            var(--radius-xl);
+
+        box-shadow:
+            var(--shadow-blue);
+    }
+
+
+    .profile-placeholder {
+
+        width: 100%;
+
+        aspect-ratio: 1 / 1;
+
+        display: grid;
+
+        place-items: center;
+
+        border:
+            1px solid var(--border-blue);
+
+        border-radius: 20px;
+
+        background:
+            radial-gradient(
+                circle at center,
+                rgba(59,130,246,0.14),
+                transparent 55%
+            ),
+            #080d13;
+    }
+
+
+    .profile-placeholder-content {
+
+        text-align: center;
+    }
+
+
+    .profile-initials {
+
+        font-family:
+            var(--mono);
+
+        font-size:
+            clamp(50px, 8vw, 90px);
+
+        font-weight: 500;
+
+        color:
+            var(--blue-bright);
+
+        text-shadow:
+            0 0 40px
+            rgba(59,130,246,0.20);
+    }
+
+
+    .profile-placeholder-content p {
+
+        color:
+            var(--muted-2);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+
+        margin-top: 5px;
+    }
+
+
+    .profile-details {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        margin-top: 20px;
+    }
+
+
+    .profile-name {
+
+        color:
+            white;
+
+        font-size: 17px;
+
+        font-weight: 800;
+    }
+
+
+    .profile-role {
+
+        margin-top: 4px;
+
+        color:
+            var(--blue-bright);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+    }
+
+
+    .available {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        color:
+            var(--green);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+    }
+
+
+    .available::before {
+
+        content: "";
+
+        width: 6px;
+        height: 6px;
+
+        border-radius: 50%;
+
+        background:
+            var(--green);
+
+        box-shadow:
+            0 0 10px
+            rgba(57,217,138,0.5);
+    }
+
+
+    .about-content {
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+    }
+
+
+    .about-content p {
+
+        color:
+            #aab5c3;
+
+        font-size: 14px;
+
+        line-height: 1.9;
+
+        margin-bottom: 20px;
+    }
+
+
+    .highlight {
+
+        padding:
+            18px 20px;
+
+        border:
+            1px solid var(--border-blue);
+
+        border-radius: 13px;
+
+        background:
+            var(--blue-soft);
+
+        color:
+            var(--blue-bright);
+
+        font-family:
+            var(--mono);
+
+        font-size: 9px;
+    }
+
+
+    /* =====================================================
+       TECHNOLOGY
+    ====================================================== */
+
+    .technology-groups {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 50px;
+    }
+
+
+    .category-title {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin-bottom: 17px;
+
+        color:
+            var(--blue-bright);
+
+        font-family:
+            var(--mono);
+
+        font-size: 9px;
+
+        letter-spacing: 0.08em;
+    }
+
+
+    .category-title::after {
+
+        content: "";
+
+        flex: 1;
+
+        height: 1px;
+
+        background:
+            var(--border);
+    }
+
+
+    .tools-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 11px;
+    }
+
+
+    .tool {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        min-height: 73px;
+
+        padding:
+            13px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 13px;
+
+        background:
+            rgba(255,255,255,0.018);
+
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease,
+            background 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+
+    .tool:hover {
+
+        transform:
+            translateY(-5px);
+
+        border-color:
+            var(--border-blue);
+
+        background:
+            rgba(59,130,246,0.045);
+
+        box-shadow:
+            0 15px 35px
+            rgba(0,0,0,0.20);
+    }
+
+
+    .tool-icon {
+
+        width: 40px;
+        height: 40px;
+
+        flex-shrink: 0;
+
+        display: grid;
+
+        place-items: center;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 10px;
+
+        background:
+            #0a0f15;
+
+        overflow: hidden;
+    }
+
+
+    .tool-icon img {
+
+        width: 24px;
+        height: 24px;
+
+        object-fit: contain;
+
+        filter:
+            brightness(0.95);
+
+        transition:
+            transform 0.25s ease;
+    }
+
+
+    .tool:hover .tool-icon img {
+
+        transform:
+            scale(1.12);
+    }
+
+
+    .tool-name {
+
+        color:
+            white;
+
+        font-size: 10px;
+
+        font-weight: 700;
+    }
+
+
+    .tool-type {
+
+        margin-top: 2px;
+
+        color:
+            var(--muted-2);
+
+        font-family:
+            var(--mono);
+
+        font-size: 7px;
+    }
+
+
+    /* =====================================================
+       PROJECTS
+    ====================================================== */
+
+    .projects {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 17px;
+    }
+
+
+    .project {
+
+        position: relative;
+
+        padding:
+            27px;
+
+        min-height: 300px;
+
+        overflow: hidden;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,0.035),
+                rgba(255,255,255,0.012)
+            );
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            var(--radius-xl);
+
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+
+    .project::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 180px;
+        height: 180px;
+
+        right: -80px;
+        top: -90px;
+
+        border-radius: 50%;
+
+        background:
+            rgba(59,130,246,0.06);
+
+        filter:
+            blur(10px);
+
+        transition:
+            transform 0.4s ease;
+    }
+
+
+    .project:hover {
+
+        transform:
+            translateY(-7px);
+
+        border-color:
+            var(--border-blue);
+
+        box-shadow:
+            var(--shadow-blue);
+    }
+
+
+    .project:hover::before {
+
+        transform:
+            scale(1.5);
+    }
+
+
+    .project-top {
+
+        position: relative;
+
+        z-index: 2;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        margin-bottom: 27px;
+    }
+
+
+    .project-number {
+
+        color:
+            var(--blue-bright);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+    }
+
+
+    .project-status {
+
+        padding:
+            6px 8px;
+
+        border:
+            1px solid var(--border-green);
+
+        border-radius: 7px;
+
+        background:
+            var(--green-soft);
+
+        color:
+            var(--green);
+
+        font-family:
+            var(--mono);
+
+        font-size: 7px;
+    }
+
+
+    .project h3 {
+
+        position: relative;
+
+        z-index: 2;
+
+        color:
+            white;
+
+        font-size: 21px;
+
+        margin-bottom: 11px;
+    }
+
+
+    .project p {
+
+        position: relative;
+
+        z-index: 2;
+
+        max-width: 520px;
+
+        color:
+            var(--muted);
+
+        font-size: 11px;
+
+        line-height: 1.8;
+
+        margin-bottom: 19px;
+    }
+
+
+    .stack {
+
+        position: relative;
+
+        z-index: 2;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 6px;
+    }
+
+
+    .tag {
+
+        padding:
+            6px 9px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 6px;
+
+        background:
+            rgba(255,255,255,0.025);
+
+        color:
+            #9aa6b5;
+
+        font-family:
+            var(--mono);
+
+        font-size: 7px;
+    }
+
+
+    .project-link {
+
+        position: relative;
+
+        z-index: 2;
+
+        display: inline-flex;
+
+        margin-top: 23px;
+
+        color:
+            var(--blue-bright);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+
+        transition:
+            color 0.25s ease;
+    }
+
+
+    .project-link:hover {
+
+        color:
+            var(--green-bright);
+    }
+
+
+    /* =====================================================
+       EDUCATION TIMELINE
+    ====================================================== */
+
+    .education-card {
+
+        padding:
+            30px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            var(--radius-xl);
+
+        background:
+            rgba(255,255,255,0.018);
+
+        box-shadow:
+            var(--shadow-blue);
+    }
+
+
+    .education-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 20px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .education-heading {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        color:
+            white;
+
+        font-size: 10px;
+
+        font-family:
+            var(--mono);
+
+        font-weight: 700;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.08em;
+    }
+
+
+    .education-heading i {
+
+        color:
+            var(--green);
+    }
+
+
+    .chronological {
+
+        color:
+            var(--muted-2);
+
+        font-family:
+            var(--mono);
+
+        font-size: 7px;
+
+        text-transform: uppercase;
+    }
+
+
+    .timeline {
+
+        position: relative;
+
+        padding-left: 27px;
+    }
+
+
+    .timeline::before {
+
+        content: "";
+
+        position: absolute;
+
+        left: 4px;
+
+        top: 4px;
+
+        bottom: 4px;
+
+        width: 1px;
+
+        background:
+            linear-gradient(
+                to bottom,
+                var(--green),
+                var(--blue),
+                var(--border)
+            );
+    }
+
+
+    .timeline-item {
+
+        position: relative;
+
+        padding-bottom: 35px;
+    }
+
+
+    .timeline-item:last-child {
+
+        padding-bottom: 0;
+    }
+
+
+    .timeline-dot {
+
+        position: absolute;
+
+        left: -29px;
+
+        top: 3px;
+
+        width: 12px;
+        height: 12px;
+
+        border-radius: 50%;
+
+        border:
+            2px solid var(--green);
+
+        background:
+            var(--black);
+
+        transition:
+            background 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+
+    .timeline-item:hover .timeline-dot {
+
+        background:
+            var(--green);
+
+        box-shadow:
+            0 0 0 5px
+            rgba(57,217,138,0.08),
+            0 0 18px
+            rgba(57,217,138,0.30);
+    }
+
+
+    .timeline-item.secondary .timeline-dot {
+
+        border-color:
+            var(--blue);
+    }
+
+
+    .timeline-item.secondary:hover .timeline-dot {
+
+        background:
+            var(--blue);
+    }
+
+
+    .timeline-top {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        align-items: baseline;
+
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+
+    .timeline-item h4 {
+
+        color:
+            white;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        text-transform: uppercase;
+    }
+
+
+    .timeline-location {
+
+        color:
+            var(--muted-2);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+    }
+
+
+    .timeline-degree {
+
+        margin-top: 3px;
+
+        color:
+            var(--green);
+
+        font-family:
+            var(--mono);
+
+        font-size: 8px;
+
+        font-weight: 500;
+    }
+
+
+    .timeline-item.secondary .timeline-degree {
+
+        color:
+            var(--blue-bright);
+    }
+
+
+    .timeline-list {
+
+        margin-top: 9px;
+
+        padding-left: 17px;
+
+        color:
+            var(--muted);
+
+        font-size: 10px;
+
+        line-height: 1.8;
+    }
+
+
+    .timeline-description {
+
+        margin-top: 7px;
+
+        color:
+            var(--muted);
+
+        font-size: 10px;
+
+        line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       ENGINEERING
+    ====================================================== */
+
+    .principles {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 14px;
+    }
+
+
+    .principle {
+
+        padding:
+            25px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 17px;
+
+        background:
+            rgba(255,255,255,0.018);
+
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease;
+    }
+
+
+    .principle:hover {
+
+        transform:
+            translateY(-5px);
+
+        border-color:
+            var(--border-blue);
+    }
+
+
+    .principle-number {
+
+        width: 40px;
+        height: 40px;
+
+        display: grid;
+
+        place-items: center;
+
+        margin-bottom: 18px;
+
+        border:
+            1px solid var(--border-blue);
+
+        border-radius: 11px;
+
+        background:
+            var(--blue-soft);
+
+        color:
+            var(--blue-bright);
+
+        font-family:
+            var(--mono);
+
+        font-size: 9px;
+    }
+
+
+    .principle h3 {
+
+        color:
+            white;
+
+        font-size: 13px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .principle p {
+
+        color:
+            var(--muted);
+
+        font-size: 10px;
+
+        line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ====================================================== */
+
+    .contact {
+
+        position: relative;
+
+        padding:
+            58px;
+
+        overflow: hidden;
+
+        border:
+            1px solid var(--border-blue);
+
+        border-radius: 30px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #07101c,
+                #08121b 50%,
+                #06100d
+            );
+
+        box-shadow:
+            var(--shadow);
+    }
+
+
+    .contact::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 400px;
+        height: 400px;
+
+        right: -180px;
+        top: -200px;
+
+        border:
+            1px solid
+            rgba(59,130,246,0.15);
+
+        border-radius: 50%;
+
+        box-shadow:
+            0 0 0 60px rgba(59,130,246,0.02),
+            0 0 0 120px rgba(59,130,246,0.015);
+    }
+
+
+    .contact::after {
+
+        content: "";
+
+        position: absolute;
+
+        width: 280px;
+        height: 280px;
+
+        left: -150px;
+        bottom: -180px;
+
+        border:
+            1px solid
+            rgba(57,217,138,0.10);
+
+        border-radius: 50%;
+    }
+
+
+    .contact-content {
+
+        position: relative;
+
+        z-index: 2;
+    }
+
+
+    .contact-label {
+
+        margin-bottom: 14px;
+
+        color:
+            var(--green);
+
+        font-family:
+            var(--mono);
+
+        font-size: 9px;
+    }
+
+
+    .contact h2 {
+
+        color:
+            white;
+
+        font-size:
+            clamp(35px, 5vw, 58px);
+
+        line-height: 1.04;
+
+        letter-spacing: -2.5px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .contact p {
+
+        max-width: 600px;
+
+        color:
+            #91a0b1;
+
+        font-size: 12px;
+
+        line-height: 1.8;
+
+        margin-bottom: 28px;
+    }
+
+
+    .contact-buttons {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 9px;
+    }
+
+
+    .contact-btn {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        padding:
+            12px 16px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 9px;
+
+        background:
+            white;
+
+        color:
+            #07101a;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        transition:
+            transform 0.25s ease;
+    }
+
+
+    .contact-btn:hover {
+
+        transform:
+            translateY(-3px);
+    }
+
+
+    .contact-btn.outline {
+
+        background:
+            transparent;
+
+        color:
+            white;
+
+        border-color:
+            rgba(255,255,255,0.15);
+    }
+
+
+    .contact-btn.outline:hover {
+
+        border-color:
+            var(--border-blue);
+
+        color:
+            var(--blue-bright);
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+
+        width:
+            min(1180px, calc(100% - 40px));
+
+        margin: auto;
+
+        padding:
+            30px 0 45px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 20px;
+
+        border-top:
+            1px solid var(--border);
+    }
+
+
+    footer p {
+
+        color:
+            var(--muted-2);
+
+        font-family:
+            var(--mono);
+
+        font-size: 7px;
+    }
+
+
+    footer span {
+
+        color:
+            var(--blue-bright);
+    }
+
+
+    /* =====================================================
+       REVEAL ANIMATION
+    ====================================================== */
+
+    .reveal {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+        transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
+    }
+
+
+    .reveal.visible {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+
+    @keyframes fadeUp {
+
+        from {
+            opacity: 0;
+            transform:
+                translateY(25px);
         }
 
-
-        /* =====================================================
-           BACKGROUND
-        ===================================================== */
-
-        body::before {
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            z-index: -2;
-
-            background-image:
-                linear-gradient(
-                    rgba(23, 78, 166, 0.035) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(23, 78, 166, 0.035) 1px,
-                    transparent 1px
-                );
-
-            background-size: 42px 42px;
+        to {
+            opacity: 1;
+            transform:
+                translateY(0);
         }
-
-        .glow {
-            position: fixed;
-
-            width: 450px;
-            height: 450px;
-
-            right: -180px;
-            top: 80px;
-
-            background: rgba(58, 111, 197, 0.10);
-
-            border-radius: 50%;
-
-            filter: blur(90px);
-
-            pointer-events: none;
-
-            z-index: -1;
-        }
+    }
 
 
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
 
-        .navbar {
-            position: sticky;
-
-            top: 0;
-
-            z-index: 1000;
-
-            background:
-                rgba(246, 240, 229, 0.90);
-
-            backdrop-filter: blur(18px);
-
-            border-bottom:
-                1px solid rgba(221, 213, 199, 0.9);
-        }
-
-        .nav {
-            width:
-                min(1180px, calc(100% - 40px));
-
-            min-height: 76px;
-
-            margin: auto;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-        }
-
-        .brand {
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-        }
-
-        .brand-logo {
-            width: 40px;
-            height: 40px;
-
-            display: grid;
-
-            place-items: center;
-
-            border-radius: 12px;
-
-            background: var(--blue);
-
-            color: white;
-
-            font-family: var(--mono);
-
-            font-size: 13px;
-
-            box-shadow:
-                0 8px 20px
-                rgba(23, 78, 166, 0.20);
-        }
-
-        .brand-name {
-            font-family: var(--mono);
-
-            font-size: 14px;
-
-            font-weight: 500;
-        }
-
-        .brand-name span {
-            color: var(--blue);
-        }
-
-        .nav-links {
-            display: flex;
-
-            align-items: center;
-
-            gap: 28px;
-        }
-
-        .nav-links a {
-            font-size: 12px;
-
-            font-weight: 600;
-
-            color: #556277;
-
-            transition: 0.25s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--blue);
-        }
-
-        .nav-button {
-            padding: 10px 16px;
-
-            background: var(--blue);
-
-            color: white !important;
-
-            border-radius: 10px;
-
-            box-shadow:
-                0 8px 20px
-                rgba(23, 78, 166, 0.16);
-        }
-
-
-        /* =====================================================
-           HERO
-        ===================================================== */
+    @media (max-width: 1000px) {
 
         .hero {
-            width:
-                min(1180px, calc(100% - 40px));
-
-            min-height:
-                calc(100vh - 76px);
-
-            margin: auto;
-
-            display: grid;
 
             grid-template-columns:
-                1.05fr 0.95fr;
+                1fr;
 
-            align-items: center;
-
-            gap: 70px;
-
-            padding: 80px 0;
+            gap: 55px;
         }
 
-        .hero-content {
-            animation:
-                fadeUp 0.8s ease forwards;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 9px;
-
-            padding: 8px 13px;
-
-            border:
-                1px solid var(--border-blue);
-
-            background:
-                rgba(255,255,255,0.65);
-
-            border-radius: 999px;
-
-            color: var(--blue);
-
-            font-family: var(--mono);
-
-            font-size: 10px;
-
-            margin-bottom: 25px;
-        }
-
-        .eyebrow-dot {
-            width: 7px;
-            height: 7px;
-
-            background: var(--green);
-
-            border-radius: 50%;
-
-            box-shadow:
-                0 0 0 4px
-                rgba(24,134,75,0.10);
-        }
-
-        .hero h1 {
-            max-width: 720px;
-
-            font-size:
-                clamp(50px, 7vw, 84px);
-
-            line-height: 0.98;
-
-            letter-spacing: -4px;
-
-            font-weight: 800;
-
-            margin-bottom: 27px;
-        }
-
-        .hero h1 span {
-            color: var(--blue);
-        }
-
-        .hero-description {
-            max-width: 600px;
-
-            color: var(--muted);
-
-            font-size: 16px;
-
-            line-height: 1.85;
-
-            margin-bottom: 34px;
-        }
-
-        .buttons {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 11px;
-        }
-
-        .btn {
-            min-height: 48px;
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 8px;
-
-            padding: 0 20px;
-
-            border-radius: 11px;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            transition: 0.25s ease;
-        }
-
-        .btn-primary {
-            background: var(--blue);
-
-            color: white;
-
-            box-shadow:
-                0 12px 28px
-                rgba(23,78,166,0.18);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-
-            background: var(--blue-dark);
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.72);
-
-            border:
-                1px solid var(--border);
-
-            color: var(--ink);
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-
-            border-color: var(--blue);
-
-            color: var(--blue);
-        }
-
-
-        /* =====================================================
-           WORKSPACE
-        ===================================================== */
 
         .workspace {
-            background: white;
 
-            border:
-                1px solid var(--border-blue);
+            max-width: 760px;
 
-            border-radius: var(--radius-xl);
-
-            overflow: hidden;
-
-            box-shadow: var(--shadow);
-
-            transform: rotate(1deg);
-
-            transition: 0.35s ease;
-
-            animation:
-                fadeUp 0.9s ease forwards;
-        }
-
-        .workspace:hover {
-            transform:
-                rotate(0deg)
-                translateY(-5px);
-        }
-
-        .window-bar {
-            height: 50px;
-
-            padding: 0 17px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 7px;
-
-            background: #f7f9fc;
-
-            border-bottom:
-                1px solid #e7ebf2;
-        }
-
-        .dot {
-            width: 9px;
-            height: 9px;
-
-            border-radius: 50%;
-
-            background: #c8ced8;
-        }
-
-        .window-title {
-            margin-left: 8px;
-
-            color: #7b8698;
-
-            font-family: var(--mono);
-
-            font-size: 10px;
-        }
-
-        .workspace-body {
-            padding: 28px;
-        }
-
-        .workspace-header {
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            margin-bottom: 23px;
-        }
-
-        .workspace-header strong {
-            font-size: 13px;
-        }
-
-        .ready {
-            color: var(--green);
-
-            background: #edf9f1;
-
-            border:
-                1px solid #d2eddc;
-
-            border-radius: 7px;
-
-            padding: 6px 9px;
-
-            font-family: var(--mono);
-
-            font-size: 9px;
-        }
-
-        .label {
-            color: var(--muted-light);
-
-            font-family: var(--mono);
-
-            font-size: 9px;
-
-            margin-bottom: 9px;
-        }
-
-        .mode {
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            padding: 12px 14px;
-
-            background: var(--cream-light);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 11px;
-
-            margin-bottom: 21px;
-        }
-
-        .mode-left {
-            font-family: var(--mono);
-
-            color: var(--muted);
-
-            font-size: 9px;
-        }
-
-        .mode-right {
-            display: flex;
-
-            align-items: center;
-
-            gap: 6px;
-
-            color: var(--blue);
-
-            font-family: var(--mono);
-
-            font-size: 9px;
-        }
-
-        .mode-right::before {
-            content: "";
-
-            width: 6px;
-            height: 6px;
-
-            border-radius: 50%;
-
-            background: var(--green);
-        }
-
-        .architecture {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 10px;
-
-            margin-bottom: 20px;
-        }
-
-        .architecture-item {
-            min-height: 76px;
-
-            padding: 13px;
-
-            background: #fbfcff;
-
-            border:
-                1px solid var(--border-blue);
-
-            border-radius: 12px;
-        }
-
-        .architecture-item small {
-            display: block;
-
-            color: var(--muted-light);
-
-            font-family: var(--mono);
-
-            font-size: 8px;
-
-            margin-bottom: 6px;
-        }
-
-        .architecture-item strong {
-            font-size: 12px;
-        }
-
-        .architecture-item strong span {
-            color: var(--blue);
-        }
-
-        .terminal {
-            padding: 17px;
-
-            background: #10213d;
-
-            border-radius: 13px;
-
-            color: #e7edf7;
-
-            font-family: var(--mono);
-
-            font-size: 9px;
-
-            line-height: 2.05;
-        }
-
-        .terminal-line {
-            display: flex;
-
-            gap: 8px;
-        }
-
-        .prompt {
-            color: #91b5ff;
-        }
-
-        .success {
-            color: #98dcb4;
-        }
-
-        .arrow {
-            color: #aebbd0;
-        }
-
-
-        /* =====================================================
-           GENERAL SECTIONS
-        ===================================================== */
-
-        .section {
-            width:
-                min(1180px, calc(100% - 40px));
+            width: 100%;
 
             margin: auto;
-
-            padding: 105px 0;
         }
 
-        .section-header {
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: end;
-
-            gap: 30px;
-
-            margin-bottom: 45px;
-        }
-
-        .section-number {
-            color: var(--blue);
-
-            font-family: var(--mono);
-
-            font-size: 10px;
-
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-size:
-                clamp(32px, 5vw, 49px);
-
-            line-height: 1.05;
-
-            letter-spacing: -2px;
-
-            font-weight: 800;
-        }
-
-        .section-description {
-            max-width: 420px;
-
-            color: var(--muted);
-
-            font-size: 13px;
-
-            line-height: 1.8;
-        }
-
-
-        /* =====================================================
-           ABOUT
-        ===================================================== */
 
         .about-grid {
-            display: grid;
 
             grid-template-columns:
-                0.8fr 1.2fr;
-
-            gap: 32px;
+                1fr;
         }
+
 
         .profile-card {
-            padding: 25px;
 
-            background: white;
-
-            border:
-                1px solid var(--border-blue);
-
-            border-radius: var(--radius-xl);
-
-            box-shadow: var(--shadow-small);
+            max-width: 550px;
         }
 
-        .profile-image {
-            width: 100%;
-
-            aspect-ratio: 1 / 1;
-
-            overflow: hidden;
-
-            border-radius: 20px;
-
-            background: var(--blue-light);
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-        }
-
-        .profile-details {
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 15px;
-
-            margin-top: 20px;
-        }
-
-        .profile-name {
-            font-size: 18px;
-
-            font-weight: 800;
-        }
-
-        .profile-role {
-            color: var(--blue);
-
-            font-family: var(--mono);
-
-            font-size: 9px;
-
-            margin-top: 4px;
-        }
-
-        .available {
-            display: flex;
-
-            align-items: center;
-
-            gap: 6px;
-
-            color: var(--green);
-
-            font-family: var(--mono);
-
-            font-size: 9px;
-        }
-
-        .available::before {
-            content: "";
-
-            width: 6px;
-            height: 6px;
-
-            background: var(--green);
-
-            border-radius: 50%;
-        }
-
-        .about-content {
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-        }
-
-        .about-content p {
-            color: #596579;
-
-            font-size: 15px;
-
-            line-height: 1.9;
-
-            margin-bottom: 20px;
-        }
-
-        .highlight {
-            padding: 18px 20px;
-
-            background: var(--blue-light);
-
-            border:
-                1px solid var(--border-blue);
-
-            border-radius: 14px;
-
-            color: var(--blue-dark);
-
-            font-family: var(--mono);
-
-            font-size: 10px;
-        }
-
-
-        /* =====================================================
-           TECHNOLOGIES
-        ===================================================== */
-
-        .technology-groups {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 52px;
-        }
-
-        .category-title {
-            display: flex;
-
-            align-items: center;
-
-            gap: 13px;
-
-            color: var(--blue);
-
-            font-family: var(--mono);
-
-            font-size: 11px;
-
-            margin-bottom: 18px;
-        }
-
-        .category-title::after {
-            content: "";
-
-            flex: 1;
-
-            height: 1px;
-
-            background: var(--border);
-        }
 
         .tools-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 12px;
-        }
-
-        .tool {
-            position: relative;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 13px;
-
-            min-height: 76px;
-
-            padding: 14px;
-
-            background:
-                rgba(255,255,255,0.78);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 15px;
-
-            overflow: hidden;
-
-            transition: 0.25s ease;
-        }
-
-        .tool:hover {
-            transform: translateY(-5px);
-
-            background: white;
-
-            border-color: var(--border-blue);
-
-            box-shadow: var(--shadow-small);
-        }
-
-        .tool-icon {
-            width: 40px;
-            height: 40px;
-
-            flex-shrink: 0;
-
-            padding: 8px;
-
-            display: grid;
-
-            place-items: center;
-
-            background: var(--blue-light);
-
-            border:
-                1px solid var(--border-blue);
-
-            border-radius: 10px;
-        }
-
-        .tool-icon img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-        }
-
-        .tool-name {
-            color: var(--ink);
-
-            font-size: 11px;
-
-            font-weight: 700;
-        }
-
-        .tool-type {
-            color: var(--muted-light);
-
-            font-family: var(--mono);
-
-            font-size: 8px;
-
-            margin-top: 2px;
-        }
-
-
-        /* =====================================================
-           PROJECTS
-        ===================================================== */
-
-        .projects {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 18px;
-        }
-
-        .project {
-            padding: 27px;
-
-            background: white;
-
-            border:
-                1px solid var(--border-blue);
-
-            border-radius: var(--radius-xl);
-
-            transition: 0.3s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-6px);
-
-            box-shadow: var(--shadow);
-        }
-
-        .project-top {
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            margin-bottom: 28px;
-        }
-
-        .project-number {
-            color: var(--blue);
-
-            font-family: var(--mono);
-
-            font-size: 9px;
-        }
-
-        .project-status {
-            color: var(--green);
-
-            background: #eef9f2;
-
-            border:
-                1px solid #d4efde;
-
-            padding: 6px 8px;
-
-            border-radius: 7px;
-
-            font-family: var(--mono);
-
-            font-size: 8px;
-        }
-
-        .project h3 {
-            font-size: 21px;
-
-            margin-bottom: 11px;
-        }
-
-        .project p {
-            color: var(--muted);
-
-            font-size: 12px;
-
-            line-height: 1.8;
-
-            margin-bottom: 20px;
-        }
-
-        .stack {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 7px;
-        }
-
-        .tag {
-            padding: 6px 9px;
-
-            background: var(--cream);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 7px;
-
-            color: #526075;
-
-            font-family: var(--mono);
-
-            font-size: 8px;
-        }
-
-        .project-link {
-            display: inline-flex;
-
-            margin-top: 23px;
-
-            color: var(--blue);
-
-            font-family: var(--mono);
-
-            font-size: 9px;
-        }
-
-
-        /* =====================================================
-           ENGINEERING
-        ===================================================== */
-
-        .principles {
-            display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
-
-            gap: 15px;
         }
 
-        .principle {
-            padding: 25px;
+    }
 
-            background:
-                rgba(255,255,255,0.75);
 
-            border:
-                1px solid var(--border);
+    @media (max-width: 760px) {
 
-            border-radius: 18px;
-        }
+        .nav {
 
-        .principle-number {
-            width: 42px;
-            height: 42px;
-
-            display: grid;
-
-            place-items: center;
-
-            margin-bottom: 19px;
-
-            background: var(--blue);
-
-            color: white;
-
-            border-radius: 12px;
-
-            font-family: var(--mono);
-
-            font-size: 10px;
-        }
-
-        .principle h3 {
-            font-size: 14px;
-
-            margin-bottom: 8px;
-        }
-
-        .principle p {
-            color: var(--muted);
-
-            font-size: 11px;
-
-            line-height: 1.75;
+            width:
+                calc(100% - 28px);
         }
 
 
-        /* =====================================================
-           CONTACT
-        ===================================================== */
+        .nav-links {
 
-        .contact {
-            position: relative;
-
-            padding: 58px;
-
-            background: var(--blue-dark);
-
-            color: white;
-
-            border-radius: 30px;
-
-            overflow: hidden;
+            gap: 9px;
         }
 
-        .contact::before {
-            content: "";
 
-            position: absolute;
+        .nav-links a:not(.nav-button) {
 
-            width: 350px;
-            height: 350px;
-
-            right: -120px;
-            top: -190px;
-
-            border:
-                1px solid rgba(255,255,255,0.10);
-
-            border-radius: 50%;
+            display: none;
         }
 
-        .contact::after {
-            content: "";
 
-            position: absolute;
+        .nav-button {
 
-            width: 230px;
-            height: 230px;
-
-            left: -90px;
-            bottom: -150px;
-
-            border:
-                1px solid rgba(255,255,255,0.08);
-
-            border-radius: 50%;
+            padding:
+                9px 12px;
         }
 
-        .contact-content {
-            position: relative;
 
-            z-index: 2;
+        .hero,
+        .section,
+        footer {
+
+            width:
+                calc(100% - 28px);
         }
 
-        .contact-label {
-            color: #9dbdff;
 
-            font-family: var(--mono);
+        .hero {
 
-            font-size: 10px;
-
-            margin-bottom: 14px;
+            padding:
+                60px 0 75px;
         }
 
-        .contact h2 {
+
+        .hero h1 {
+
             font-size:
-                clamp(34px, 5vw, 58px);
+                clamp(45px, 14vw, 65px);
 
-            line-height: 1.05;
-
-            letter-spacing: -2px;
-
-            margin-bottom: 18px;
+            letter-spacing:
+                -3px;
         }
 
-        .contact p {
-            max-width: 580px;
 
-            color: #c5d2e9;
+        .hero-description {
 
             font-size: 13px;
-
-            line-height: 1.8;
-
-            margin-bottom: 28px;
-        }
-
-        .contact-buttons {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-        }
-
-        .contact-btn {
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-            padding: 12px 16px;
-
-            border-radius: 10px;
-
-            background: white;
-
-            color: var(--blue-dark);
-
-            font-size: 11px;
-
-            font-weight: 700;
-
-            transition: 0.25s ease;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-3px);
-        }
-
-        .contact-btn.outline {
-            color: white;
-
-            background: transparent;
-
-            border:
-                1px solid rgba(255,255,255,0.23);
         }
 
 
-        /* =====================================================
-           FOOTER
-        ===================================================== */
+        .workspace {
+
+            transform:
+                none;
+        }
+
+
+        .workspace:hover {
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        .workspace-body {
+
+            padding:
+                20px;
+        }
+
+
+        .section {
+
+            padding:
+                75px 0;
+        }
+
+
+        .section-header {
+
+            display: block;
+        }
+
+
+        .section-description {
+
+            margin-top:
+                17px;
+        }
+
+
+        .tools-grid {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+
+        .projects {
+
+            grid-template-columns:
+                1fr;
+        }
+
+
+        .principles {
+
+            grid-template-columns:
+                1fr;
+        }
+
+
+        .contact {
+
+            padding:
+                38px 25px;
+        }
+
+
+        .education-card {
+
+            padding:
+                22px;
+        }
+
+
+        .education-header {
+
+            align-items:
+                flex-start;
+
+            flex-direction:
+                column;
+        }
+
 
         footer {
+
+            display:
+                block;
+        }
+
+
+        footer p + p {
+
+            margin-top:
+                8px;
+        }
+
+    }
+
+
+    @media (max-width: 470px) {
+
+        .brand-name {
+
+            font-size:
+                11px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                43px;
+
+            letter-spacing:
+                -2px;
+        }
+
+
+        .buttons {
+
+            flex-direction:
+                column;
+        }
+
+
+        .btn {
+
             width:
-                min(1180px, calc(100% - 40px));
-
-            margin: auto;
-
-            padding: 30px 0 45px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 20px;
-
-            border-top:
-                1px solid var(--border);
-        }
-
-        footer p {
-            color: var(--muted);
-
-            font-family: var(--mono);
-
-            font-size: 8px;
-        }
-
-        footer span {
-            color: var(--blue);
+                100%;
         }
 
 
-        /* =====================================================
-           ANIMATION
-        ===================================================== */
+        .architecture {
 
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-
-                transform:
-                    translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-            }
-
+            grid-template-columns:
+                1fr;
         }
 
 
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
+        .tools-grid {
 
-        @media (max-width: 950px) {
-
-            .hero {
-                grid-template-columns: 1fr;
-
-                gap: 55px;
-            }
-
-            .workspace {
-                max-width: 700px;
-
-                width: 100%;
-
-                margin: auto;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-card {
-                max-width: 500px;
-            }
-
-            .tools-grid {
-                grid-template-columns:
-                    repeat(3, 1fr);
-            }
-
+            grid-template-columns:
+                1fr;
         }
 
 
-        @media (max-width: 700px) {
+        .profile-details {
 
-            .nav {
-                width:
-                    calc(100% - 28px);
-            }
+            align-items:
+                flex-start;
 
-            .nav-links a:not(.nav-button) {
-                display: none;
-            }
-
-            .nav-button {
-                padding:
-                    9px 12px;
-            }
-
-            .hero,
-            .section,
-            footer {
-                width:
-                    calc(100% - 28px);
-            }
-
-            .hero {
-                padding:
-                    55px 0 75px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-
-                letter-spacing: -2.5px;
-            }
-
-            .hero-description {
-                font-size: 14px;
-            }
-
-            .workspace {
-                transform: none;
-            }
-
-            .workspace-body {
-                padding: 20px;
-            }
-
-            .architecture {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .section {
-                padding: 75px 0;
-            }
-
-            .section-header {
-                display: block;
-            }
-
-            .section-description {
-                margin-top: 17px;
-            }
-
-            .tools-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .principles {
-                grid-template-columns: 1fr;
-            }
-
-            .contact {
-                padding: 37px 25px;
-            }
-
-            footer {
-                display: block;
-            }
-
-            footer p + p {
-                margin-top: 8px;
-            }
-
+            flex-direction:
+                column;
         }
 
 
-        @media (max-width: 430px) {
+        .timeline-top {
 
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .architecture {
-                grid-template-columns: 1fr;
-            }
-
-            .tools-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-details {
-                align-items: flex-start;
-
-                flex-direction: column;
-            }
-
+            display:
+                block;
         }
 
-    </style>
+
+        .timeline-location {
+
+            display:
+                block;
+
+            margin-top:
+                4px;
+        }
+
+
+        .contact-buttons {
+
+            flex-direction:
+                column;
+        }
+
+
+        .contact-btn {
+
+            justify-content:
+                center;
+        }
+
+    }
+
+</style>
+```
+
 </head>
-
 
 <body>
 
-    <div class="glow"></div>
+```
+<!-- =====================================================
+     ANIMATED BACKGROUND
+====================================================== -->
+
+<div class="background">
+
+    <div class="orb orb-blue"></div>
+
+    <div class="orb orb-green"></div>
+
+    <div class="orb orb-small"></div>
+
+</div>
+
+<div class="scanline"></div>
 
 
-    <!-- =====================================================
-         NAVIGATION
-    ===================================================== -->
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
 
-    <header class="navbar">
+<header class="navbar">
 
-        <div class="nav">
+    <div class="nav">
 
-            <a href="#home" class="brand">
+        <a href="#home" class="brand">
 
-                <div class="brand-logo">
-                    VR
-                </div>
+            <div class="brand-logo">
+                VR
+            </div>
 
-                <div class="brand-name">
-                    vishnu.dev
-                    <span>/ engineering</span>
-                </div>
+            <div class="brand-name">
+                vishnu.dev
+                <span>/ engineering</span>
+            </div>
 
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#about">
+                About
             </a>
 
+            <a href="#stack">
+                Stack
+            </a>
 
-            <nav class="nav-links">
+            <a href="#projects">
+                Projects
+            </a>
 
-                <a href="#about">
-                    About
-                </a>
+            <a href="#education">
+                Education
+            </a>
 
-                <a href="#stack">
-                    Stack
-                </a>
+            <a href="#contact" class="nav-button">
+                Let's talk
+            </a>
 
-                <a href="#projects">
-                    Projects
-                </a>
+        </nav>
 
-                <a href="#contact" class="nav-button">
-                    Let's talk
-                </a>
+    </div>
 
-            </nav>
-
-        </div>
-
-    </header>
+</header>
 
 
-
-    <main>
-
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
-
-        <section id="home" class="hero">
+<main>
 
 
-            <div class="hero-content">
+    <!-- =================================================
+         HERO
+    ================================================== -->
 
-                <div class="eyebrow">
-
-                    <span class="eyebrow-dot"></span>
-
-                    PYTHON FULL STACK DEVELOPER
-
-                </div>
+    <section id="home" class="hero">
 
 
-                <h1>
+        <div class="hero-content">
 
-                    Building
-                    <span>digital</span>
-                    products.
+            <div class="eyebrow">
 
-                </h1>
+                <span class="eyebrow-dot"></span>
 
-
-                <p class="hero-description">
-
-                    I build scalable web applications, backend
-                    systems and REST APIs using Python, Django
-                    and modern frontend technologies.
-
-                </p>
-
-
-                <div class="buttons">
-
-                    <a
-                        href="#projects"
-                        class="btn btn-primary"
-                    >
-                        View projects →
-                    </a>
-
-
-                    <a
-                        href="#contact"
-                        class="btn btn-secondary"
-                    >
-                        Get in touch
-                    </a>
-
-                </div>
+                PYTHON FULL STACK DEVELOPER
 
             </div>
 
 
+            <h1>
 
-            <!-- =================================================
-                 DEVELOPER WORKSPACE
-            ================================================== -->
+                Building
+                <span>digital</span>
+                products.
 
-            <div class="workspace">
+            </h1>
 
 
-                <div class="window-bar">
+            <p class="hero-description">
 
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                I build scalable web applications, backend
+                systems and REST APIs using Python, Django,
+                React and modern web technologies.
 
-                    <span class="window-title">
-                        developer-workspace
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    href="#projects"
+                    class="btn btn-primary"
+                >
+                    <i class="fa-solid fa-code"></i>
+                    View projects
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="btn btn-secondary"
+                >
+                    <i class="fa-regular fa-paper-plane"></i>
+                    Get in touch
+                </a>
+
+
+                <!-- =================================================
+                     CV BUTTON
+                     Put your PDF at:
+                     assets/Vishnu_Radhakrishnan_CV.pdf
+                ================================================== -->
+
+                <a
+                    href="assets/Vishnu_Radhakrishnan_CV.pdf"
+                    class="btn btn-cv"
+                    download
+                >
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    Download CV
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DEVELOPER WORKSPACE
+        ================================================== -->
+
+        <div class="workspace">
+
+            <div class="window-bar">
+
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+
+                <span class="window-title">
+                    developer-workspace
+                </span>
+
+            </div>
+
+
+            <div class="workspace-body">
+
+                <div class="workspace-header">
+
+                    <strong>
+                        Developer workspace
+                    </strong>
+
+                    <span class="ready">
+                        READY
                     </span>
 
                 </div>
 
 
-                <div class="workspace-body">
+                <div class="label">
+                    Current workflow
+                </div>
 
 
-                    <div class="workspace-header">
+                <div class="mode">
+
+                    <span class="mode-left">
+                        MODE
+                    </span>
+
+                    <span class="mode-right">
+                        Build
+                    </span>
+
+                </div>
+
+
+                <div class="label">
+                    Application architecture
+                </div>
+
+
+                <div class="architecture">
+
+
+                    <div class="architecture-item">
+
+                        <small>
+                            FRONTEND
+                        </small>
 
                         <strong>
-                            Developer workspace
+                            <span>React</span>
                         </strong>
 
-                        <span class="ready">
-                            READY
+                    </div>
+
+
+                    <div class="architecture-item">
+
+                        <small>
+                            BACKEND
+                        </small>
+
+                        <strong>
+                            <span>Django</span>
+                        </strong>
+
+                    </div>
+
+
+                    <div class="architecture-item">
+
+                        <small>
+                            API
+                        </small>
+
+                        <strong>
+                            <span>REST / DRF</span>
+                        </strong>
+
+                    </div>
+
+
+                    <div class="architecture-item">
+
+                        <small>
+                            DATABASE
+                        </small>
+
+                        <strong>
+                            SQL / NoSQL
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="terminal">
+
+
+                    <div class="terminal-line">
+
+                        <span class="prompt">
+                            $
+                        </span>
+
+                        <span>
+                            git status
                         </span>
 
                     </div>
 
 
-                    <div class="label">
-                        Mode
-                    </div>
+                    <div class="terminal-line">
 
-
-                    <div class="mode">
-
-                        <span class="mode-left">
-                            CURRENT WORKFLOW
+                        <span class="success">
+                            ✓
                         </span>
 
-                        <span class="mode-right">
-                            Build
+                        <span class="success">
+                            working tree clean
                         </span>
 
                     </div>
 
 
-                    <div class="label">
-                        Application architecture
-                    </div>
+                    <div class="terminal-line">
 
+                        <span class="prompt">
+                            $
+                        </span>
 
-                    <div class="architecture">
-
-
-                        <div class="architecture-item">
-
-                            <small>
-                                Frontend
-                            </small>
-
-                            <strong>
-                                <span>React</span>
-                            </strong>
-
-                        </div>
-
-
-                        <div class="architecture-item">
-
-                            <small>
-                                Backend
-                            </small>
-
-                            <strong>
-                                <span>Django</span>
-                            </strong>
-
-                        </div>
-
-
-                        <div class="architecture-item">
-
-                            <small>
-                                Authentication
-                            </small>
-
-                            <strong>
-                                <span>JWT</span>
-                            </strong>
-
-                        </div>
-
-
-                        <div class="architecture-item">
-
-                            <small>
-                                Database
-                            </small>
-
-                            <strong>
-                                SQL / NoSQL
-                            </strong>
-
-                        </div>
-
+                        <span>
+                            python manage.py runserver
+                        </span>
 
                     </div>
 
 
-                    <div class="terminal">
+                    <div class="terminal-line">
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                        <span>
+                            API server ready on localhost
+                        </span>
+
+                    </div>
 
 
-                        <div class="terminal-line">
+                    <div class="terminal-line">
 
-                            <span class="prompt">
-                                $
-                            </span>
+                        <span class="prompt">
+                            $
+                        </span>
 
-                            <span>
-                                git status
-                            </span>
+                        <span>
+                            docker compose up
+                        </span>
 
+                    </div>
+
+
+                    <div class="terminal-line">
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                        <span>
+                            services started successfully
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ABOUT
+    ================================================== -->
+
+    <section id="about" class="section reveal">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    01 / ABOUT
+                </div>
+
+                <h2 class="section-title">
+                    Engineering with<br>
+                    purpose.
+                </h2>
+
+            </div>
+
+
+            <p class="section-description">
+
+                Focused on creating clean, maintainable and
+                user-centric applications from database to
+                interface.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="about-grid">
+
+
+            <!-- NO PERSONAL IMAGE -->
+
+            <div class="profile-card">
+
+                <div class="profile-placeholder">
+
+                    <div class="profile-placeholder-content">
+
+                        <div class="profile-initials">
+                            VR
                         </div>
 
+                        <p>
+                            PYTHON / FULL STACK / ENGINEERING
+                        </p>
 
-                        <div class="terminal-line">
+                    </div>
 
-                            <span class="success">
-                                ✓
-                            </span>
+                </div>
 
-                            <span class="success">
-                                working tree clean
-                            </span>
 
+                <div class="profile-details">
+
+                    <div>
+
+                        <div class="profile-name">
+                            Vishnu Radhakrishnan
                         </div>
 
-
-                        <div class="terminal-line">
-
-                            <span class="prompt">
-                                $
-                            </span>
-
-                            <span>
-                                python manage.py runserver
-                            </span>
-
+                        <div class="profile-role">
+                            Python Full Stack Developer
                         </div>
 
-
-                        <div class="terminal-line">
-
-                            <span class="arrow">
-                                →
-                            </span>
-
-                            <span>
-                                API server ready on localhost
-                            </span>
-
-                        </div>
+                    </div>
 
 
-                        <div class="terminal-line">
-
-                            <span class="prompt">
-                                $
-                            </span>
-
-                            <span>
-                                docker compose up
-                            </span>
-
-                        </div>
-
-
-                        <div class="terminal-line">
-
-                            <span class="arrow">
-                                →
-                            </span>
-
-                            <span>
-                                services started successfully
-                            </span>
-
-                        </div>
-
-
+                    <div class="available">
+                        Available
                     </div>
 
                 </div>
 
             </div>
 
-        </section>
 
 
+            <div class="about-content">
 
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
+                <p>
 
-        <section id="about" class="section">
-
-
-            <div class="section-header">
-
-                <div>
-
-                    <div class="section-number">
-                        01 / ABOUT
-                    </div>
-
-                    <h2 class="section-title">
-                        Engineering with<br>
-                        purpose.
-                    </h2>
-
-                </div>
-
-
-                <p class="section-description">
-
-                    Focused on creating clean, maintainable
-                    and user-centric applications from database
-                    to interface.
+                    I'm a BCA graduate and Python Full Stack
+                    Developer interested in building practical
+                    digital products that solve real problems.
 
                 </p>
 
+
+                <p>
+
+                    My work focuses on backend architecture,
+                    REST APIs, database design and responsive
+                    interfaces using Python, Django, React
+                    and modern web technologies.
+
+                </p>
+
+
+                <div class="highlight">
+
+                    &gt; clean code + scalable architecture
+                    + useful experiences
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TECHNOLOGY STACK
+    ================================================== -->
+
+    <section id="stack" class="section reveal">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    02 / TECHNOLOGY
+                </div>
+
+                <h2 class="section-title">
+                    Tools I<br>
+                    build with.
+                </h2>
+
             </div>
 
 
+            <p class="section-description">
 
-            <div class="about-grid">
+                A practical stack covering backend development,
+                frontend engineering, databases and developer
+                tooling.
 
+            </p>
 
-                <div class="profile-card">
-
-                    <div class="profile-image">
-
-                        <img
-                            src="assets/img1.jpeg"
-                            alt="Vishnu Radhakrishnan"
-                        >
-
-                    </div>
+        </div>
 
 
-                    <div class="profile-details">
+
+        <div class="technology-groups">
+
+
+            <!-- BACKEND -->
+
+            <div>
+
+                <div class="category-title">
+                    01 / BACKEND
+                </div>
+
+
+                <div class="tools-grid">
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/python/60a5fa"
+                                alt="Python"
+                            >
+
+                        </div>
 
                         <div>
 
-                            <div class="profile-name">
-                                Vishnu Radhakrishnan
+                            <div class="tool-name">
+                                Python
                             </div>
 
-                            <div class="profile-role">
-                                Python Full Stack Developer
+                            <div class="tool-type">
+                                Language
                             </div>
 
                         </div>
 
+                    </div>
 
-                        <div class="available">
-                            Available
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/django/39d98a"
+                                alt="Django"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                Django
+                            </div>
+
+                            <div class="tool-type">
+                                Backend
+                            </div>
+
                         </div>
 
                     </div>
 
-                </div>
 
+                    <div class="tool">
 
+                        <div class="tool-icon">
 
-                <div class="about-content">
+                            <img
+                                src="https://cdn.simpleicons.org/django/60a5fa"
+                                alt="Django REST Framework"
+                            >
 
-                    <p>
+                        </div>
 
-                        I'm a BCA graduate and Python Full Stack
-                        Developer interested in building practical
-                        digital products that solve real problems.
+                        <div>
 
-                    </p>
+                            <div class="tool-name">
+                                Django REST
+                            </div>
 
+                            <div class="tool-type">
+                                API
+                            </div>
 
-                    <p>
-
-                        My work focuses on backend architecture,
-                        REST APIs, database design and responsive
-                        interfaces using Python, Django, React
-                        and modern web technologies.
-
-                    </p>
-
-
-                    <div class="highlight">
-
-                        &gt; clean code + scalable architecture
-                        + useful experiences
+                        </div>
 
                     </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/fastapi/39d98a"
+                                alt="FastAPI"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                FastAPI
+                            </div>
+
+                            <div class="tool-type">
+                                API
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/jsonwebtokens/60a5fa"
+                                alt="JWT"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                JWT
+                            </div>
+
+                            <div class="tool-type">
+                                Authentication
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/flask/39d98a"
+                                alt="Flask"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                Flask
+                            </div>
+
+                            <div class="tool-type">
+                                Backend
+                            </div>
+
+                        </div>
+
+                    </div>
+
 
                 </div>
 
             </div>
 
-        </section>
 
 
+            <!-- FRONTEND -->
 
-        <!-- =================================================
-             TECHNOLOGY STACK
-        ================================================== -->
+            <div>
 
-        <section id="stack" class="section">
+                <div class="category-title">
+                    02 / FRONTEND
+                </div>
 
 
-            <div class="section-header">
+                <div class="tools-grid">
 
-                <div>
 
-                    <div class="section-number">
-                        02 / TECHNOLOGY
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/react/60a5fa"
+                                alt="React"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                React
+                            </div>
+
+                            <div class="tool-type">
+                                Frontend
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <h2 class="section-title">
-                        Tools I<br>
-                        build with.
-                    </h2>
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/javascript/facc15"
+                                alt="JavaScript"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                JavaScript
+                            </div>
+
+                            <div class="tool-type">
+                                Language
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/html5/f97316"
+                                alt="HTML5"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                HTML5
+                            </div>
+
+                            <div class="tool-type">
+                                Markup
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/css/60a5fa"
+                                alt="CSS3"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                CSS3
+                            </div>
+
+                            <div class="tool-type">
+                                Styling
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/tailwindcss/38bdf8"
+                                alt="Tailwind CSS"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                Tailwind CSS
+                            </div>
+
+                            <div class="tool-type">
+                                UI
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DATABASE -->
+
+            <div>
+
+                <div class="category-title">
+                    03 / DATABASE
+                </div>
+
+
+                <div class="tools-grid">
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/postgresql/60a5fa"
+                                alt="PostgreSQL"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                PostgreSQL
+                            </div>
+
+                            <div class="tool-type">
+                                SQL
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/mysql/60a5fa"
+                                alt="MySQL"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                MySQL
+                            </div>
+
+                            <div class="tool-type">
+                                SQL
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/mongodb/39d98a"
+                                alt="MongoDB"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                MongoDB
+                            </div>
+
+                            <div class="tool-type">
+                                NoSQL
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/redis/ef4444"
+                                alt="Redis"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                Redis
+                            </div>
+
+                            <div class="tool-type">
+                                Cache
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DEVELOPER TOOLS -->
+
+            <div>
+
+                <div class="category-title">
+                    04 / DEVELOPER TOOLS
+                </div>
+
+
+                <div class="tools-grid">
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/git/f97316"
+                                alt="Git"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                Git
+                            </div>
+
+                            <div class="tool-type">
+                                Version Control
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/github/ffffff"
+                                alt="GitHub"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                GitHub
+                            </div>
+
+                            <div class="tool-type">
+                                Collaboration
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/postman/ff6c37"
+                                alt="Postman"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                Postman
+                            </div>
+
+                            <div class="tool-type">
+                                API Testing
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/visualstudiocode/60a5fa"
+                                alt="VS Code"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                VS Code
+                            </div>
+
+                            <div class="tool-type">
+                                Editor
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/docker/2496ed"
+                                alt="Docker"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                Docker
+                            </div>
+
+                            <div class="tool-type">
+                                Containers
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <div class="tool-icon">
+
+                            <img
+                                src="https://cdn.simpleicons.org/vercel/ffffff"
+                                alt="Vercel"
+                            >
+
+                        </div>
+
+                        <div>
+
+                            <div class="tool-name">
+                                Vercel
+                            </div>
+
+                            <div class="tool-type">
+                                Deployment
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROJECTS
+    ================================================== -->
+
+    <section id="projects" class="section reveal">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    03 / PROJECTS
+                </div>
+
+                <h2 class="section-title">
+                    Things I've<br>
+                    built.
+                </h2>
+
+            </div>
+
+
+            <p class="section-description">
+
+                Selected full-stack projects demonstrating
+                backend architecture, API development,
+                responsive interfaces and practical problem
+                solving.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="projects">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project">
+
+                <div class="project-top">
+
+                    <span class="project-number">
+                        PROJECT / 001
+                    </span>
+
+                    <span class="project-status">
+                        FULL STACK
+                    </span>
 
                 </div>
 
 
-                <p class="section-description">
+                <h3>
+                    POS Billing Software
+                </h3>
 
-                    A practical technology stack covering frontend,
-                    backend, databases and developer tooling.
+
+                <p>
+
+                    A retail point-of-sale and billing platform
+                    with product management, staff management,
+                    inventory, transactions, payments and reports.
+
+                </p>
+
+
+                <div class="stack">
+
+                    <span class="tag">Python</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">DRF</span>
+                    <span class="tag">React</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">JWT</span>
+
+                </div>
+
+
+                <a
+                    class="project-link"
+                    href="https://github.com/vishnuradhakrishnan595-cloud"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View on GitHub →
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project">
+
+                <div class="project-top">
+
+                    <span class="project-number">
+                        PROJECT / 002
+                    </span>
+
+                    <span class="project-status">
+                        AI PLATFORM
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    INTERVUE
+                </h3>
+
+
+                <p>
+
+                    An AI-powered recruitment and intelligent
+                    interview platform designed for companies,
+                    recruiters, interviewers and candidates.
+
+                </p>
+
+
+                <div class="stack">
+
+                    <span class="tag">React</span>
+                    <span class="tag">Tailwind</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">DRF</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">AI / NLP</span>
+
+                </div>
+
+
+                <a
+                    class="project-link"
+                    href="https://github.com/vishnuradhakrishnan595-cloud"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View on GitHub →
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project">
+
+                <div class="project-top">
+
+                    <span class="project-number">
+                        PROJECT / 003
+                    </span>
+
+                    <span class="project-status">
+                        WEB APP
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    MiniShop
+                </h3>
+
+
+                <p>
+
+                    A Django-based shopping application with
+                    authentication, product management, user
+                    flows and responsive web interfaces.
+
+                </p>
+
+
+                <div class="stack">
+
+                    <span class="tag">Django</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+
+                </div>
+
+
+                <a
+                    class="project-link"
+                    href="https://github.com/vishnuradhakrishnan595-cloud"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View on GitHub →
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 04 -->
+
+            <article class="project">
+
+                <div class="project-top">
+
+                    <span class="project-number">
+                        PROJECT / 004
+                    </span>
+
+                    <span class="project-status">
+                        API SYSTEM
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    REST API Systems
+                </h3>
+
+
+                <p>
+
+                    Backend API systems focused on JWT
+                    authentication, CRUD operations,
+                    permissions, validation and scalable
+                    API architecture.
+
+                </p>
+
+
+                <div class="stack">
+
+                    <span class="tag">Python</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">DRF</span>
+                    <span class="tag">JWT</span>
+                    <span class="tag">PostgreSQL</span>
+
+                </div>
+
+
+                <a
+                    class="project-link"
+                    href="https://github.com/vishnuradhakrishnan595-cloud"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View on GitHub →
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         EDUCATION
+    ================================================== -->
+
+    <section id="education" class="section reveal">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    04 / EDUCATION
+                </div>
+
+                <h2 class="section-title">
+                    Academic<br>
+                    background.
+                </h2>
+
+            </div>
+
+
+            <p class="section-description">
+
+                My academic journey and the foundation that
+                shaped my interest in software development.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="education-card">
+
+
+            <div class="education-header">
+
+                <h3 class="education-heading">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    Education &amp; Academic Background
+
+                </h3>
+
+
+                <span class="chronological">
+                    Chronological Order
+                </span>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <!-- GRADUATION -->
+
+                <div class="timeline-item">
+
+                    <span class="timeline-dot"></span>
+
+
+                    <div class="timeline-top">
+
+                        <h4>
+                            Arafa College of Arts and Science
+                        </h4>
+
+                        <span class="timeline-location">
+                            Muvattupuzha, Kerala
+                        </span>
+
+                    </div>
+
+
+                    <p class="timeline-degree">
+
+                        Bachelor's Degree /
+                        Higher Education
+
+                    </p>
+
+
+                    <ul class="timeline-list">
+
+                        <li>
+                            Focus on core computer applications,
+                            software engineering principles, and
+                            database concepts.
+                        </li>
+
+                        <li>
+                            Active participation in technical
+                            seminars, coding events, and campus
+                            project exhibitions.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- SECONDARY -->
+
+                <div class="timeline-item secondary">
+
+                    <span class="timeline-dot"></span>
+
+
+                    <div class="timeline-top">
+
+                        <h4>
+                            St. Mary's Higher Secondary School
+                        </h4>
+
+                        <span class="timeline-location">
+                            Kerala State Board
+                        </span>
+
+                    </div>
+
+
+                    <p class="timeline-degree">
+
+                        Higher Secondary Education
+                        (12th Standard)
+
+                    </p>
+
+
+                    <p class="timeline-description">
+
+                        Completed higher secondary coursework
+                        emphasizing analytical thinking,
+                        mathematics, and foundational
+                        science/computer concepts.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ENGINEERING
+    ================================================== -->
+
+    <section class="section reveal">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    05 / ENGINEERING
+                </div>
+
+                <h2 class="section-title">
+                    How I<br>
+                    approach code.
+                </h2>
+
+            </div>
+
+
+            <p class="section-description">
+
+                I care about more than making something work.
+                The goal is to build software that can evolve.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="principles">
+
+
+            <div class="principle">
+
+                <div class="principle-number">
+                    01
+                </div>
+
+                <h3>
+                    Clean Architecture
+                </h3>
+
+                <p>
+
+                    Structured applications with clear separation
+                    between business logic, APIs, data and UI.
 
                 </p>
 
             </div>
 
 
+            <div class="principle">
 
-            <div class="technology-groups">
-
-
-                <!-- BACKEND -->
-
-                <div>
-
-                    <div class="category-title">
-                        01 / BACKEND
-                    </div>
-
-
-                    <div class="tools-grid">
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/python"
-                                    alt="Python"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Python
-                                </div>
-
-                                <div class="tool-type">
-                                    Language
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/django"
-                                    alt="Django"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Django
-                                </div>
-
-                                <div class="tool-type">
-                                    Backend
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/djangorestframework"
-                                    alt="Django REST Framework"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Django REST
-                                </div>
-
-                                <div class="tool-type">
-                                    API
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/flask"
-                                    alt="Flask"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Flask
-                                </div>
-
-                                <div class="tool-type">
-                                    Backend
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/fastapi"
-                                    alt="FastAPI"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    FastAPI
-                                </div>
-
-                                <div class="tool-type">
-                                    API
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/jsonwebtokens"
-                                    alt="JWT"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    JWT
-                                </div>
-
-                                <div class="tool-type">
-                                    Authentication
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/postman"
-                                    alt="REST API"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    REST API
-                                </div>
-
-                                <div class="tool-type">
-                                    API Architecture
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
+                <div class="principle-number">
+                    02
                 </div>
 
-
-
-                <!-- FRONTEND -->
-
-                <div>
-
-                    <div class="category-title">
-                        02 / FRONTEND
-                    </div>
-
-
-                    <div class="tools-grid">
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/react"
-                                    alt="React"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    React
-                                </div>
-
-                                <div class="tool-type">
-                                    Frontend
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/javascript"
-                                    alt="JavaScript"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    JavaScript
-                                </div>
-
-                                <div class="tool-type">
-                                    Language
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/html5"
-                                    alt="HTML5"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    HTML5
-                                </div>
-
-                                <div class="tool-type">
-                                    Markup
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/css3"
-                                    alt="CSS3"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    CSS3
-                                </div>
-
-                                <div class="tool-type">
-                                    Styling
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/tailwindcss"
-                                    alt="Tailwind CSS"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Tailwind CSS
-                                </div>
-
-                                <div class="tool-type">
-                                    UI
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- DATABASE -->
-
-                <div>
-
-                    <div class="category-title">
-                        03 / DATABASE
-                    </div>
-
-
-                    <div class="tools-grid">
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/postgresql"
-                                    alt="PostgreSQL"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    PostgreSQL
-                                </div>
-
-                                <div class="tool-type">
-                                    SQL
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/mysql"
-                                    alt="MySQL"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    MySQL
-                                </div>
-
-                                <div class="tool-type">
-                                    SQL
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/mongodb"
-                                    alt="MongoDB"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    MongoDB
-                                </div>
-
-                                <div class="tool-type">
-                                    NoSQL
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/redis"
-                                    alt="Redis"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Redis
-                                </div>
-
-                                <div class="tool-type">
-                                    Cache
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/celery"
-                                    alt="Celery"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Celery
-                                </div>
-
-                                <div class="tool-type">
-                                    Task Queue
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/firebase"
-                                    alt="Firebase"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Firebase
-                                </div>
-
-                                <div class="tool-type">
-                                    Backend Service
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- DEVELOPER TOOLS -->
-
-                <div>
-
-                    <div class="category-title">
-                        04 / DEVELOPER TOOLS
-                    </div>
-
-
-                    <div class="tools-grid">
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/git"
-                                    alt="Git"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Git
-                                </div>
-
-                                <div class="tool-type">
-                                    Version Control
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/github"
-                                    alt="GitHub"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    GitHub
-                                </div>
-
-                                <div class="tool-type">
-                                    Collaboration
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/postman"
-                                    alt="Postman"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Postman
-                                </div>
-
-                                <div class="tool-type">
-                                    API Testing
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/visualstudiocode"
-                                    alt="VS Code"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    VS Code
-                                </div>
-
-                                <div class="tool-type">
-                                    Editor
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/docker"
-                                    alt="Docker"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Docker
-                                </div>
-
-                                <div class="tool-type">
-                                    Containers
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/render"
-                                    alt="Render"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Render
-                                </div>
-
-                                <div class="tool-type">
-                                    Platform
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="tool">
-
-                            <div class="tool-icon">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/vercel"
-                                    alt="Vercel"
-                                >
-
-                            </div>
-
-                            <div>
-
-                                <div class="tool-name">
-                                    Vercel
-                                </div>
-
-                                <div class="tool-type">
-                                    Platform
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             PROJECTS
-        ================================================== -->
-
-        <section id="projects" class="section">
-
-
-            <div class="section-header">
-
-                <div>
-
-                    <div class="section-number">
-                        03 / PROJECTS
-                    </div>
-
-                    <h2 class="section-title">
-                        Things I've<br>
-                        built.
-                    </h2>
-
-                </div>
-
-
-                <p class="section-description">
-
-                    Selected projects demonstrating full-stack
-                    development, backend architecture and
-                    practical problem solving.
+                <h3>
+                    API First
+                </h3>
+
+                <p>
+
+                    Reliable REST APIs with authentication,
+                    permissions, validation and predictable
+                    responses.
 
                 </p>
 
             </div>
 
 
+            <div class="principle">
 
-            <div class="projects">
-
-
-                <article class="project">
-
-                    <div class="project-top">
-
-                        <span class="project-number">
-                            PROJECT / 001
-                        </span>
-
-                        <span class="project-status">
-                            FULL STACK
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        POS Billing Software
-                    </h3>
-
-
-                    <p>
-
-                        A retail point-of-sale and billing platform
-                        with product management, staff management,
-                        inventory, transactions, payments and reports.
-
-                    </p>
-
-
-                    <div class="stack">
-
-                        <span class="tag">
-                            Python
-                        </span>
-
-                        <span class="tag">
-                            Django
-                        </span>
-
-                        <span class="tag">
-                            DRF
-                        </span>
-
-                        <span class="tag">
-                            React
-                        </span>
-
-                        <span class="tag">
-                            MySQL
-                        </span>
-
-                        <span class="tag">
-                            JWT
-                        </span>
-
-                    </div>
-
-
-                    <a
-                        class="project-link"
-                        href="https://github.com/vishnuradhakrishnan595-cloud"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View on GitHub →
-                    </a>
-
-                </article>
-
-
-
-                <article class="project">
-
-                    <div class="project-top">
-
-                        <span class="project-number">
-                            PROJECT / 002
-                        </span>
-
-                        <span class="project-status">
-                            AI PLATFORM
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        INTERVUE
-                    </h3>
-
-
-                    <p>
-
-                        An AI-powered recruitment and intelligent
-                        interview platform for companies, recruiters,
-                        interviewers and candidates.
-
-                    </p>
-
-
-                    <div class="stack">
-
-                        <span class="tag">
-                            React
-                        </span>
-
-                        <span class="tag">
-                            Tailwind
-                        </span>
-
-                        <span class="tag">
-                            Django
-                        </span>
-
-                        <span class="tag">
-                            DRF
-                        </span>
-
-                        <span class="tag">
-                            PostgreSQL
-                        </span>
-
-                        <span class="tag">
-                            AI / NLP
-                        </span>
-
-                    </div>
-
-
-                    <a
-                        class="project-link"
-                        href="https://github.com/vishnuradhakrishnan595-cloud"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View on GitHub →
-                    </a>
-
-                </article>
-
-
-
-                <article class="project">
-
-                    <div class="project-top">
-
-                        <span class="project-number">
-                            PROJECT / 003
-                        </span>
-
-                        <span class="project-status">
-                            WEB APP
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        MiniShop
-                    </h3>
-
-
-                    <p>
-
-                        A Django shopping application featuring
-                        authentication, products, user flows and
-                        responsive interfaces.
-
-                    </p>
-
-
-                    <div class="stack">
-
-                        <span class="tag">
-                            Django
-                        </span>
-
-                        <span class="tag">
-                            Python
-                        </span>
-
-                        <span class="tag">
-                            MySQL
-                        </span>
-
-                        <span class="tag">
-                            HTML
-                        </span>
-
-                        <span class="tag">
-                            CSS
-                        </span>
-
-                    </div>
-
-
-                    <a
-                        class="project-link"
-                        href="https://github.com/vishnuradhakrishnan595-cloud"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View on GitHub →
-                    </a>
-
-                </article>
-
-
-
-                <article class="project">
-
-                    <div class="project-top">
-
-                        <span class="project-number">
-                            PROJECT / 004
-                        </span>
-
-                        <span class="project-status">
-                            API
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        REST API Systems
-                    </h3>
-
-
-                    <p>
-
-                        Backend APIs focused on authentication,
-                        CRUD operations, database relationships,
-                        permissions and scalable API patterns.
-
-                    </p>
-
-
-                    <div class="stack">
-
-                        <span class="tag">
-                            Python
-                        </span>
-
-                        <span class="tag">
-                            Django
-                        </span>
-
-                        <span class="tag">
-                            DRF
-                        </span>
-
-                        <span class="tag">
-                            JWT
-                        </span>
-
-                        <span class="tag">
-                            PostgreSQL
-                        </span>
-
-                    </div>
-
-
-                    <a
-                        class="project-link"
-                        href="https://github.com/vishnuradhakrishnan595-cloud"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View on GitHub →
-                    </a>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             ENGINEERING
-        ================================================== -->
-
-        <section class="section">
-
-
-            <div class="section-header">
-
-                <div>
-
-                    <div class="section-number">
-                        04 / ENGINEERING
-                    </div>
-
-                    <h2 class="section-title">
-                        How I<br>
-                        approach code.
-                    </h2>
-
+                <div class="principle-number">
+                    03
                 </div>
 
+                <h3>
+                    User Focused
+                </h3>
 
-                <p class="section-description">
+                <p>
 
-                    I care about more than making something work.
-                    The goal is to build software that can evolve.
+                    Interfaces should be clear, responsive
+                    and useful instead of simply looking
+                    impressive.
 
                 </p>
 
             </div>
 
 
+        </div>
 
-            <div class="principles">
+    </section>
 
 
-                <div class="principle">
 
-                    <div class="principle-number">
-                        01
-                    </div>
+    <!-- =================================================
+         CONTACT
+    ================================================== -->
 
-                    <h3>
-                        Clean Architecture
-                    </h3>
+    <section id="contact" class="section reveal">
 
-                    <p>
 
-                        Structured applications with clear separation
-                        between business logic, APIs, data and UI.
+        <div class="contact">
 
-                    </p>
 
+            <div class="contact-content">
+
+
+                <div class="contact-label">
+                    06 / CONTACT
                 </div>
 
 
-
-                <div class="principle">
-
-                    <div class="principle-number">
-                        02
-                    </div>
-
-                    <h3>
-                        API First
-                    </h3>
-
-                    <p>
-
-                        Reliable REST APIs with authentication,
-                        permissions, validation and predictable
-                        responses.
-
-                    </p>
-
-                </div>
+                <h2>
+                    Let's build<br>
+                    something useful.
+                </h2>
 
 
+                <p>
 
-                <div class="principle">
+                    I'm open to opportunities, collaborations,
+                    internships and interesting software projects.
 
-                    <div class="principle-number">
-                        03
-                    </div>
-
-                    <h3>
-                        User Focused
-                    </h3>
-
-                    <p>
-
-                        Interfaces should be clear, responsive
-                        and useful instead of simply looking
-                        impressive.
-
-                    </p>
-
-                </div>
+                </p>
 
 
-            </div>
-
-        </section>
+                <div class="contact-buttons">
 
 
+                    <!-- CHANGE EMAIL -->
 
-        <!-- =================================================
-             CONTACT
-        ================================================== -->
-
-        <section id="contact" class="section">
-
-
-            <div class="contact">
-
-
-                <div class="contact-content">
-
-                    <div class="contact-label">
-                        05 / CONTACT
-                    </div>
+                    <a
+                        href="mailto:your-email@example.com"
+                        class="contact-btn"
+                    >
+                        <i class="fa-regular fa-envelope"></i>
+                        Email me
+                    </a>
 
 
-                    <h2>
-                        Let's build<br>
-                        something useful.
-                    </h2>
+                    <a
+                        href="https://github.com/vishnuradhakrishnan595-cloud"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-btn outline"
+                    >
+                        <i class="fa-brands fa-github"></i>
+                        GitHub
+                    </a>
 
 
-                    <p>
+                    <!-- CHANGE LINKEDIN -->
 
-                        I'm open to opportunities, collaborations,
-                        internships and interesting software projects.
-
-                    </p>
-
-
-                    <div class="contact-buttons">
-
-
-                        <!-- CHANGE THIS EMAIL -->
-
-                        <a
-                            href="mailto:your-email@example.com"
-                            class="contact-btn"
-                        >
-                            Email me →
-                        </a>
+                    <a
+                        href="https://www.linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-btn outline"
+                    >
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </a>
 
 
-                        <a
-                            href="https://github.com/vishnuradhakrishnan595-cloud"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-btn outline"
-                        >
-                            GitHub ↗
-                        </a>
-
-
-                        <!-- CHANGE LINKEDIN -->
-
-                        <a
-                            href="https://www.linkedin.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-btn outline"
-                        >
-                            LinkedIn ↗
-                        </a>
-
-                    </div>
+                    <a
+                        href="assets/Vishnu_Radhakrishnan_CV.pdf"
+                        download
+                        class="contact-btn outline"
+                    >
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        Download CV
+                    </a>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-    </main>
+</main>
 
 
 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
-    <footer>
+<footer>
 
-        <p>
-            © 2026
-            <span>vishnu.dev</span>
-            / engineering
-        </p>
+    <p>
 
-        <p>
-            Built with Python + React + curiosity.
-        </p>
+        © 2026
+        <span>vishnu.dev</span>
+        / engineering
 
-    </footer>
+    </p>
 
+
+    <p>
+
+        Built with Python + React + curiosity.
+
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+    /*
+     * Scroll reveal animation
+     */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach((element) => {
+
+        observer.observe(element);
+
+    });
+
+
+    /*
+     * Small mouse movement effect
+     * for desktop workspace.
+     */
+
+    const workspace =
+        document.querySelector(".workspace");
+
+
+    if (workspace &&
+        window.matchMedia("(min-width: 1001px)").matches) {
+
+        workspace.addEventListener(
+            "mousemove",
+            (event) => {
+
+                const rect =
+                    workspace.getBoundingClientRect();
+
+                const x =
+                    event.clientX - rect.left;
+
+                const y =
+                    event.clientY - rect.top;
+
+                const rotateY =
+                    ((x / rect.width) - 0.5) * 3;
+
+                const rotateX =
+                    ((y / rect.height) - 0.5) * -3;
+
+                workspace.style.transform =
+                    `rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)`;
+
+            }
+        );
+
+
+        workspace.addEventListener(
+            "mouseleave",
+            () => {
+
+                workspace.style.transform =
+                    "rotate(1deg)";
+
+            }
+        );
+
+    }
+
+</script>
 
 </body>
 </html>
