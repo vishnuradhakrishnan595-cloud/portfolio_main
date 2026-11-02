@@ -38,17 +38,17 @@
                     },
 
                     colors: {
-                        ink: "#08090b",
-                        panel: "#101114",
-                        panel2: "#15171b",
-                        line: "#272a30",
-                        muted: "#8c919c",
-                        orange: "#ff6b3d",
-                        orange2: "#ff8d68"
+                        ink: "#20212a",
+                        panel: "#ffffff",
+                        panel2: "#f8f6ef",
+                        line: "#e7e5df",
+                        muted: "#68758a",
+                        orange: "#5279a7",
+                        orange2: "#385f91"
                     },
 
                     boxShadow: {
-                        glow: "0 0 70px rgba(255,107,61,.13)",
+                        glow: "0 0 70px rgba(82,121,167,.16)",
                         card: "0 25px 90px rgba(0,0,0,.42)"
                     }
                 }
@@ -477,6 +477,200 @@
                 transition-duration: .01ms !important;
             }
         }
+    
+        /* =====================================================
+           UPDATED REFERENCE-INSPIRED THEME
+           Cream / white / muted blue with a bold editorial footer
+        ====================================================== */
+        :root { color-scheme: light; }
+        html { background: #e5e5e5; scroll-behavior: smooth; }
+        body {
+            background: #e5e5e5 !important;
+            color: #20212a !important;
+            padding-top: 76px;
+        }
+        body::before {
+            opacity: .18;
+            background-image:
+                linear-gradient(rgba(32,33,42,.055) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(32,33,42,.055) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+        main {
+            background: #fff;
+            border: 8px solid rgba(255,255,255,.9);
+            border-radius: 30px;
+            overflow: hidden;
+            margin-top: 12px;
+            margin-bottom: 42px;
+            box-shadow: 0 18px 55px rgba(30,35,45,.06);
+        }
+        header nav {
+            background: rgba(255,255,255,.92) !important;
+            border-color: rgba(32,33,42,.08) !important;
+            box-shadow: 0 8px 30px rgba(30,35,45,.06);
+        }
+        .glass {
+            background: rgba(255,255,255,.94);
+            border-color: #e7e5df;
+            backdrop-filter: blur(18px);
+        }
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(32,33,42,.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(32,33,42,.045) 1px, transparent 1px);
+        }
+        .orange-ring { box-shadow: 0 0 0 1px rgba(82,121,167,.15), 0 0 55px rgba(82,121,167,.10); }
+        .tool-card, .project-card, .service-card, .skill-card {
+            background: #fff !important;
+            border-color: #e7e5df !important;
+        }
+        .tool-card:hover, .project-card:hover, .service-card:hover, .skill-card:hover {
+            background: #fbfaf6 !important;
+            border-color: #8ca7c8 !important;
+            box-shadow: 0 20px 55px rgba(30,35,45,.10);
+        }
+        .code-window {
+            background: linear-gradient(145deg, #253d5b, #172337) !important;
+            border-color: #d9e0e9 !important;
+            box-shadow: none;
+            color: #fff;
+        }
+        .tag {
+            border-color: #e4e5e8;
+            background: #f8f8f7;
+        }
+        .nav-link.active { color: #5279a7; }
+        .marquee { color: #7c8797 !important; }
+        .project-number { color: #7c8797; }
+        #about, #services, #stack, #work, #contact,
+        main > section { border-color: #e7e5df !important; }
+        #contact > div {
+            background: linear-gradient(135deg, #f8f6ef, #ffffff 75%) !important;
+            border-color: #e7e5df !important;
+        }
+        .live-btn:hover { background: #385f91 !important; box-shadow: 0 12px 35px rgba(82,121,167,.2); }
+        @media (min-width: 768px) {
+            main { padding-left: 16px; padding-right: 16px; }
+        }
+        @media (max-width: 640px) {
+            body { padding-top: 68px; }
+            main { border-width: 5px; border-radius: 22px; margin-top: 8px; }
+        }
+
+    
+        .editorial-footer {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            width: calc(100% + 2rem);
+            margin-left: -1rem;
+            margin-top: 28px;
+            padding: 58px 5.5% 0;
+            background: #1f1f20;
+            color: #f7f3eb;
+            min-height: 520px;
+        }
+        .footer-top {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: minmax(230px, .9fr) 1.3fr;
+            gap: 64px;
+            padding-bottom: 55px;
+        }
+        .footer-cta { max-width: 420px; }
+        .footer-kicker {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #e97856;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+        .footer-cta h2 {
+            margin: 0;
+            font-size: clamp(28px, 3.4vw, 48px);
+            font-weight: 800;
+            line-height: .98;
+            letter-spacing: -.055em;
+        }
+        .footer-cta h2 span { color: #9fb4cf; }
+        .footer-cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 25px;
+            padding: 12px 16px;
+            border-radius: 999px;
+            background: #f7f3eb;
+            color: #20212a;
+            font-size: 11px;
+            font-weight: 700;
+            transition: transform .25s ease, background .25s ease;
+        }
+        .footer-cta-button:hover { transform: translateY(-2px); background: #dce6f1; }
+        .footer-details {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            padding-top: 10px;
+        }
+        .footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+        .footer-label {
+            margin-bottom: 7px;
+            color: #a4a5a8;
+            font-size: 9px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+        .footer-column a, .footer-column > span:not(.footer-label) {
+            color: #f1eee7;
+            font-size: 11px;
+            line-height: 1.5;
+            text-decoration: none;
+        }
+        .footer-column a { transition: color .2s ease; }
+        .footer-column a:hover { color: #9fb4cf; }
+        .footer-column a i { margin-left: 4px; font-size: 8px; color: #a4a5a8; }
+        .footer-bottom {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px 0 22px;
+            border-top: 1px solid rgba(255,255,255,.15);
+            color: #aaa9a5;
+            font-size: 9px;
+        }
+        .footer-wordmark {
+            position: relative;
+            z-index: 1;
+            margin: -12px 0 -5.7vw -1%;
+            color: #f7f3eb;
+            font-size: clamp(90px, 20.5vw, 285px);
+            font-weight: 800;
+            line-height: .76;
+            letter-spacing: -.085em;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        @media (max-width: 800px) {
+            .footer-top { grid-template-columns: 1fr; gap: 42px; }
+            .footer-details { gap: 18px; }
+            .editorial-footer { padding-top: 42px; }
+            .footer-wordmark { font-size: 20vw; }
+        }
+        @media (max-width: 520px) {
+            .footer-details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .footer-bottom { flex-direction: column; }
+            .footer-wordmark { font-size: 19vw; margin-top: 0; }
+        }
+
     </style>
 </head>
 
@@ -3283,76 +3477,45 @@
              FOOTER
         ========================================================== -->
 
-        <footer class="py-10">
-
-            <div
-                class="flex flex-col items-center justify-between gap-5 border-t border-line pt-7 text-center sm:flex-row sm:text-left">
-
-                <div>
-
-                    <p class="font-mono text-sm font-bold">
-
-                        vishnu<span class="text-orange">
-                            .dev
-                        </span>
-
-                    </p>
-
-                    <p class="mt-1 text-xs text-zinc-600">
-                        Python Full Stack Developer
-                    </p>
-
+        <footer class="editorial-footer">
+            <div class="footer-top">
+                <div class="footer-cta">
+                    <span class="footer-kicker">Have a project in mind?</span>
+                    <h2>LET'S BUILD<br><span>SOMETHING GREAT.</span></h2>
+                    <a href="mailto:vishnuradhakrishnan595@gmail.com" class="footer-cta-button">
+                        Start a conversation <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
-
-
-                <div
-                    class="flex items-center gap-5 text-zinc-600">
-
-                    <a
-                        href="https://github.com/vishnuradhakrishnan595-cloud"
-                        target="_blank"
-                        rel="noopener"
-                        class="transition hover:text-white"
-                        aria-label="GitHub">
-
-                        <i class="fa-brands fa-github"></i>
-
-                    </a>
-
-
-                    <a
-                        href="https://www.linkedin.com/"
-                        target="_blank"
-                        rel="noopener"
-                        class="transition hover:text-white"
-                        aria-label="LinkedIn">
-
-                        <i class="fa-brands fa-linkedin"></i>
-
-                    </a>
-
-
-                    <a
-                        href="mailto:vishnuradhakrishnan595@gmail.com"
-                        class="transition hover:text-white"
-                        aria-label="Email">
-
-                        <i class="fa-solid fa-envelope"></i>
-
-                    </a>
-
+                <div class="footer-details">
+                    <div class="footer-column">
+                        <span class="footer-label">Pages</span>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#stack">Tech Stack</a>
+                        <a href="#work">Selected Work</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <span class="footer-label">Services</span>
+                        <span>Backend Development</span>
+                        <span>Frontend Development</span>
+                        <span>REST API Integration</span>
+                        <span>Full-Stack Applications</span>
+                    </div>
+                    <div class="footer-column">
+                        <span class="footer-label">Get in touch</span>
+                        <a href="mailto:vishnuradhakrishnan595@gmail.com">Email me</a>
+                        <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener">GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <span>Kochi, Kerala, India</span>
+                    </div>
                 </div>
-
-
-                <p
-                    class="font-mono text-[9px] uppercase tracking-widest text-zinc-700">
-
-                    © 2026 Vishnu Radhakrishnan Nair
-
-                </p>
-
             </div>
-
+            <div class="footer-bottom">
+                <span>© 2026 Vishnu Radhakrishnan Nair</span>
+                <span>Python Full Stack Developer · Built with purpose</span>
+            </div>
+            <div class="footer-wordmark" aria-label="Vishnu">VISHNUR</div>
         </footer>
 
     </main>
