@@ -542,64 +542,39 @@
 
         <nav class="glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3">
 
-            <a href="#home" class="flex items-center gap-2 font-mono text-sm font-bold">
 
-                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-700 text-zinc-900 shadow-glow">
-                    V
-                </span>
-
-                <span>
-                    vishnu<span class="text-zinc-500">.dev</span>
-                </span>
-
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-2 font-mono text-sm font-bold tracking-wide text-zinc-900">
+                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-900 text-white">V</span>
+                VISHNU<span class="text-[#F06445]">.DEV</span>
             </a>
 
-
-            <div class="hidden items-center gap-7 text-xs text-zinc-400 md:flex">
-
-                <a class="nav-link transition hover:text-zinc-900" href="#home">
-                    Home
-                </a>
-
-                <a class="nav-link transition hover:text-zinc-900" href="#about">
-                    About
-                </a>
-
-                <a class="nav-link transition hover:text-zinc-900" href="#services">
-                    Services
-                </a>
-
-                <a class="nav-link transition hover:text-zinc-900" href="#stack">
-                    Stack
-                </a>
-
-                <a class="nav-link transition hover:text-zinc-900" href="#work">
-                    Work
-                </a>
-
-                <a class="nav-link transition hover:text-zinc-900" href="#contact">
-                    Contact
-                </a>
-
+            <!-- Navigation -->
+            <div class="hidden items-center gap-6 text-xs font-medium text-zinc-500 md:flex">
+                <a href="#home" class="transition hover:text-zinc-900">Home</a>
+                <a href="#services" class="transition hover:text-zinc-900">Services</a>
+                <a href="#stack" class="transition hover:text-zinc-900">Stack</a>
+                <a href="#work" class="transition hover:text-zinc-900">Work</a>
+                <a href="#contact" class="transition hover:text-zinc-900">Contact</a>
             </div>
 
-
+            <!-- Let's Talk -->
             <a href="#contact"
-                class="hidden rounded-xl bg-white px-4 py-2 text-xs font-bold text-white transition hover:bg-zinc-700 hover:text-zinc-900 sm:inline-flex">
+                class="hidden items-center gap-2 rounded-full bg-[#F06445] px-5 py-2.5 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#D95337] sm:inline-flex">
                 Let's Talk
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
             </a>
 
-
+            <!-- Mobile Menu -->
             <button id="menuBtn"
-                class="flex h-9 w-9 items-center justify-center rounded-xl border border-line text-zinc-300 md:hidden"
+                class="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-200 text-zinc-800 md:hidden"
                 aria-label="Toggle menu">
-
-                <i id="menuIcon" class="fa-solid fa-bars">
-                </i>
-
+                <i id="menuIcon" class="fa-solid fa-bars"></i>
             </button>
 
+
         </nav>
+
 
 
         <div id="mobileMenu" class="glass mx-auto mt-2 hidden max-w-6xl rounded-2xl p-3 md:hidden">
