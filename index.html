@@ -542,7 +542,7 @@
 
         <nav class="glass mx-auto flex max-w-5xl items-center justify-between rounded-xl px-4 py-2.5">
 
-            
+
             <!-- Logo -->
             <a href="#home" class="font-mono text-sm font-bold tracking-wider text-zinc-900">
                 VISHNU<span class="text-[#F06445]">.</span>
@@ -569,7 +569,7 @@
                 aria-label="Toggle menu">
                 <i id="menuIcon" class="fa-solid fa-bars"></i>
             </button>
-            
+
 
         </nav>
 
@@ -707,100 +707,206 @@
 
         <section id="services" class="border-t border-line py-24">
 
+            ```
+            <!-- SECTION HEADING -->
             <div class="reveal">
 
-                <p class="font-mono text-[10px] uppercase tracking-[.2em] text-zinc-500">
-                    // What I do
+                <p class="font-mono text-[10px] uppercase tracking-[.2em] text-[#F06445]">
+                    01 / Services
                 </p>
 
-                <h2 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-                    From API to interface.
+                <h2 class="mt-4 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+                    What I build for the web.
                 </h2>
 
-                <p class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
-
-                    A practical full-stack workflow focused on
-                    maintainability, clean architecture and useful
-                    user experiences.
-
+                <p class="mt-4 max-w-xl text-sm leading-7 text-zinc-500">
+                    From backend architecture to modern interfaces, I build
+                    practical digital solutions using modern technologies.
                 </p>
 
             </div>
 
 
-            <div class="mt-12 grid gap-5 md:grid-cols-3">
+            <!-- SERVICE CARDS -->
+            <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
-                <article class="service-card reveal rounded-3xl border border-line bg-panel p-7">
 
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-700/10 text-zinc-500">
+                <!-- 01 BACKEND -->
+                <article
+                    class="service-card reveal rounded-3xl border border-line bg-panel p-6 transition duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-                        <i class="fa-solid fa-server"></i>
+                    <div class="flex items-center justify-between">
+
+                        <div
+                            class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F06445]/10 text-[#F06445]">
+                            <i class="fa-solid fa-server text-lg"></i>
+                        </div>
+
+                        <span class="font-mono text-sm text-zinc-400">01</span>
 
                     </div>
 
-                    <h3 class="mt-6 text-lg font-bold">
+                    <h3 class="mt-7 text-lg font-bold text-zinc-900">
                         Backend Development
                     </h3>
 
                     <p class="mt-3 text-sm leading-6 text-zinc-500">
-
-                        Django, Flask and REST APIs with authentication,
-                        business logic, database integration and scalable
-                        application structure.
-
+                        Building secure backend systems, APIs and scalable application logic.
                     </p>
+
+                    <div class="mt-6 flex flex-wrap gap-2">
+
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">DRF</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">WebSockets</span>
+
+                    </div>
 
                 </article>
 
 
-                <article class="service-card reveal rounded-3xl border border-line bg-panel p-7">
+                <!-- 02 FRONTEND -->
+                <article
+                    class="service-card reveal rounded-3xl border border-line bg-panel p-6 transition duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-700/10 text-zinc-500">
+                    <div class="flex items-center justify-between">
 
-                        <i class="fa-solid fa-code-branch"></i>
+                        <div
+                            class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F06445]/10 text-[#F06445]">
+                            <i class="fa-solid fa-code text-lg"></i>
+                        </div>
 
-                    </div>
-
-                    <h3 class="mt-6 text-lg font-bold">
-                        API & Authentication
-                    </h3>
-
-                    <p class="mt-3 text-sm leading-6 text-zinc-500">
-
-                        RESTful services, JWT authentication,
-                        protected routes, API testing and integration-ready
-                        backend systems.
-
-                    </p>
-
-                </article>
-
-
-                <article class="service-card reveal rounded-3xl border border-line bg-panel p-7">
-
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-700/10 text-zinc-500">
-
-                        <i class="fa-solid fa-display"></i>
+                        <span class="font-mono text-sm text-zinc-400">02</span>
 
                     </div>
 
-                    <h3 class="mt-6 text-lg font-bold">
+                    <h3 class="mt-7 text-lg font-bold text-zinc-900">
                         Frontend Development
                     </h3>
 
                     <p class="mt-3 text-sm leading-6 text-zinc-500">
-
-                        Responsive React interfaces with clean layouts,
-                        reusable components, forms, dashboards and
-                        modern interactions.
-
+                        Creating responsive interfaces with reusable components and modern UI.
                     </p>
+
+                    <div class="mt-6 flex flex-wrap gap-2">
+
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML / CSS</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 03 AI ENGINEERING -->
+                <article
+                    class="service-card reveal rounded-3xl border border-line bg-panel p-6 transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+
+                    <div class="flex items-center justify-between">
+
+                        <div
+                            class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F06445]/10 text-[#F06445]">
+                            <i class="fa-solid fa-brain text-lg"></i>
+                        </div>
+
+                        <span class="font-mono text-sm text-zinc-400">03</span>
+
+                    </div>
+
+                    <h3 class="mt-7 text-lg font-bold text-zinc-900">
+                        AI Engineering
+                    </h3>
+
+                    <p class="mt-3 text-sm leading-6 text-zinc-500">
+                        Developing AI-powered applications using LLMs, retrieval and intelligent workflows.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-2">
+
+                        <span class="tech-tag">LangGraph</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">RAG</span>
+                        <span class="tech-tag">ChromaDB</span>
+                        <span class="tech-tag">Groq</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 04 TOOLING -->
+                <article
+                    class="service-card reveal rounded-3xl border border-line bg-panel p-6 transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+
+                    <div class="flex items-center justify-between">
+
+                        <div
+                            class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F06445]/10 text-[#F06445]">
+                            <i class="fa-solid fa-layer-group text-lg"></i>
+                        </div>
+
+                        <span class="font-mono text-sm text-zinc-400">04</span>
+
+                    </div>
+
+                    <h3 class="mt-7 text-lg font-bold text-zinc-900">
+                        Tooling & Infra
+                    </h3>
+
+                    <p class="mt-3 text-sm leading-6 text-zinc-500">
+                        Managing development tools, databases, deployment and application infrastructure.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-2">
+
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">GitHub</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">MySQL</span>
+
+                    </div>
 
                 </article>
 
             </div>
+            ```
 
         </section>
+
+        <!-- SERVICE TECHNOLOGY TAG STYLING -->
+
+        <style>
+            .tech-tag {
+                display: inline-flex;
+                align-items: center;
+                border: 1px solid #e4e4e2;
+                border-radius: 9999px;
+                background: #f8f7f3;
+                padding: 6px 10px;
+                font-size: 10px;
+                font-weight: 500;
+                color: #66645e;
+                transition: all 0.25s ease;
+            }
+
+            .tech-tag:hover {
+                border-color: #F06445;
+                background: #F06445;
+                color: white;
+            }
+
+            .service-card {
+                min-height: 330px;
+            }
+        </style>
+
 
 
 
