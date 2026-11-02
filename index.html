@@ -9,9 +9,9 @@
     <meta name="description"
         content="Vishnu Radhakrishnan Nair — Python Full Stack Developer portfolio">
 
-    <meta name="theme-color" content="#08090b">
+    <meta name="theme-color" content="#e5e5e5">
 
-    <title>Vishnu.dev — Python Full Stack Developer</title>
+    <title>VISHNU — Python Full Stack Developer</title>
 
     <!-- =========================================================
          FONTS
@@ -671,17 +671,65 @@
             .footer-wordmark { font-size: 19vw; margin-top: 0; }
         }
 
+    
+        /* Final user-requested refinements: monochrome UI, integrated home navigation */
+        :root { color-scheme: light; }
+        html { background: #e5e5e5; scroll-padding-top: 32px; }
+        body { background: #e5e5e5 !important; color: #202124 !important; padding-top: 0 !important; }
+        body::before { opacity: .12; }
+        main { margin-top: 0 !important; }
+        #home { padding-top: 150px !important; }
+        #home > header { position: absolute; }
+        main > section:not(#home) .text-orange,
+        #home .text-orange { color: #55565a !important; }
+        main > section:not(#stack) .bg-orange,
+        #home .bg-orange { background-color: #303136 !important; }
+        main > section:not(#stack) .bg-orange\/5,
+        #home .bg-orange\/5 { background-color: rgba(50,51,55,.055) !important; }
+        main > section:not(#stack) .border-orange\/20,
+        #home .border-orange\/20 { border-color: rgba(60,60,65,.18) !important; }
+        main > section:not(#stack) .hover\:bg-orange2:hover,
+        #home .hover\:bg-orange2:hover { background-color: #55565a !important; }
+        main > section:not(#stack) .hover\:text-orange:hover,
+        #home .hover\:text-orange:hover { color: #303136 !important; }
+        main > section:not(#stack) .orange-ring,
+        #home .orange-ring { box-shadow: 0 0 0 1px rgba(70,70,75,.10), 0 0 40px rgba(70,70,75,.07) !important; }
+        .glass { background: rgba(255,255,255,.94) !important; border-color: #e1e1e1 !important; }
+        .nav-link { color: #65666a !important; }
+        .nav-link:hover, .nav-link.active { color: #17181b !important; }
+        .live-btn:hover { background: #55565a !important; box-shadow: 0 12px 35px rgba(0,0,0,.10) !important; }
+        .code-window { background: linear-gradient(145deg, #393a3f, #222327) !important; }
+        /* The technology stack intentionally keeps colourful technology icons. */
+        #stack .tool-card:nth-child(6n+1) .tool-icon { color: #3776ab !important; }
+        #stack .tool-card:nth-child(6n+2) .tool-icon { color: #0b7fab !important; }
+        #stack .tool-card:nth-child(6n+3) .tool-icon { color: #e76f00 !important; }
+        #stack .tool-card:nth-child(6n+4) .tool-icon { color: #2f80ed !important; }
+        #stack .tool-card:nth-child(6n+5) .tool-icon { color: #7b61a8 !important; }
+        #stack .tool-card:nth-child(6n) .tool-icon { color: #2e9d62 !important; }
+        #stack .tool-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+        #stack .tool-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,.07); }
+        @media (max-width: 640px) { #home { padding-top: 132px !important; } }
+
     </style>
 </head>
 
 
 <body>
 
+    <main class="mx-auto max-w-6xl px-4">
+
+        <!-- =========================================================
+             HERO
+        ========================================================== -->
+
+        <section id="home"
+            class="relative min-h-screen pt-36 pb-20">
+
     <!-- =========================================================
          NAVIGATION
     ========================================================== -->
 
-    <header class="fixed left-0 right-0 top-0 z-50 px-4 pt-4">
+    <header class="absolute left-0 right-0 top-0 z-50 px-4 pt-4">
 
         <nav
             class="glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3">
@@ -690,46 +738,46 @@
                 class="flex items-center gap-2 font-mono text-sm font-bold">
 
                 <span
-                    class="flex h-8 w-8 items-center justify-center rounded-lg bg-orange text-white shadow-glow">
+                    class="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-800 text-white shadow-none">
                     V
                 </span>
 
                 <span>
-                    VISHNU<span class="text-orange"></span>
+                    VISHNU
                 </span>
 
             </a>
 
 
             <div
-                class="hidden items-center gap-7 text-xs text-zinc-400 md:flex">
+                class="hidden items-center gap-7 text-xs text-zinc-600 md:flex">
 
-                <a class="nav-link transition hover:text-white"
+                <a class="nav-link transition hover:text-zinc-900"
                     href="#home">
                     Home
                 </a>
 
-                <a class="nav-link transition hover:text-white"
+                <a class="nav-link transition hover:text-zinc-900"
                     href="#about">
                     About
                 </a>
 
-                <a class="nav-link transition hover:text-white"
+                <a class="nav-link transition hover:text-zinc-900"
                     href="#services">
                     Services
                 </a>
 
-                <a class="nav-link transition hover:text-white"
+                <a class="nav-link transition hover:text-zinc-900"
                     href="#stack">
                     Stack
                 </a>
 
-                <a class="nav-link transition hover:text-white"
+                <a class="nav-link transition hover:text-zinc-900"
                     href="#work">
                     Work
                 </a>
 
-                <a class="nav-link transition hover:text-white"
+                <a class="nav-link transition hover:text-zinc-900"
                     href="#contact">
                     Contact
                 </a>
@@ -738,13 +786,13 @@
 
 
             <a href="#contact"
-                class="hidden rounded-xl bg-white px-4 py-2 text-xs font-bold text-black transition hover:bg-orange hover:text-white sm:inline-flex">
+                class="hidden rounded-xl bg-white px-4 py-2 text-xs font-bold text-black transition hover:bg-orange hover:text-zinc-900 sm:inline-flex">
                 Let's Talk
             </a>
 
 
             <button id="menuBtn"
-                class="flex h-9 w-9 items-center justify-center rounded-xl border border-line text-zinc-300 md:hidden"
+                class="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300 text-zinc-700 md:hidden"
                 aria-label="Toggle menu">
 
                 <i id="menuIcon"
@@ -759,35 +807,35 @@
         <div id="mobileMenu"
             class="glass mx-auto mt-2 hidden max-w-6xl rounded-2xl p-3 md:hidden">
 
-            <div class="grid gap-1 text-sm text-zinc-300">
+            <div class="grid gap-1 text-sm text-zinc-700">
 
                 <a href="#home"
-                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
                     Home
                 </a>
 
                 <a href="#about"
-                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
                     About
                 </a>
 
                 <a href="#services"
-                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
                     Services
                 </a>
 
                 <a href="#stack"
-                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
                     Stack
                 </a>
 
                 <a href="#work"
-                    class="rounded-xl px-4 py-3 hover:bg-white/5">
+                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
                     Work
                 </a>
 
                 <a href="#contact"
-                    class="rounded-xl px-4 py-3 text-orange hover:bg-white/5">
+                    class="rounded-xl px-4 py-3 text-zinc-700 hover:bg-zinc-100">
                     Contact
                 </a>
 
@@ -796,17 +844,6 @@
         </div>
 
     </header>
-
-
-
-    <main class="mx-auto max-w-6xl px-4">
-
-        <!-- =========================================================
-             HERO
-        ========================================================== -->
-
-        <section id="home"
-            class="relative min-h-screen pt-36 pb-20">
 
             <div
                 class="hero-grid pointer-events-none absolute inset-x-0 top-12 h-[700px]">
