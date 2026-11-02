@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
@@ -6,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Vishnu Radhakrishnan Nair — Python Full Stack Developer portfolio">
+    <meta name="description" content="Vishnu Radhakrishnan Nair — Python Full Stack Developer portfolio">
 
-    <meta name="theme-color" content="#e5e5e5">
+    <meta name="theme-color" content="#f4f4f2">
 
-    <title>VISHNU — Python Full Stack Developer</title>
+    <title>Vishnu.dev — Python Full Stack Developer</title>
 
     <!-- =========================================================
          FONTS
@@ -38,17 +36,17 @@
                     },
 
                     colors: {
-                        ink: "#20212a",
+                        ink: "#f4f4f2",
                         panel: "#ffffff",
-                        panel2: "#f8f6ef",
-                        line: "#e7e5df",
-                        muted: "#68758a",
-                        orange: "#5279a7",
-                        orange2: "#385f91"
+                        panel2: "#f7f7f5",
+                        line: "#e4e4e7",
+                        muted: "#8c919c",
+                        orange: "#52525b",
+                        orange2: "#52525b"
                     },
 
                     boxShadow: {
-                        glow: "0 0 70px rgba(82,121,167,.16)",
+                        glow: "0 0 70px rgba(255,107,61,.13)",
                         card: "0 25px 90px rgba(0,0,0,.42)"
                     }
                 }
@@ -59,15 +57,14 @@
     <!-- =========================================================
          FONT AWESOME
     ========================================================== -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- =========================================================
          CUSTOM CSS
     ========================================================== -->
     <style>
         :root {
-            color-scheme: dark;
+            color-scheme: light;
         }
 
         * {
@@ -81,19 +78,15 @@
         body {
             margin: 0;
             background:
-                radial-gradient(
-                    circle at 50% -5%,
-                    rgba(255, 107, 61, .13),
-                    transparent 34rem
-                ),
-                radial-gradient(
-                    circle at 100% 40%,
-                    rgba(255, 255, 255, .035),
-                    transparent 28rem
-                ),
-                #08090b;
+                radial-gradient(circle at 50% -5%,
+                    rgba(82, 82, 91, .10),
+                    transparent 34rem),
+                radial-gradient(circle at 100% 40%,
+                    rgba(24, 24, 27, .035),
+                    transparent 28rem),
+                #f4f4f2;
 
-            color: #f5f5f5;
+            color: #202124;
             font-family: "DM Sans", sans-serif;
             overflow-x: hidden;
         }
@@ -107,28 +100,22 @@
             opacity: .32;
 
             background-image:
-                linear-gradient(
+                linear-gradient(rgba(255, 255, 255, .025) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
                     rgba(255, 255, 255, .025) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255, 255, 255, .025) 1px,
-                    transparent 1px
-                );
+                    transparent 1px);
 
             background-size: 44px 44px;
 
             mask-image:
-                linear-gradient(
-                    to bottom,
+                linear-gradient(to bottom,
                     black 0%,
-                    transparent 85%
-                );
+                    transparent 85%);
         }
 
         ::selection {
-            background: rgba(255, 107, 61, .35);
+            background: rgba(82, 82, 91, .25);
             color: white;
         }
 
@@ -137,8 +124,8 @@
         ====================================================== */
 
         .glass {
-            background: rgba(14, 15, 18, .78);
-            border: 1px solid rgba(255, 255, 255, .09);
+            background: rgba(255, 255, 255, .82);
+            border: 1px solid rgba(24, 24, 27, .10);
 
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -150,24 +137,18 @@
 
         .hero-grid {
             background-image:
-                linear-gradient(
-                    rgba(255, 255, 255, .035) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255, 255, 255, .035) 1px,
-                    transparent 1px
-                );
+                linear-gradient(rgba(24, 24, 27, .035) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(24, 24, 27, .035) 1px,
+                    transparent 1px);
 
             background-size: 34px 34px;
 
             mask-image:
-                radial-gradient(
-                    circle at center,
+                radial-gradient(circle at center,
                     black 0%,
-                    transparent 74%
-                );
+                    transparent 74%);
         }
 
         /* =====================================================
@@ -176,8 +157,8 @@
 
         .orange-ring {
             box-shadow:
-                0 0 0 1px rgba(255, 107, 61, .12),
-                0 0 65px rgba(255, 107, 61, .11);
+                0 0 0 1px rgba(82, 82, 91, .10),
+                0 0 65px rgba(82, 82, 91, .08);
         }
 
         /* =====================================================
@@ -200,15 +181,15 @@
         .service-card:hover,
         .skill-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(255, 107, 61, .42);
-            background: #131519;
-            box-shadow: 0 25px 75px rgba(0, 0, 0, .30);
+            border-color: rgba(82, 82, 91, .25);
+            background: #fafafa;
+            box-shadow: 0 25px 75px rgba(0, 0, 0, .06);
         }
 
         .tool-card:hover .tool-icon,
         .skill-card:hover .skill-icon {
             transform: scale(1.08);
-            color: #ff8d68;
+            color: #52525b;
         }
 
         .tool-icon,
@@ -224,21 +205,17 @@
 
         .code-window {
             background:
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(255, 107, 61, .12),
-                    transparent 15rem
-                ),
-                linear-gradient(
-                    145deg,
-                    #15171a,
-                    #0c0d0f
-                );
+                radial-gradient(circle at 85% 20%,
+                    rgba(82, 82, 91, .10),
+                    transparent 15rem),
+                linear-gradient(145deg,
+                    #f4f4f5,
+                    #ffffff);
 
             border: 1px solid #2a2d33;
 
             box-shadow:
-                0 40px 110px rgba(0, 0, 0, .48);
+                0 40px 110px rgba(0, 0, 0, .08);
         }
 
         /* =====================================================
@@ -256,12 +233,10 @@
             inset: 0;
 
             background:
-                linear-gradient(
-                    120deg,
+                linear-gradient(120deg,
                     transparent 30%,
                     rgba(255, 255, 255, .04),
-                    transparent 70%
-                );
+                    transparent 70%);
 
             transform: translateX(-100%);
             transition: transform .7s ease;
@@ -286,9 +261,9 @@
 
         .live-btn:hover {
             transform: translateY(-2px);
-            background: #ff8d68;
+            background: #52525b;
             box-shadow:
-                0 12px 35px rgba(255, 107, 61, .22);
+                0 12px 35px rgba(82, 82, 91, .12);
         }
 
         .live-btn i {
@@ -425,7 +400,7 @@
         ====================================================== */
 
         .nav-link.active {
-            color: #ff8d68;
+            color: #52525b;
         }
 
         /* =====================================================
@@ -434,7 +409,7 @@
 
         .tag {
             border: 1px solid rgba(255, 255, 255, .08);
-            background: rgba(255, 255, 255, .035);
+            background: rgba(24, 24, 27, .035);
         }
 
         .number {
@@ -477,308 +452,132 @@
                 transition-duration: .01ms !important;
             }
         }
-    
-        /* =====================================================
-           UPDATED REFERENCE-INSPIRED THEME
-           Cream / white / muted blue with a bold editorial footer
-        ====================================================== */
-        :root { color-scheme: light; }
-        html { background: #e5e5e5; scroll-behavior: smooth; }
+
+        /* Wider, edge-to-edge portfolio layout */
         body {
-            background: #e5e5e5 !important;
-            color: #20212a !important;
-            padding-top: 76px;
+            background: #f4f4f2 !important;
+            color: #202124 !important;
         }
-        body::before {
-            opacity: .18;
-            background-image:
-                linear-gradient(rgba(32,33,42,.055) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(32,33,42,.055) 1px, transparent 1px);
-            background-size: 48px 48px;
-        }
+
         main {
-            background: #fff;
-            border: 8px solid rgba(255,255,255,.9);
-            border-radius: 30px;
-            overflow: hidden;
-            margin-top: 12px;
-            margin-bottom: 42px;
-            box-shadow: 0 18px 55px rgba(30,35,45,.06);
+            max-width: 1600px !important;
+            width: 100%;
         }
-        header nav {
-            background: rgba(255,255,255,.92) !important;
-            border-color: rgba(32,33,42,.08) !important;
-            box-shadow: 0 8px 30px rgba(30,35,45,.06);
+
+        .project-card {
+            border-radius: 20px !important;
         }
-        .glass {
-            background: rgba(255,255,255,.94);
-            border-color: #e7e5df;
-            backdrop-filter: blur(18px);
+
+        .project-preview {
+            height: 155px !important;
         }
-        .hero-grid {
-            background-image:
-                linear-gradient(rgba(32,33,42,.045) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(32,33,42,.045) 1px, transparent 1px);
+
+        .project-card .code-window {
+            border-radius: 14px !important;
         }
-        .orange-ring { box-shadow: 0 0 0 1px rgba(82,121,167,.15), 0 0 55px rgba(82,121,167,.10); }
-        .tool-card, .project-card, .service-card, .skill-card {
-            background: #fff !important;
-            border-color: #e7e5df !important;
+
+        .project-card:hover {
+            transform: translateY(-4px);
         }
-        .tool-card:hover, .project-card:hover, .service-card:hover, .skill-card:hover {
-            background: #fbfaf6 !important;
-            border-color: #8ca7c8 !important;
-            box-shadow: 0 20px 55px rgba(30,35,45,.10);
+
+        .project-accent-emerald:hover {
+            border-color: #10b981 !important;
         }
-        .code-window {
-            background: linear-gradient(145deg, #253d5b, #172337) !important;
-            border-color: #d9e0e9 !important;
-            box-shadow: none;
-            color: #fff;
+
+        .project-accent-violet:hover {
+            border-color: #8b5cf6 !important;
         }
-        .tag {
-            border-color: #e4e5e8;
-            background: #f8f8f7;
+
+        .project-accent-cyan:hover {
+            border-color: #06b6d4 !important;
         }
-        .nav-link.active { color: #5279a7; }
-        .marquee { color: #7c8797 !important; }
-        .project-number { color: #7c8797; }
-        #about, #services, #stack, #work, #contact,
-        main > section { border-color: #e7e5df !important; }
-        #contact > div {
-            background: linear-gradient(135deg, #f8f6ef, #ffffff 75%) !important;
-            border-color: #e7e5df !important;
+
+        .project-accent-amber:hover {
+            border-color: #f59e0b !important;
         }
-        .live-btn:hover { background: #385f91 !important; box-shadow: 0 12px 35px rgba(82,121,167,.2); }
-        @media (min-width: 768px) {
-            main { padding-left: 16px; padding-right: 16px; }
+
+        .project-accent-pink:hover {
+            border-color: #ec4899 !important;
         }
+
+        .project-accent-red:hover {
+            border-color: #ef4444 !important;
+        }
+
+        .project-accent-teal:hover {
+            border-color: #14b8a6 !important;
+        }
+
+        .project-accent-indigo:hover {
+            border-color: #6366f1 !important;
+        }
+
         @media (max-width: 640px) {
-            body { padding-top: 68px; }
-            main { border-width: 5px; border-radius: 22px; margin-top: 8px; }
-        }
+            main {
+                padding-left: 18px !important;
+                padding-right: 18px !important;
+            }
 
-    
-        .editorial-footer {
-            position: relative;
-            isolation: isolate;
-            overflow: hidden;
-            width: calc(100% + 2rem);
-            margin-left: -1rem;
-            margin-top: 28px;
-            padding: 58px 5.5% 0;
-            background: #1f1f20;
-            color: #f7f3eb;
-            min-height: 520px;
-        }
-        .footer-top {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: minmax(230px, .9fr) 1.3fr;
-            gap: 64px;
-            padding-bottom: 55px;
-        }
-        .footer-cta { max-width: 420px; }
-        .footer-kicker {
-            display: inline-block;
-            margin-bottom: 18px;
-            padding: 7px 12px;
-            border-radius: 999px;
-            background: #e97856;
-            color: #fff;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: .04em;
-        }
-        .footer-cta h2 {
-            margin: 0;
-            font-size: clamp(28px, 3.4vw, 48px);
-            font-weight: 800;
-            line-height: .98;
-            letter-spacing: -.055em;
-        }
-        .footer-cta h2 span { color: #9fb4cf; }
-        .footer-cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 14px;
-            margin-top: 25px;
-            padding: 12px 16px;
-            border-radius: 999px;
-            background: #f7f3eb;
-            color: #20212a;
-            font-size: 11px;
-            font-weight: 700;
-            transition: transform .25s ease, background .25s ease;
-        }
-        .footer-cta-button:hover { transform: translateY(-2px); background: #dce6f1; }
-        .footer-details {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 25px;
-            padding-top: 10px;
-        }
-        .footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-        .footer-label {
-            margin-bottom: 7px;
-            color: #a4a5a8;
-            font-size: 9px;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-        }
-        .footer-column a, .footer-column > span:not(.footer-label) {
-            color: #f1eee7;
-            font-size: 11px;
-            line-height: 1.5;
-            text-decoration: none;
-        }
-        .footer-column a { transition: color .2s ease; }
-        .footer-column a:hover { color: #9fb4cf; }
-        .footer-column a i { margin-left: 4px; font-size: 8px; color: #a4a5a8; }
-        .footer-bottom {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 20px 0 22px;
-            border-top: 1px solid rgba(255,255,255,.15);
-            color: #aaa9a5;
-            font-size: 9px;
-        }
-        .footer-wordmark {
-            position: relative;
-            z-index: 1;
-            margin: -12px 0 -5.7vw -1%;
-            color: #f7f3eb;
-            font-size: clamp(90px, 20.5vw, 285px);
-            font-weight: 800;
-            line-height: .76;
-            letter-spacing: -.085em;
-            white-space: nowrap;
-            pointer-events: none;
-        }
-        @media (max-width: 800px) {
-            .footer-top { grid-template-columns: 1fr; gap: 42px; }
-            .footer-details { gap: 18px; }
-            .editorial-footer { padding-top: 42px; }
-            .footer-wordmark { font-size: 20vw; }
-        }
-        @media (max-width: 520px) {
-            .footer-details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .footer-bottom { flex-direction: column; }
-            .footer-wordmark { font-size: 19vw; margin-top: 0; }
-        }
+            #home {
+                min-height: auto;
+                padding-top: 130px;
+            }
 
-    
-        /* Final user-requested refinements: monochrome UI, integrated home navigation */
-        :root { color-scheme: light; }
-        html { background: #e5e5e5; scroll-padding-top: 32px; }
-        body { background: #e5e5e5 !important; color: #202124 !important; padding-top: 0 !important; }
-        body::before { opacity: .12; }
-        main { margin-top: 0 !important; }
-        #home { padding-top: 150px !important; }
-        #home > header { position: absolute; }
-        main > section:not(#home) .text-orange,
-        #home .text-orange { color: #55565a !important; }
-        main > section:not(#stack) .bg-orange,
-        #home .bg-orange { background-color: #303136 !important; }
-        main > section:not(#stack) .bg-orange\/5,
-        #home .bg-orange\/5 { background-color: rgba(50,51,55,.055) !important; }
-        main > section:not(#stack) .border-orange\/20,
-        #home .border-orange\/20 { border-color: rgba(60,60,65,.18) !important; }
-        main > section:not(#stack) .hover\:bg-orange2:hover,
-        #home .hover\:bg-orange2:hover { background-color: #55565a !important; }
-        main > section:not(#stack) .hover\:text-orange:hover,
-        #home .hover\:text-orange:hover { color: #303136 !important; }
-        main > section:not(#stack) .orange-ring,
-        #home .orange-ring { box-shadow: 0 0 0 1px rgba(70,70,75,.10), 0 0 40px rgba(70,70,75,.07) !important; }
-        .glass { background: rgba(255,255,255,.94) !important; border-color: #e1e1e1 !important; }
-        .nav-link { color: #65666a !important; }
-        .nav-link:hover, .nav-link.active { color: #17181b !important; }
-        .live-btn:hover { background: #55565a !important; box-shadow: 0 12px 35px rgba(0,0,0,.10) !important; }
-        .code-window { background: linear-gradient(145deg, #393a3f, #222327) !important; }
-        /* The technology stack intentionally keeps colourful technology icons. */
-        #stack .tool-card:nth-child(6n+1) .tool-icon { color: #3776ab !important; }
-        #stack .tool-card:nth-child(6n+2) .tool-icon { color: #0b7fab !important; }
-        #stack .tool-card:nth-child(6n+3) .tool-icon { color: #e76f00 !important; }
-        #stack .tool-card:nth-child(6n+4) .tool-icon { color: #2f80ed !important; }
-        #stack .tool-card:nth-child(6n+5) .tool-icon { color: #7b61a8 !important; }
-        #stack .tool-card:nth-child(6n) .tool-icon { color: #2e9d62 !important; }
-        #stack .tool-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-        #stack .tool-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,.07); }
-        @media (max-width: 640px) { #home { padding-top: 132px !important; } }
-
+            #work {
+                padding-top: 64px;
+                padding-bottom: 64px;
+            }
+        }
     </style>
 </head>
 
 
 <body>
 
-    <main class="mx-auto max-w-6xl px-4">
-
-        <!-- =========================================================
-             HERO
-        ========================================================== -->
-
-        <section id="home"
-            class="relative min-h-screen pt-36 pb-20">
-
     <!-- =========================================================
          NAVIGATION
     ========================================================== -->
 
-    <header class="absolute left-0 right-0 top-0 z-50 px-4 pt-4">
+    <header class="fixed left-0 right-0 top-0 z-50 px-4 pt-4">
 
-        <nav
-            class="glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3">
+        <nav class="glass mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3">
 
-            <a href="#home"
-                class="flex items-center gap-2 font-mono text-sm font-bold">
+            <a href="#home" class="flex items-center gap-2 font-mono text-sm font-bold">
 
-                <span
-                    class="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-800 text-white shadow-none">
+                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-700 text-zinc-900 shadow-glow">
                     V
                 </span>
 
                 <span>
-                    VISHNU
+                    vishnu<span class="text-zinc-500">.dev</span>
                 </span>
 
             </a>
 
 
-            <div
-                class="hidden items-center gap-7 text-xs text-zinc-600 md:flex">
+            <div class="hidden items-center gap-7 text-xs text-zinc-400 md:flex">
 
-                <a class="nav-link transition hover:text-zinc-900"
-                    href="#home">
+                <a class="nav-link transition hover:text-zinc-900" href="#home">
                     Home
                 </a>
 
-                <a class="nav-link transition hover:text-zinc-900"
-                    href="#about">
+                <a class="nav-link transition hover:text-zinc-900" href="#about">
                     About
                 </a>
 
-                <a class="nav-link transition hover:text-zinc-900"
-                    href="#services">
+                <a class="nav-link transition hover:text-zinc-900" href="#services">
                     Services
                 </a>
 
-                <a class="nav-link transition hover:text-zinc-900"
-                    href="#stack">
+                <a class="nav-link transition hover:text-zinc-900" href="#stack">
                     Stack
                 </a>
 
-                <a class="nav-link transition hover:text-zinc-900"
-                    href="#work">
+                <a class="nav-link transition hover:text-zinc-900" href="#work">
                     Work
                 </a>
 
-                <a class="nav-link transition hover:text-zinc-900"
-                    href="#contact">
+                <a class="nav-link transition hover:text-zinc-900" href="#contact">
                     Contact
                 </a>
 
@@ -786,17 +585,16 @@
 
 
             <a href="#contact"
-                class="hidden rounded-xl bg-white px-4 py-2 text-xs font-bold text-black transition hover:bg-orange hover:text-zinc-900 sm:inline-flex">
+                class="hidden rounded-xl bg-white px-4 py-2 text-xs font-bold text-white transition hover:bg-zinc-700 hover:text-zinc-900 sm:inline-flex">
                 Let's Talk
             </a>
 
 
             <button id="menuBtn"
-                class="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-300 text-zinc-700 md:hidden"
+                class="flex h-9 w-9 items-center justify-center rounded-xl border border-line text-zinc-300 md:hidden"
                 aria-label="Toggle menu">
 
-                <i id="menuIcon"
-                    class="fa-solid fa-bars">
+                <i id="menuIcon" class="fa-solid fa-bars">
                 </i>
 
             </button>
@@ -804,38 +602,31 @@
         </nav>
 
 
-        <div id="mobileMenu"
-            class="glass mx-auto mt-2 hidden max-w-6xl rounded-2xl p-3 md:hidden">
+        <div id="mobileMenu" class="glass mx-auto mt-2 hidden max-w-6xl rounded-2xl p-3 md:hidden">
 
-            <div class="grid gap-1 text-sm text-zinc-700">
+            <div class="grid gap-1 text-sm text-zinc-300">
 
-                <a href="#home"
-                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
+                <a href="#home" class="rounded-xl px-4 py-3 hover:bg-white/5">
                     Home
                 </a>
 
-                <a href="#about"
-                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
+                <a href="#about" class="rounded-xl px-4 py-3 hover:bg-white/5">
                     About
                 </a>
 
-                <a href="#services"
-                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
+                <a href="#services" class="rounded-xl px-4 py-3 hover:bg-white/5">
                     Services
                 </a>
 
-                <a href="#stack"
-                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
+                <a href="#stack" class="rounded-xl px-4 py-3 hover:bg-white/5">
                     Stack
                 </a>
 
-                <a href="#work"
-                    class="rounded-xl px-4 py-3 hover:bg-zinc-100">
+                <a href="#work" class="rounded-xl px-4 py-3 hover:bg-white/5">
                     Work
                 </a>
 
-                <a href="#contact"
-                    class="rounded-xl px-4 py-3 text-zinc-700 hover:bg-zinc-100">
+                <a href="#contact" class="rounded-xl px-4 py-3 text-zinc-500 hover:bg-white/5">
                     Contact
                 </a>
 
@@ -845,375 +636,114 @@
 
     </header>
 
-            <div
-                class="hero-grid pointer-events-none absolute inset-x-0 top-12 h-[700px]">
-            </div>
 
 
-            <div
-                class="relative grid items-center gap-14 lg:grid-cols-12">
-
-                <!-- HERO COPY -->
-
-                <div class="reveal lg:col-span-6">
-
-                    <div
-                        class="mb-6 inline-flex items-center gap-2 rounded-full border border-orange/20 bg-orange/5 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[.18em] text-orange">
-
-                        <span
-                            class="pulse-dot h-1.5 w-1.5 rounded-full bg-orange">
-                        </span>
-
-                        Python Full Stack Developer
-
-                    </div>
-
-
-                    <h1
-                        class="max-w-3xl text-5xl font-bold leading-[.96] tracking-[-.055em] sm:text-6xl lg:text-7xl">
-
-                        I build
-
-                        <span class="text-zinc-500">
-                            web products
-                        </span>
-
-                        that are
-
-                        <span class="text-orange">
-                            built to last.
-                        </span>
-
-                    </h1>
-
-
-                    <p
-                        class="mt-7 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">
-
-                        I'm
-                        <strong class="text-white">
-                            Vishnu Radhakrishnan Nair
-                        </strong>,
-
-                        a BCA graduate and Python Full Stack Developer
-                        focused on Django, REST APIs, React, databases
-                        and production-ready application development.
-
-                    </p>
-
-
-                    <div class="mt-8 flex flex-wrap gap-3">
-
-                        <a href="#work"
-                            class="inline-flex items-center gap-2 rounded-xl bg-orange px-5 py-3 text-xs font-bold text-white transition hover:bg-orange2 hover:shadow-glow">
-
-                            View my work
-
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]">
-                            </i>
-
-                        </a>
-
-
-                        <a href="#stack"
-                            class="inline-flex items-center gap-2 rounded-xl border border-line bg-panel px-5 py-3 text-xs font-bold text-zinc-300 transition hover:border-zinc-500 hover:text-white">
-
-                            <i class="fa-solid fa-layer-group"></i>
-
-                            Explore my stack
-
-                        </a>
-
-                    </div>
-
-
-                    <div
-                        class="mt-9 flex flex-wrap items-center gap-5 text-zinc-500">
-
-                        <a href="https://github.com/vishnuradhakrishnan595-cloud"
-                            target="_blank"
-                            rel="noopener"
-                            class="transition hover:text-white"
-                            aria-label="GitHub">
-
-                            <i class="fa-brands fa-github text-xl"></i>
-
-                        </a>
-
-
-                        <a href="https://www.linkedin.com/"
-                            target="_blank"
-                            rel="noopener"
-                            class="transition hover:text-white"
-                            aria-label="LinkedIn">
-
-                            <i class="fa-brands fa-linkedin text-xl"></i>
-
-                        </a>
-
-
-                        <a href="mailto:vishnuradhakrishnan595@gmail.com"
-                            class="transition hover:text-white"
-                            aria-label="Email">
-
-                            <i class="fa-solid fa-envelope text-lg"></i>
-
-                        </a>
-
-
-                        <span class="h-5 w-px bg-line"></span>
-
-
-                        <span
-                            class="font-mono text-[10px] uppercase tracking-widest">
-
-                            Kerala · India
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- TECHNOLOGY TICKER -->
-
-            <div class="mt-20 overflow-hidden border-y border-line py-5">
-
-                <div
-                    class="marquee flex w-max gap-12 whitespace-nowrap font-mono text-[10px] uppercase tracking-[.2em] text-zinc-600">
-
-                    <span>Python</span>
-                    <span>Django</span>
-                    <span>Flask</span>
-                    <span>REST API</span>
-                    <span>JWT</span>
-                    <span>React</span>
-                    <span>PostgreSQL</span>
-                    <span>MongoDB</span>
-                    <span>Redis</span>
-                    <span>Celery</span>
-                    <span>Docker</span>
-                    <span>GitHub</span>
-                    <span>Postman</span>
-                    <span>Firebase</span>
-                    <span>Render</span>
-                    <span>Vercel</span>
-
-                    <span>Python</span>
-                    <span>Django</span>
-                    <span>Flask</span>
-                    <span>REST API</span>
-                    <span>JWT</span>
-                    <span>React</span>
-                    <span>PostgreSQL</span>
-                    <span>MongoDB</span>
-                    <span>Redis</span>
-                    <span>Celery</span>
-                    <span>Docker</span>
-                    <span>GitHub</span>
-                    <span>Postman</span>
-                    <span>Firebase</span>
-                    <span>Render</span>
-                    <span>Vercel</span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
+    <main class="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 2xl:px-16">
 
         <!-- =========================================================
-             ABOUT
+             HERO
         ========================================================== -->
 
-        <section id="about"
-            class="border-t border-line py-24">
-
-            <div class="grid gap-12 lg:grid-cols-12">
-
-                <div class="reveal lg:col-span-5">
-
-                    <p
-                        class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
-                        // About me
-                    </p>
-
-                    <h2
-                        class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-
-                        Engineering with
-                        <span class="text-zinc-500">
-                            purpose.
-                        </span>
-
-                    </h2>
-
-                    <p
-                        class="mt-6 text-sm leading-7 text-zinc-500">
-
-                        I enjoy taking an idea from requirements to
-                        a working application: designing APIs,
-                        modelling data, implementing business logic,
-                        building responsive interfaces and getting
-                        the product deployed.
-
-                    </p>
-
-                </div>
-
-
-                <div class="reveal lg:col-span-7">
-
+        <section id="home"
+            class="relative flex min-h-screen flex-col justify-center overflow-hidden pb-12 pt-32 sm:pt-36">
+            <div class="hero-grid pointer-events-none absolute inset-0 opacity-70"></div>
+            <div class="relative grid min-h-[68vh] items-center gap-12 lg:grid-cols-12">
+                <div class="reveal lg:col-span-9 xl:col-span-8">
                     <div
-                        class="rounded-3xl border border-line bg-panel p-7 sm:p-8">
-
-                        <div
-                            class="flex items-center justify-between gap-4">
-
-                            <div>
-
-                                <p
-                                    class="font-mono text-[9px] uppercase tracking-widest text-orange">
-                                    Developer profile
-                                </p>
-
-                                <h3 class="mt-2 text-xl font-bold">
-                                    Backend-first. Full-stack mindset.
-                                </h3>
-
-                            </div>
-
-
-                            <div
-                                class="hidden h-10 w-10 items-center justify-center rounded-xl bg-orange/10 text-orange sm:flex">
-
-                                <i class="fa-solid fa-terminal"></i>
-
-                            </div>
-
-                        </div>
-
-
-                        <p
-                            class="mt-5 text-sm leading-7 text-zinc-500">
-
-                            My primary focus is Python and Django
-                            development, with experience building REST
-                            APIs, authentication flows, database-backed
-                            systems, React frontends and deployment
-                            workflows.
-
-                        </p>
-
-
-                        <div class="mt-7 grid gap-3 sm:grid-cols-3">
-
-                            <div
-                                class="rounded-2xl border border-line p-4">
-
-                                <p class="font-mono text-[9px] text-zinc-600">
-                                    01
-                                </p>
-
-                                <i
-                                    class="fa-solid fa-server mt-4 text-orange">
-                                </i>
-
-                                <h4 class="mt-3 text-sm font-bold">
-                                    Backend
-                                </h4>
-
-                                <p
-                                    class="mt-1 text-[10px] leading-5 text-zinc-600">
-                                    Django · Flask · DRF
-                                </p>
-
-                            </div>
-
-
-                            <div
-                                class="rounded-2xl border border-line p-4">
-
-                                <p class="font-mono text-[9px] text-zinc-600">
-                                    02
-                                </p>
-
-                                <i
-                                    class="fa-solid fa-code mt-4 text-orange">
-                                </i>
-
-                                <h4 class="mt-3 text-sm font-bold">
-                                    Frontend
-                                </h4>
-
-                                <p
-                                    class="mt-1 text-[10px] leading-5 text-zinc-600">
-                                    React · JavaScript · Tailwind
-                                </p>
-
-                            </div>
-
-
-                            <div
-                                class="rounded-2xl border border-line p-4">
-
-                                <p class="font-mono text-[9px] text-zinc-600">
-                                    03
-                                </p>
-
-                                <i
-                                    class="fa-solid fa-cloud mt-4 text-orange">
-                                </i>
-
-                                <h4 class="mt-3 text-sm font-bold">
-                                    Deployment
-                                </h4>
-
-                                <p
-                                    class="mt-1 text-[10px] leading-5 text-zinc-600">
-                                    Docker · Render · Vercel
-                                </p>
-
-                            </div>
-
-                        </div>
-
+                        class="mb-7 inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white/70 px-4 py-2 font-mono text-[10px] uppercase tracking-[.18em] text-zinc-500">
+                        <span class="pulse-dot h-2 w-2 rounded-full bg-emerald-500"></span>
+                        Full-Stack &amp; AI Developer
                     </div>
 
+                    <p class="mb-5 text-lg font-medium tracking-tight text-zinc-500 sm:text-xl">Hey, I'm Vishnu <span
+                            class="text-2xl">👋</span></p>
+
+                    <h1
+                        class="max-w-5xl text-6xl font-bold leading-[.91] tracking-[-.07em] text-zinc-900 sm:text-7xl md:text-8xl xl:text-[112px]">
+                        From idea<br>
+                        <span class="text-zinc-400">to deployment.</span>
+                    </h1>
+
+                    <p class="mt-8 max-w-2xl text-base leading-8 text-zinc-500 sm:text-lg">
+                        I'm a full-stack and AI developer crafting clean, scalable web applications with Django, React
+                        and modern AI — built to move fast, stay simple, and perform in the real world.
+                    </p>
+
+                    <div class="mt-9 flex flex-wrap gap-3">
+                        <a href="#work"
+                            class="inline-flex items-center gap-3 rounded-full bg-zinc-900 px-6 py-3.5 text-sm font-semibold text-zinc-900 transition hover:-translate-y-1 hover:bg-zinc-700">
+                            View my work <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                        <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-3 rounded-full border border-zinc-300 bg-white px-6 py-3.5 text-sm font-semibold text-zinc-800 transition hover:-translate-y-1 hover:border-zinc-500">
+                            <i class="fa-brands fa-github text-base"></i> GitHub
+                        </a>
+                    </div>
                 </div>
 
+                <div class="relative hidden lg:col-span-3 lg:flex lg:justify-end xl:col-span-4">
+                    <div
+                        class="float w-full max-w-[290px] rounded-[2rem] border border-zinc-200 bg-white/80 p-5 shadow-2xl shadow-zinc-300/40 backdrop-blur">
+                        <div class="flex items-center gap-2 border-b border-zinc-100 pb-4">
+                            <span class="h-2.5 w-2.5 rounded-full bg-rose-400"></span>
+                            <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+                            <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                            <span class="ml-auto font-mono text-[9px] text-zinc-400">vishnu.dev</span>
+                        </div>
+                        <div class="space-y-4 py-6 font-mono text-xs">
+                            <p class="text-zinc-400">// turning ideas into products</p>
+                            <p><span class="text-violet-600">const</span> developer = {</p>
+                            <p class="pl-4 text-zinc-500">name: <span class="text-emerald-600">"Vishnu"</span>,</p>
+                            <p class="pl-4 text-zinc-500">stack: <span class="text-emerald-600">"Django + React"</span>,
+                            </p>
+                            <p class="pl-4 text-zinc-500">focus: <span class="text-emerald-600">"Full Stack &amp;
+                                    AI"</span></p>
+                            <p>};</p>
+                        </div>
+                        <div class="flex items-center justify-between rounded-xl bg-zinc-100 px-3 py-3">
+                            <span class="text-[10px] font-semibold text-zinc-500">Available for opportunities</span>
+                            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-        </section>
+            <div class="relative mt-12 flex flex-wrap items-center justify-between gap-4 border-y border-zinc-200 py-5">
+                <p class="font-mono text-[10px] uppercase tracking-[.15em] text-zinc-500">Full-Stack &amp; AI Developer
+                </p>
+                <p class="font-mono text-[10px] uppercase tracking-[.15em] text-zinc-500">© 2026 — Kochi, India</p>
+            </div>
 
+            <div class="relative mt-7 overflow-hidden">
+                <div
+                    class="marquee flex w-max gap-12 whitespace-nowrap font-mono text-[10px] uppercase tracking-[.2em] text-zinc-400">
+                    <span>Python</span><span>Django</span><span>REST
+                        APIs</span><span>JWT</span><span>React</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Docker</span><span>AI
+                        Engineering</span><span>Python</span><span>Django</span><span>REST
+                        APIs</span><span>JWT</span><span>React</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Docker</span><span>AI
+                        Engineering</span>
+                </div>
+            </div>
+        </section>
 
 
         <!-- =========================================================
              SERVICES
         ========================================================== -->
 
-        <section id="services"
-            class="border-t border-line py-24">
+        <section id="services" class="border-t border-line py-24">
 
             <div class="reveal">
 
-                <p
-                    class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                <p class="font-mono text-[10px] uppercase tracking-[.2em] text-zinc-500">
                     // What I do
                 </p>
 
-                <h2
-                    class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+                <h2 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
                     From API to interface.
                 </h2>
 
-                <p
-                    class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
+                <p class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
 
                     A practical full-stack workflow focused on
                     maintainability, clean architecture and useful
@@ -1226,11 +756,9 @@
 
             <div class="mt-12 grid gap-5 md:grid-cols-3">
 
-                <article
-                    class="service-card reveal rounded-3xl border border-line bg-panel p-7">
+                <article class="service-card reveal rounded-3xl border border-line bg-panel p-7">
 
-                    <div
-                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange/10 text-orange">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-700/10 text-zinc-500">
 
                         <i class="fa-solid fa-server"></i>
 
@@ -1240,8 +768,7 @@
                         Backend Development
                     </h3>
 
-                    <p
-                        class="mt-3 text-sm leading-6 text-zinc-500">
+                    <p class="mt-3 text-sm leading-6 text-zinc-500">
 
                         Django, Flask and REST APIs with authentication,
                         business logic, database integration and scalable
@@ -1252,11 +779,9 @@
                 </article>
 
 
-                <article
-                    class="service-card reveal rounded-3xl border border-line bg-panel p-7">
+                <article class="service-card reveal rounded-3xl border border-line bg-panel p-7">
 
-                    <div
-                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange/10 text-orange">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-700/10 text-zinc-500">
 
                         <i class="fa-solid fa-code-branch"></i>
 
@@ -1266,8 +791,7 @@
                         API & Authentication
                     </h3>
 
-                    <p
-                        class="mt-3 text-sm leading-6 text-zinc-500">
+                    <p class="mt-3 text-sm leading-6 text-zinc-500">
 
                         RESTful services, JWT authentication,
                         protected routes, API testing and integration-ready
@@ -1278,11 +802,9 @@
                 </article>
 
 
-                <article
-                    class="service-card reveal rounded-3xl border border-line bg-panel p-7">
+                <article class="service-card reveal rounded-3xl border border-line bg-panel p-7">
 
-                    <div
-                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange/10 text-orange">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-700/10 text-zinc-500">
 
                         <i class="fa-solid fa-display"></i>
 
@@ -1292,8 +814,7 @@
                         Frontend Development
                     </h3>
 
-                    <p
-                        class="mt-3 text-sm leading-6 text-zinc-500">
+                    <p class="mt-3 text-sm leading-6 text-zinc-500">
 
                         Responsive React interfaces with clean layouts,
                         reusable components, forms, dashboards and
@@ -1313,23 +834,19 @@
              STACK
         ========================================================== -->
 
-        <section id="stack"
-            class="border-t border-line py-24">
+        <section id="stack" class="border-t border-line py-24">
 
             <div class="reveal">
 
-                <p
-                    class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                <p class="font-mono text-[10px] uppercase tracking-[.2em] text-zinc-500">
                     // Tools & technologies
                 </p>
 
-                <h2
-                    class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+                <h2 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
                     The stack I work with.
                 </h2>
 
-                <p
-                    class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
+                <p class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
 
                     A broader toolkit covering development, APIs,
                     databases, background jobs, containers, testing,
@@ -1348,8 +865,7 @@
 
                     <span class="h-px flex-1 bg-line"></span>
 
-                    <span
-                        class="font-mono text-[9px] uppercase tracking-widest text-zinc-600">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-zinc-500">
                         Core development
                     </span>
 
@@ -1358,111 +874,98 @@
                 </div>
 
 
-                <div
-                    class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+                <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-brands fa-python text-2xl text-orange">
+                        <i class="tool-icon fa-brands fa-python text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Python
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Programming
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-layer-group text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-layer-group text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Django
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Web framework
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-flask text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-flask text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Flask
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Micro framework
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-plug text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-plug text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             REST API
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             API architecture
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-key text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-key text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             JWT
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Authentication
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-brands fa-react text-2xl text-orange">
+                        <i class="tool-icon fa-brands fa-react text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             React
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Frontend
                         </p>
 
@@ -1481,8 +984,7 @@
 
                     <span class="h-px flex-1 bg-line"></span>
 
-                    <span
-                        class="font-mono text-[9px] uppercase tracking-widest text-zinc-600">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-zinc-500">
                         Data & backend infrastructure
                     </span>
 
@@ -1491,111 +993,98 @@
                 </div>
 
 
-                <div
-                    class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+                <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-database text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-database text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             PostgreSQL
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Relational DB
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-leaf text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-leaf text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             MongoDB
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             NoSQL database
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-bolt text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-bolt text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Redis
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Cache / broker
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-gears text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-gears text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Celery
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Background tasks
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-brands fa-google text-2xl text-orange">
+                        <i class="tool-icon fa-brands fa-google text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Firebase
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Cloud services
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-table text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-table text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             MySQL
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Relational DB
                         </p>
 
@@ -1614,8 +1103,7 @@
 
                     <span class="h-px flex-1 bg-line"></span>
 
-                    <span
-                        class="font-mono text-[9px] uppercase tracking-widest text-zinc-600">
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-zinc-500">
                         DevOps, testing & deployment
                     </span>
 
@@ -1624,111 +1112,98 @@
                 </div>
 
 
-                <div
-                    class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+                <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-brands fa-git-alt text-2xl text-orange">
+                        <i class="tool-icon fa-brands fa-git-alt text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Git
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Version control
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-brands fa-github text-2xl text-orange">
+                        <i class="tool-icon fa-brands fa-github text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             GitHub
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Code hosting
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-paper-plane text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-paper-plane text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Postman
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             API testing
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-brands fa-docker text-2xl text-orange">
+                        <i class="tool-icon fa-brands fa-docker text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Docker
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Containers
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-cloud-arrow-up text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-cloud-arrow-up text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Render
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Deployment
                         </p>
 
                     </div>
 
 
-                    <div
-                        class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
+                    <div class="tool-card reveal rounded-2xl border border-line bg-panel p-5">
 
-                        <i
-                            class="tool-icon fa-solid fa-triangle-exclamation text-2xl text-orange">
+                        <i class="tool-icon fa-solid fa-triangle-exclamation text-2xl text-zinc-500">
                         </i>
 
                         <h3 class="mt-4 text-sm font-bold">
                             Vercel
                         </h3>
 
-                        <p class="mt-1 text-[9px] text-zinc-600">
+                        <p class="mt-1 text-[9px] text-zinc-500">
                             Frontend deploy
                         </p>
 
@@ -1741,16 +1216,13 @@
 
             <!-- WORKFLOW -->
 
-            <div
-                class="reveal mt-8 rounded-3xl border border-line bg-panel p-6 sm:p-8">
+            <div class="reveal mt-8 rounded-3xl border border-line bg-panel p-6 sm:p-8">
 
-                <div
-                    class="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
+                <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
 
                     <div>
 
-                        <p
-                            class="font-mono text-[9px] uppercase tracking-widest text-orange">
+                        <p class="font-mono text-[9px] uppercase tracking-widest text-zinc-500">
                             Workflow
                         </p>
 
@@ -1763,38 +1235,31 @@
 
                     <div class="flex flex-wrap gap-2">
 
-                        <span
-                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                        <span class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
                             VS Code
                         </span>
 
-                        <span
-                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                        <span class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
                             Git
                         </span>
 
-                        <span
-                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                        <span class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
                             GitHub
                         </span>
 
-                        <span
-                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                        <span class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
                             Postman
                         </span>
 
-                        <span
-                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                        <span class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
                             Docker
                         </span>
 
-                        <span
-                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                        <span class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
                             Render
                         </span>
 
-                        <span
-                            class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
+                        <span class="tag rounded-lg px-3 py-2 font-mono text-[9px] text-zinc-400">
                             Vercel
                         </span>
 
@@ -1812,30 +1277,25 @@
              WORK / PROJECTS
         ========================================================== -->
 
-        <section id="work"
-            class="border-t border-line py-24">
+        <section id="work" class="border-t border-line py-24">
 
             <!-- PROJECT HEADER -->
 
-            <div
-                class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+            <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
 
                 <div class="reveal">
 
-                    <p
-                        class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                    <p class="font-mono text-[10px] uppercase tracking-[.2em] text-zinc-500">
                         // Selected work
                     </p>
 
-                    <h2
-                        class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+                    <h2 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
 
                         Projects that ship.
 
                     </h2>
 
-                    <p
-                        class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
+                    <p class="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
 
                         A selection of applications, dashboards and
                         full-stack projects I've built while exploring
@@ -1846,15 +1306,12 @@
                 </div>
 
 
-                <a href="https://github.com/vishnuradhakrishnan595-cloud"
-                    target="_blank"
-                    rel="noopener"
-                    class="reveal inline-flex items-center gap-2 text-xs font-bold text-zinc-400 transition hover:text-orange">
+                <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                    class="reveal inline-flex items-center gap-2 text-xs font-bold text-zinc-400 transition hover:text-zinc-500">
 
                     Explore GitHub
 
-                    <i
-                        class="fa-solid fa-arrow-up-right-from-square text-[9px]">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[9px]">
                     </i>
 
                 </a>
@@ -1866,8 +1323,7 @@
                  PROJECT GRID
             ====================================================== -->
 
-            <div
-                class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
 
 
                 <!-- =================================================
@@ -1875,26 +1331,21 @@
                 ================================================== -->
 
                 <article
-                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+                    class="project-card project-accent-emerald reveal flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel">
 
                     <!-- PREVIEW -->
 
-                    <div
-                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+                    <div class="project-preview relative h-40 overflow-hidden border-b border-line p-3">
 
-                        <div
-                            class="code-window h-full rounded-2xl p-4">
+                        <div class="code-window h-full rounded-2xl p-4">
 
-                            <div
-                                class="flex items-center justify-between">
+                            <div class="flex items-center justify-between">
 
-                                <span
-                                    class="font-mono text-[8px] text-zinc-600">
+                                <span class="font-mono text-[8px] text-zinc-500">
                                     POSFLOW / RETAIL
                                 </span>
 
-                                <span
-                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                <span class="rounded-full bg-emerald-500/10 px-2 py-1 text-[7px] text-emerald-600">
                                     FULL STACK
                                 </span>
 
@@ -1903,11 +1354,9 @@
 
                             <div class="mt-5 grid grid-cols-3 gap-2">
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-3">
+                                <div class="rounded-xl bg-white/5 p-3">
 
-                                    <p
-                                        class="text-[7px] text-zinc-600">
+                                    <p class="text-[7px] text-zinc-500">
                                         Sales
                                     </p>
 
@@ -1918,10 +1367,9 @@
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-orange/10 p-3">
+                                <div class="rounded-xl bg-emerald-500/10 p-3">
 
-                                    <p class="text-[7px] text-orange">
+                                    <p class="text-[7px] text-emerald-500">
                                         Orders
                                     </p>
 
@@ -1932,11 +1380,9 @@
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-3">
+                                <div class="rounded-xl bg-white/5 p-3">
 
-                                    <p
-                                        class="text-[7px] text-zinc-600">
+                                    <p class="text-[7px] text-zinc-500">
                                         Stock
                                     </p>
 
@@ -1949,31 +1395,24 @@
                             </div>
 
 
-                            <div
-                                class="mt-4 flex h-12 items-end gap-2">
+                            <div class="mt-4 flex h-12 items-end gap-2">
 
-                                <span
-                                    class="bar h-5 w-full rounded-t bg-orange/30">
+                                <span class="bar h-5 w-full rounded-t bg-emerald-500/30">
                                 </span>
 
-                                <span
-                                    class="bar h-8 w-full rounded-t bg-orange/40">
+                                <span class="bar h-8 w-full rounded-t bg-emerald-500/40">
                                 </span>
 
-                                <span
-                                    class="bar h-6 w-full rounded-t bg-orange/50">
+                                <span class="bar h-6 w-full rounded-t bg-emerald-500/50">
                                 </span>
 
-                                <span
-                                    class="bar h-10 w-full rounded-t bg-orange/60">
+                                <span class="bar h-10 w-full rounded-t bg-emerald-500/60">
                                 </span>
 
-                                <span
-                                    class="bar h-12 w-full rounded-t bg-orange/80">
+                                <span class="bar h-12 w-full rounded-t bg-emerald-500/80">
                                 </span>
 
-                                <span
-                                    class="bar h-14 w-full rounded-t bg-orange">
+                                <span class="bar h-14 w-full rounded-t bg-emerald-500">
                                 </span>
 
                             </div>
@@ -1985,20 +1424,19 @@
 
                     <!-- CONTENT -->
 
-                    <div class="flex flex-1 flex-col p-6">
+                    <div class="flex flex-1 flex-col p-4">
 
                         <span class="project-number">
                             01 · RETAIL MANAGEMENT
                         </span>
 
 
-                        <h3 class="mt-3 text-xl font-bold">
+                        <h3 class="mt-2 text-lg font-bold">
                             POS Billing Software
                         </h3>
 
 
-                        <p
-                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+                        <p class="mt-2 flex-1 text-xs leading-5 text-zinc-500">
 
                             Retail POS platform with product management,
                             billing, inventory, staff roles, sales
@@ -2032,14 +1470,10 @@
 
                         <!-- ACTIONS -->
 
-                        <div
-                            class="mt-6 grid grid-cols-2 gap-2">
+                        <div class="mt-4 grid grid-cols-2 gap-2">
 
-                            <a
-                                href="https://github.com/vishnuradhakrishnan595-cloud"
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+                            <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-zinc-100 px-3 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-emerald-400 hover:text-emerald-500">
 
                                 <i class="fa-brands fa-github"></i>
 
@@ -2048,11 +1482,8 @@
                             </a>
 
 
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener"
-                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+                            <a href="#" target="_blank" rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-3 py-2.5 text-[10px] font-bold text-zinc-900">
 
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
@@ -2073,24 +1504,19 @@
                 ================================================== -->
 
                 <article
-                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+                    class="project-card project-accent-violet reveal flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel">
 
-                    <div
-                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+                    <div class="project-preview relative h-40 overflow-hidden border-b border-line p-3">
 
-                        <div
-                            class="code-window h-full rounded-2xl p-4">
+                        <div class="code-window h-full rounded-2xl p-4">
 
-                            <div
-                                class="flex items-center justify-between">
+                            <div class="flex items-center justify-between">
 
-                                <span
-                                    class="font-mono text-[8px] text-zinc-600">
+                                <span class="font-mono text-[8px] text-zinc-500">
                                     INTERVUE / RECRUITMENT
                                 </span>
 
-                                <span
-                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                <span class="rounded-full bg-violet-500/10 px-2 py-1 text-[7px] text-violet-600">
                                     AI PLATFORM
                                 </span>
 
@@ -2099,11 +1525,9 @@
 
                             <div class="mt-5 grid grid-cols-2 gap-3">
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-3">
+                                <div class="rounded-xl bg-white/5 p-3">
 
-                                    <p
-                                        class="text-[7px] text-zinc-600">
+                                    <p class="text-[7px] text-zinc-500">
                                         Candidates
                                     </p>
 
@@ -2114,10 +1538,9 @@
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-orange/10 p-3">
+                                <div class="rounded-xl bg-violet-500/10 p-3">
 
-                                    <p class="text-[7px] text-orange">
+                                    <p class="text-[7px] text-violet-500">
                                         Matches
                                     </p>
 
@@ -2132,16 +1555,13 @@
 
                             <div class="mt-3 space-y-2">
 
-                                <div
-                                    class="h-5 rounded-lg bg-white/5">
+                                <div class="h-5 rounded-lg bg-white/5">
                                 </div>
 
-                                <div
-                                    class="h-5 w-4/5 rounded-lg bg-orange/10">
+                                <div class="h-5 w-4/5 rounded-lg bg-violet-500/10">
                                 </div>
 
-                                <div
-                                    class="h-5 w-3/5 rounded-lg bg-white/5">
+                                <div class="h-5 w-3/5 rounded-lg bg-white/5">
                                 </div>
 
                             </div>
@@ -2151,20 +1571,19 @@
                     </div>
 
 
-                    <div class="flex flex-1 flex-col p-6">
+                    <div class="flex flex-1 flex-col p-4">
 
                         <span class="project-number">
                             02 · RECRUITMENT PLATFORM
                         </span>
 
 
-                        <h3 class="mt-3 text-xl font-bold">
+                        <h3 class="mt-2 text-lg font-bold">
                             INTERVUE
                         </h3>
 
 
-                        <p
-                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+                        <p class="mt-2 flex-1 text-xs leading-5 text-zinc-500">
 
                             Intelligent recruitment and interview
                             platform concept with company, recruiter,
@@ -2194,14 +1613,10 @@
                         </div>
 
 
-                        <div
-                            class="mt-6 grid grid-cols-2 gap-2">
+                        <div class="mt-4 grid grid-cols-2 gap-2">
 
-                            <a
-                                href="https://github.com/vishnuradhakrishnan595-cloud"
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+                            <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-zinc-100 px-3 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-violet-400 hover:text-violet-500">
 
                                 <i class="fa-brands fa-github"></i>
 
@@ -2210,11 +1625,8 @@
                             </a>
 
 
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener"
-                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+                            <a href="#" target="_blank" rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-violet-500 px-3 py-2.5 text-[10px] font-bold text-zinc-900">
 
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
@@ -2235,24 +1647,19 @@
                 ================================================== -->
 
                 <article
-                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+                    class="project-card project-accent-cyan reveal flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel">
 
-                    <div
-                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+                    <div class="project-preview relative h-40 overflow-hidden border-b border-line p-3">
 
-                        <div
-                            class="code-window h-full rounded-2xl p-4">
+                        <div class="code-window h-full rounded-2xl p-4">
 
-                            <div
-                                class="flex items-center justify-between">
+                            <div class="flex items-center justify-between">
 
-                                <span
-                                    class="font-mono text-[8px] text-zinc-600">
+                                <span class="font-mono text-[8px] text-zinc-500">
                                     STOCKEDGE / ANALYTICS
                                 </span>
 
-                                <span
-                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                <span class="rounded-full bg-cyan-500/10 px-2 py-1 text-[7px] text-cyan-600">
                                     FINANCE
                                 </span>
 
@@ -2261,11 +1668,9 @@
 
                             <div class="mt-5 grid grid-cols-3 gap-2">
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-3">
+                                <div class="rounded-xl bg-white/5 p-3">
 
-                                    <p
-                                        class="text-[7px] text-zinc-600">
+                                    <p class="text-[7px] text-zinc-500">
                                         Portfolio
                                     </p>
 
@@ -2276,10 +1681,9 @@
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-orange/10 p-3">
+                                <div class="rounded-xl bg-cyan-500/10 p-3">
 
-                                    <p class="text-[7px] text-orange">
+                                    <p class="text-[7px] text-cyan-500">
                                         Growth
                                     </p>
 
@@ -2290,11 +1694,9 @@
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-3">
+                                <div class="rounded-xl bg-white/5 p-3">
 
-                                    <p
-                                        class="text-[7px] text-zinc-600">
+                                    <p class="text-[7px] text-zinc-500">
                                         API
                                     </p>
 
@@ -2307,27 +1709,21 @@
                             </div>
 
 
-                            <div
-                                class="mt-5 flex h-10 items-end gap-1.5">
+                            <div class="mt-5 flex h-10 items-end gap-1.5">
 
-                                <span
-                                    class="h-4 w-full rounded-sm bg-orange/30">
+                                <span class="h-4 w-full rounded-sm bg-cyan-500/30">
                                 </span>
 
-                                <span
-                                    class="h-7 w-full rounded-sm bg-orange/40">
+                                <span class="h-7 w-full rounded-sm bg-cyan-500/40">
                                 </span>
 
-                                <span
-                                    class="h-5 w-full rounded-sm bg-orange/50">
+                                <span class="h-5 w-full rounded-sm bg-cyan-500/50">
                                 </span>
 
-                                <span
-                                    class="h-9 w-full rounded-sm bg-orange/70">
+                                <span class="h-9 w-full rounded-sm bg-cyan-500/70">
                                 </span>
 
-                                <span
-                                    class="h-11 w-full rounded-sm bg-orange">
+                                <span class="h-11 w-full rounded-sm bg-cyan-500">
                                 </span>
 
                             </div>
@@ -2337,20 +1733,19 @@
                     </div>
 
 
-                    <div class="flex flex-1 flex-col p-6">
+                    <div class="flex flex-1 flex-col p-4">
 
                         <span class="project-number">
                             03 · FINANCIAL APPLICATION
                         </span>
 
 
-                        <h3 class="mt-3 text-xl font-bold">
+                        <h3 class="mt-2 text-lg font-bold">
                             STOCKEDGE
                         </h3>
 
 
-                        <p
-                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+                        <p class="mt-2 flex-1 text-xs leading-5 text-zinc-500">
 
                             Full-stack financial application built around
                             backend APIs, data handling and responsive
@@ -2376,14 +1771,11 @@
                         </div>
 
 
-                        <div
-                            class="mt-6 grid grid-cols-2 gap-2">
+                        <div class="mt-4 grid grid-cols-2 gap-2">
 
-                            <a
-                                href="https://github.com/vishnuradhakrishnan595-cloud/STOCKEDGE-v2"
-                                target="_blank"
+                            <a href="https://github.com/vishnuradhakrishnan595-cloud/STOCKEDGE-v2" target="_blank"
                                 rel="noopener"
-                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-zinc-100 px-3 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-cyan-400 hover:text-cyan-500">
 
                                 <i class="fa-brands fa-github"></i>
 
@@ -2392,11 +1784,8 @@
                             </a>
 
 
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener"
-                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+                            <a href="#" target="_blank" rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 px-3 py-2.5 text-[10px] font-bold text-zinc-900">
 
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
@@ -2417,36 +1806,30 @@
                 ================================================== -->
 
                 <article
-                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+                    class="project-card project-accent-amber reveal flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel">
 
-                    <div
-                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+                    <div class="project-preview relative h-40 overflow-hidden border-b border-line p-3">
 
-                        <div
-                            class="code-window h-full rounded-2xl p-4">
+                        <div class="code-window h-full rounded-2xl p-4">
 
-                            <div
-                                class="flex items-center justify-between">
+                            <div class="flex items-center justify-between">
 
-                                <span
-                                    class="font-mono text-[8px] text-zinc-600">
+                                <span class="font-mono text-[8px] text-zinc-500">
                                     DJANGO / BACKEND
                                 </span>
 
-                                <span
-                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                <span class="rounded-full bg-amber-500/10 px-2 py-1 text-[7px] text-amber-600">
                                     PYTHON
                                 </span>
 
                             </div>
 
 
-                            <div
-                                class="mt-5 rounded-xl bg-black/30 p-4 font-mono text-[9px] leading-6">
+                            <div class="mt-5 rounded-xl bg-zinc-100 p-4 font-mono text-[9px] leading-6">
 
                                 <div>
 
-                                    <span class="text-orange">
+                                    <span class="text-amber-500">
                                         class
                                     </span>
 
@@ -2456,15 +1839,15 @@
 
                                 </div>
 
-                                <div class="pl-4 text-zinc-600">
+                                <div class="pl-4 text-zinc-500">
                                     name = models.CharField(...)
                                 </div>
 
-                                <div class="pl-4 text-zinc-600">
+                                <div class="pl-4 text-zinc-500">
                                     price = models.DecimalField(...)
                                 </div>
 
-                                <div class="pl-4 text-zinc-600">
+                                <div class="pl-4 text-zinc-500">
                                     stock = models.IntegerField(...)
                                 </div>
 
@@ -2473,16 +1856,13 @@
 
                             <div class="mt-4 flex gap-2">
 
-                                <span
-                                    class="h-2 w-20 rounded bg-orange/40">
+                                <span class="h-2 w-20 rounded bg-amber-500/40">
                                 </span>
 
-                                <span
-                                    class="h-2 w-12 rounded bg-white/10">
+                                <span class="h-2 w-12 rounded bg-white/10">
                                 </span>
 
-                                <span
-                                    class="h-2 w-16 rounded bg-white/10">
+                                <span class="h-2 w-16 rounded bg-white/10">
                                 </span>
 
                             </div>
@@ -2492,20 +1872,19 @@
                     </div>
 
 
-                    <div class="flex flex-1 flex-col p-6">
+                    <div class="flex flex-1 flex-col p-4">
 
                         <span class="project-number">
                             04 · BACKEND ENGINEERING
                         </span>
 
 
-                        <h3 class="mt-3 text-xl font-bold">
+                        <h3 class="mt-2 text-lg font-bold">
                             Django Demo Web
                         </h3>
 
 
-                        <p
-                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+                        <p class="mt-2 flex-1 text-xs leading-5 text-zinc-500">
 
                             Django practice application demonstrating
                             models, routing, views, templates, database
@@ -2531,14 +1910,10 @@
                         </div>
 
 
-                        <div
-                            class="mt-6 grid grid-cols-2 gap-2">
+                        <div class="mt-4 grid grid-cols-2 gap-2">
 
-                            <a
-                                href="https://github.com/vishnuradhakrishnan595-cloud"
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+                            <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-zinc-100 px-3 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-amber-400 hover:text-amber-500">
 
                                 <i class="fa-brands fa-github"></i>
 
@@ -2547,11 +1922,8 @@
                             </a>
 
 
-                            <a
-                                href="https://django-demo-web-1.onrender.com"
-                                target="_blank"
-                                rel="noopener"
-                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+                            <a href="https://django-demo-web-1.onrender.com" target="_blank" rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-3 py-2.5 text-[10px] font-bold text-zinc-900">
 
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
@@ -2572,24 +1944,19 @@
                 ================================================== -->
 
                 <article
-                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+                    class="project-card project-accent-pink reveal flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel">
 
-                    <div
-                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+                    <div class="project-preview relative h-40 overflow-hidden border-b border-line p-3">
 
-                        <div
-                            class="code-window h-full rounded-2xl p-4">
+                        <div class="code-window h-full rounded-2xl p-4">
 
-                            <div
-                                class="flex items-center justify-between">
+                            <div class="flex items-center justify-between">
 
-                                <span
-                                    class="font-mono text-[8px] text-zinc-600">
+                                <span class="font-mono text-[8px] text-zinc-500">
                                     PAYPILOT / PAYROLL
                                 </span>
 
-                                <span
-                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                <span class="rounded-full bg-pink-500/10 px-2 py-1 text-[7px] text-pink-600">
                                     MANAGEMENT
                                 </span>
 
@@ -2598,31 +1965,26 @@
 
                             <div class="mt-5 grid grid-cols-2 gap-3">
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-4">
+                                <div class="rounded-xl bg-white/5 p-4">
 
-                                    <p
-                                        class="text-[7px] text-zinc-600">
+                                    <p class="text-[7px] text-zinc-500">
                                         Payroll
                                     </p>
 
-                                    <p
-                                        class="mt-2 text-xl font-semibold">
+                                    <p class="mt-2 text-xl font-semibold">
                                         ₹2.4M
                                     </p>
 
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-orange/10 p-4">
+                                <div class="rounded-xl bg-pink-500/10 p-4">
 
-                                    <p class="text-[7px] text-orange">
+                                    <p class="text-[7px] text-pink-500">
                                         Employees
                                     </p>
 
-                                    <p
-                                        class="mt-2 text-xl font-semibold">
+                                    <p class="mt-2 text-xl font-semibold">
                                         248
                                     </p>
 
@@ -2633,27 +1995,22 @@
 
                             <div class="mt-4 space-y-2">
 
-                                <div
-                                    class="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2">
+                                <div class="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2">
 
-                                    <span
-                                        class="text-[8px] text-zinc-500">
+                                    <span class="text-[8px] text-zinc-500">
                                         Payroll processed
                                     </span>
 
-                                    <span
-                                        class="text-[8px] text-orange">
+                                    <span class="text-[8px] text-pink-500">
                                         92%
                                     </span>
 
                                 </div>
 
 
-                                <div
-                                    class="h-1.5 overflow-hidden rounded-full bg-white/5">
+                                <div class="h-1.5 overflow-hidden rounded-full bg-white/5">
 
-                                    <div
-                                        class="h-full w-[92%] rounded-full bg-orange">
+                                    <div class="h-full w-[92%] rounded-full bg-pink-500">
                                     </div>
 
                                 </div>
@@ -2665,20 +2022,19 @@
                     </div>
 
 
-                    <div class="flex flex-1 flex-col p-6">
+                    <div class="flex flex-1 flex-col p-4">
 
                         <span class="project-number">
                             05 · PAYROLL MANAGEMENT
                         </span>
 
 
-                        <h3 class="mt-3 text-xl font-bold">
+                        <h3 class="mt-2 text-lg font-bold">
                             PayPilot
                         </h3>
 
 
-                        <p
-                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+                        <p class="mt-2 flex-1 text-xs leading-5 text-zinc-500">
 
                             Payroll management dashboard designed to
                             manage employees, payroll workflows and
@@ -2704,14 +2060,10 @@
                         </div>
 
 
-                        <div
-                            class="mt-6 grid grid-cols-2 gap-2">
+                        <div class="mt-4 grid grid-cols-2 gap-2">
 
-                            <a
-                                href="https://github.com/vishnuradhakrishnan595-cloud"
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+                            <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-zinc-100 px-3 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-pink-400 hover:text-pink-500">
 
                                 <i class="fa-brands fa-github"></i>
 
@@ -2720,11 +2072,9 @@
                             </a>
 
 
-                            <a
-                                href="https://vishnuradhakrishnan595-cloud.github.io/Payroll-Management-System/#dashboard"
-                                target="_blank"
-                                rel="noopener"
-                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+                            <a href="https://vishnuradhakrishnan595-cloud.github.io/Payroll-Management-System/#dashboard"
+                                target="_blank" rel="noopener"
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-pink-500 px-3 py-2.5 text-[10px] font-bold text-zinc-900">
 
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
@@ -2745,24 +2095,19 @@
                 ================================================== -->
 
                 <article
-                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+                    class="project-card project-accent-red reveal flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel">
 
-                    <div
-                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+                    <div class="project-preview relative h-40 overflow-hidden border-b border-line p-3">
 
-                        <div
-                            class="code-window h-full rounded-2xl p-4">
+                        <div class="code-window h-full rounded-2xl p-4">
 
-                            <div
-                                class="flex items-center justify-between">
+                            <div class="flex items-center justify-between">
 
-                                <span
-                                    class="font-mono text-[8px] text-zinc-600">
+                                <span class="font-mono text-[8px] text-zinc-500">
                                     F1 GAMEZONE / GRAND PRIX
                                 </span>
 
-                                <span
-                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                <span class="rounded-full bg-red-500/10 px-2 py-1 text-[7px] text-red-600">
                                     GAMING
                                 </span>
 
@@ -2771,11 +2116,9 @@
 
                             <div class="mt-5 grid grid-cols-3 gap-2">
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-3">
+                                <div class="rounded-xl bg-white/5 p-3">
 
-                                    <p
-                                        class="text-[7px] text-zinc-600">
+                                    <p class="text-[7px] text-zinc-500">
                                         Race
                                     </p>
 
@@ -2786,10 +2129,9 @@
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-orange/10 p-3">
+                                <div class="rounded-xl bg-red-500/10 p-3">
 
-                                    <p class="text-[7px] text-orange">
+                                    <p class="text-[7px] text-red-500">
                                         Laps
                                     </p>
 
@@ -2800,11 +2142,9 @@
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-3">
+                                <div class="rounded-xl bg-white/5 p-3">
 
-                                    <p
-                                        class="text-[7px] text-zinc-600">
+                                    <p class="text-[7px] text-zinc-500">
                                         Speed
                                     </p>
 
@@ -2817,27 +2157,21 @@
                             </div>
 
 
-                            <div
-                                class="mt-5 flex items-center gap-2">
+                            <div class="mt-5 flex items-center gap-2">
 
-                                <span
-                                    class="h-2 w-2 rounded-full bg-orange">
+                                <span class="h-2 w-2 rounded-full bg-red-500">
                                 </span>
 
-                                <span
-                                    class="h-px flex-1 bg-orange/30">
+                                <span class="h-px flex-1 bg-red-500/30">
                                 </span>
 
-                                <span
-                                    class="h-2 w-2 rounded-full bg-white/20">
+                                <span class="h-2 w-2 rounded-full bg-white/20">
                                 </span>
 
-                                <span
-                                    class="h-px flex-1 bg-white/10">
+                                <span class="h-px flex-1 bg-white/10">
                                 </span>
 
-                                <span
-                                    class="h-2 w-2 rounded-full bg-white/20">
+                                <span class="h-2 w-2 rounded-full bg-white/20">
                                 </span>
 
                             </div>
@@ -2847,20 +2181,19 @@
                     </div>
 
 
-                    <div class="flex flex-1 flex-col p-6">
+                    <div class="flex flex-1 flex-col p-4">
 
                         <span class="project-number">
                             06 · GAMING EXPERIENCE
                         </span>
 
 
-                        <h3 class="mt-3 text-xl font-bold">
+                        <h3 class="mt-2 text-lg font-bold">
                             F1 GameZone
                         </h3>
 
 
-                        <p
-                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+                        <p class="mt-2 flex-1 text-xs leading-5 text-zinc-500">
 
                             Formula 1 inspired gaming website with
                             Grand Prix focused layouts, responsive
@@ -2886,14 +2219,10 @@
                         </div>
 
 
-                        <div
-                            class="mt-6 grid grid-cols-2 gap-2">
+                        <div class="mt-4 grid grid-cols-2 gap-2">
 
-                            <a
-                                href="https://github.com/vishnuradhakrishnan595-cloud"
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+                            <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-zinc-100 px-3 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-red-400 hover:text-red-500">
 
                                 <i class="fa-brands fa-github"></i>
 
@@ -2902,11 +2231,9 @@
                             </a>
 
 
-                            <a
-                                href="https://vishnuradhakrishnan595-cloud.github.io/BootStrap_Project/"
-                                target="_blank"
+                            <a href="https://vishnuradhakrishnan595-cloud.github.io/BootStrap_Project/" target="_blank"
                                 rel="noopener"
-                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-red-500 px-3 py-2.5 text-[10px] font-bold text-zinc-900">
 
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
@@ -2927,24 +2254,19 @@
                 ================================================== -->
 
                 <article
-                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+                    class="project-card project-accent-teal reveal flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel">
 
-                    <div
-                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+                    <div class="project-preview relative h-40 overflow-hidden border-b border-line p-3">
 
-                        <div
-                            class="code-window h-full rounded-2xl p-4">
+                        <div class="code-window h-full rounded-2xl p-4">
 
-                            <div
-                                class="flex items-center justify-between">
+                            <div class="flex items-center justify-between">
 
-                                <span
-                                    class="font-mono text-[8px] text-zinc-600">
+                                <span class="font-mono text-[8px] text-zinc-500">
                                     HEALTH CONNECT
                                 </span>
 
-                                <span
-                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                <span class="rounded-full bg-teal-500/10 px-2 py-1 text-[7px] text-teal-600">
                                     HEALTHCARE
                                 </span>
 
@@ -2953,30 +2275,24 @@
 
                             <div class="mt-5 grid grid-cols-2 gap-3">
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-4">
+                                <div class="rounded-xl bg-white/5 p-4">
 
-                                    <i
-                                        class="fa-solid fa-heart-pulse text-lg text-orange">
+                                    <i class="fa-solid fa-heart-pulse text-lg text-teal-500">
                                     </i>
 
-                                    <p
-                                        class="mt-3 text-[8px] text-zinc-500">
+                                    <p class="mt-3 text-[8px] text-zinc-500">
                                         Health Connect
                                     </p>
 
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-orange/10 p-4">
+                                <div class="rounded-xl bg-teal-500/10 p-4">
 
-                                    <i
-                                        class="fa-solid fa-user-doctor text-lg text-orange">
+                                    <i class="fa-solid fa-user-doctor text-lg text-teal-500">
                                     </i>
 
-                                    <p
-                                        class="mt-3 text-[8px] text-zinc-500">
+                                    <p class="mt-3 text-[8px] text-zinc-500">
                                         Doctors
                                     </p>
 
@@ -2987,16 +2303,13 @@
 
                             <div class="mt-4 space-y-2">
 
-                                <div
-                                    class="h-3 rounded bg-white/5">
+                                <div class="h-3 rounded bg-white/5">
                                 </div>
 
-                                <div
-                                    class="h-3 w-4/5 rounded bg-orange/10">
+                                <div class="h-3 w-4/5 rounded bg-teal-500/10">
                                 </div>
 
-                                <div
-                                    class="h-3 w-2/3 rounded bg-white/5">
+                                <div class="h-3 w-2/3 rounded bg-white/5">
                                 </div>
 
                             </div>
@@ -3006,20 +2319,19 @@
                     </div>
 
 
-                    <div class="flex flex-1 flex-col p-6">
+                    <div class="flex flex-1 flex-col p-4">
 
                         <span class="project-number">
                             07 · HEALTHCARE PLATFORM
                         </span>
 
 
-                        <h3 class="mt-3 text-xl font-bold">
+                        <h3 class="mt-2 text-lg font-bold">
                             Health Connect
                         </h3>
 
 
-                        <p
-                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+                        <p class="mt-2 flex-1 text-xs leading-5 text-zinc-500">
 
                             Healthcare-focused web interface designed
                             to provide an organized and accessible
@@ -3046,14 +2358,10 @@
                         </div>
 
 
-                        <div
-                            class="mt-6 grid grid-cols-2 gap-2">
+                        <div class="mt-4 grid grid-cols-2 gap-2">
 
-                            <a
-                                href="https://github.com/vishnuradhakrishnan595-cloud"
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+                            <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-zinc-100 px-3 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-teal-400 hover:text-teal-500">
 
                                 <i class="fa-brands fa-github"></i>
 
@@ -3062,11 +2370,9 @@
                             </a>
 
 
-                            <a
-                                href="https://vishnuradhakrishnan595-cloud.github.io/Health_Connect_v2/"
-                                target="_blank"
+                            <a href="https://vishnuradhakrishnan595-cloud.github.io/Health_Connect_v2/" target="_blank"
                                 rel="noopener"
-                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-teal-500 px-3 py-2.5 text-[10px] font-bold text-zinc-900">
 
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
@@ -3087,24 +2393,19 @@
                 ================================================== -->
 
                 <article
-                    class="project-card reveal flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-panel">
+                    class="project-card project-accent-indigo reveal flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel">
 
-                    <div
-                        class="project-preview relative h-52 overflow-hidden border-b border-line p-4">
+                    <div class="project-preview relative h-40 overflow-hidden border-b border-line p-3">
 
-                        <div
-                            class="code-window h-full rounded-2xl p-4">
+                        <div class="code-window h-full rounded-2xl p-4">
 
-                            <div
-                                class="flex items-center justify-between">
+                            <div class="flex items-center justify-between">
 
-                                <span
-                                    class="font-mono text-[8px] text-zinc-600">
+                                <span class="font-mono text-[8px] text-zinc-500">
                                     SHOPEASE / E-COMMERCE
                                 </span>
 
-                                <span
-                                    class="rounded-full bg-orange/10 px-2 py-1 text-[7px] text-orange">
+                                <span class="rounded-full bg-indigo-500/10 px-2 py-1 text-[7px] text-indigo-600">
                                     SHOPPING
                                 </span>
 
@@ -3113,45 +2414,36 @@
 
                             <div class="mt-5 grid grid-cols-3 gap-2">
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-3">
+                                <div class="rounded-xl bg-white/5 p-3">
 
-                                    <i
-                                        class="fa-solid fa-bag-shopping text-orange">
+                                    <i class="fa-solid fa-bag-shopping text-indigo-500">
                                     </i>
 
-                                    <p
-                                        class="mt-3 text-[7px] text-zinc-600">
+                                    <p class="mt-3 text-[7px] text-zinc-500">
                                         Products
                                     </p>
 
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-orange/10 p-3">
+                                <div class="rounded-xl bg-indigo-500/10 p-3">
 
-                                    <i
-                                        class="fa-solid fa-cart-shopping text-orange">
+                                    <i class="fa-solid fa-cart-shopping text-indigo-500">
                                     </i>
 
-                                    <p
-                                        class="mt-3 text-[7px] text-orange">
+                                    <p class="mt-3 text-[7px] text-indigo-500">
                                         Cart
                                     </p>
 
                                 </div>
 
 
-                                <div
-                                    class="rounded-xl bg-white/5 p-3">
+                                <div class="rounded-xl bg-white/5 p-3">
 
-                                    <i
-                                        class="fa-solid fa-credit-card text-orange">
+                                    <i class="fa-solid fa-credit-card text-indigo-500">
                                     </i>
 
-                                    <p
-                                        class="mt-3 text-[7px] text-zinc-600">
+                                    <p class="mt-3 text-[7px] text-zinc-500">
                                         Checkout
                                     </p>
 
@@ -3160,21 +2452,17 @@
                             </div>
 
 
-                            <div
-                                class="mt-4 flex items-center gap-2">
+                            <div class="mt-4 flex items-center gap-2">
 
-                                <div
-                                    class="h-8 w-8 rounded-lg bg-orange/20">
+                                <div class="h-8 w-8 rounded-lg bg-indigo-500/20">
                                 </div>
 
                                 <div class="flex-1 space-y-2">
 
-                                    <div
-                                        class="h-2 w-4/5 rounded bg-white/10">
+                                    <div class="h-2 w-4/5 rounded bg-white/10">
                                     </div>
 
-                                    <div
-                                        class="h-2 w-2/5 rounded bg-orange/30">
+                                    <div class="h-2 w-2/5 rounded bg-indigo-500/30">
                                     </div>
 
                                 </div>
@@ -3186,20 +2474,19 @@
                     </div>
 
 
-                    <div class="flex flex-1 flex-col p-6">
+                    <div class="flex flex-1 flex-col p-4">
 
                         <span class="project-number">
                             08 · E-COMMERCE EXPERIENCE
                         </span>
 
 
-                        <h3 class="mt-3 text-xl font-bold">
+                        <h3 class="mt-2 text-lg font-bold">
                             ShopEase
                         </h3>
 
 
-                        <p
-                            class="mt-3 flex-1 text-sm leading-6 text-zinc-500">
+                        <p class="mt-2 flex-1 text-xs leading-5 text-zinc-500">
 
                             Modern shopping interface focused on product
                             discovery, responsive layouts and a clean
@@ -3225,14 +2512,10 @@
                         </div>
 
 
-                        <div
-                            class="mt-6 grid grid-cols-2 gap-2">
+                        <div class="mt-4 grid grid-cols-2 gap-2">
 
-                            <a
-                                href="https://github.com/vishnuradhakrishnan595-cloud"
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-black/20 px-3 py-3 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+                            <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-zinc-100 px-3 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-indigo-400 hover:text-indigo-500">
 
                                 <i class="fa-brands fa-github"></i>
 
@@ -3241,11 +2524,9 @@
                             </a>
 
 
-                            <a
-                                href="https://vishnuradhakrishnan595-cloud.github.io/Shop_Ease/"
-                                target="_blank"
+                            <a href="https://vishnuradhakrishnan595-cloud.github.io/Shop_Ease/" target="_blank"
                                 rel="noopener"
-                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-orange px-3 py-3 text-[10px] font-bold text-white">
+                                class="live-btn inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-500 px-3 py-2.5 text-[10px] font-bold text-zinc-900">
 
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
@@ -3269,8 +2550,7 @@
 
                 <div>
 
-                    <p
-                        class="font-mono text-[9px] uppercase tracking-widest text-zinc-600">
+                    <p class="font-mono text-[9px] uppercase tracking-widest text-zinc-500">
                         08 projects
                     </p>
 
@@ -3281,11 +2561,8 @@
                 </div>
 
 
-                <a
-                    href="https://github.com/vishnuradhakrishnan595-cloud"
-                    target="_blank"
-                    rel="noopener"
-                    class="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-orange hover:text-orange">
+                <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                    class="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-[10px] font-bold text-zinc-300 transition hover:border-indigo-400 hover:text-indigo-500">
 
                     View GitHub Profile
 
@@ -3308,13 +2585,11 @@
 
             <div class="reveal text-center">
 
-                <p
-                    class="font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                <p class="font-mono text-[10px] uppercase tracking-[.2em] text-zinc-500">
                     // Development workflow
                 </p>
 
-                <h2
-                    class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+                <h2 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
 
                     How I turn ideas into software.
 
@@ -3325,23 +2600,20 @@
 
             <div class="mt-12 grid gap-3 md:grid-cols-4">
 
-                <div
-                    class="reveal rounded-3xl border border-line bg-panel p-6">
+                <div class="reveal rounded-2xl border border-line bg-panel p-5">
 
-                    <span class="font-mono text-xs text-orange">
+                    <span class="font-mono text-xs text-zinc-500">
                         01
                     </span>
 
-                    <i
-                        class="fa-solid fa-lightbulb mt-6 text-xl text-zinc-400">
+                    <i class="fa-solid fa-lightbulb mt-6 text-xl text-zinc-400">
                     </i>
 
                     <h3 class="mt-4 font-bold">
                         Plan
                     </h3>
 
-                    <p
-                        class="mt-2 text-xs leading-6 text-zinc-600">
+                    <p class="mt-2 text-xs leading-6 text-zinc-500">
 
                         Understand requirements, data and application flow.
 
@@ -3350,23 +2622,20 @@
                 </div>
 
 
-                <div
-                    class="reveal rounded-3xl border border-line bg-panel p-6">
+                <div class="reveal rounded-2xl border border-line bg-panel p-5">
 
-                    <span class="font-mono text-xs text-orange">
+                    <span class="font-mono text-xs text-zinc-500">
                         02
                     </span>
 
-                    <i
-                        class="fa-solid fa-code mt-6 text-xl text-zinc-400">
+                    <i class="fa-solid fa-code mt-6 text-xl text-zinc-400">
                     </i>
 
                     <h3 class="mt-4 font-bold">
                         Build
                     </h3>
 
-                    <p
-                        class="mt-2 text-xs leading-6 text-zinc-600">
+                    <p class="mt-2 text-xs leading-6 text-zinc-500">
 
                         Develop backend APIs, database models and frontend UI.
 
@@ -3375,23 +2644,20 @@
                 </div>
 
 
-                <div
-                    class="reveal rounded-3xl border border-line bg-panel p-6">
+                <div class="reveal rounded-2xl border border-line bg-panel p-5">
 
-                    <span class="font-mono text-xs text-orange">
+                    <span class="font-mono text-xs text-zinc-500">
                         03
                     </span>
 
-                    <i
-                        class="fa-solid fa-vial-circle-check mt-6 text-xl text-zinc-400">
+                    <i class="fa-solid fa-vial-circle-check mt-6 text-xl text-zinc-400">
                     </i>
 
                     <h3 class="mt-4 font-bold">
                         Test
                     </h3>
 
-                    <p
-                        class="mt-2 text-xs leading-6 text-zinc-600">
+                    <p class="mt-2 text-xs leading-6 text-zinc-500">
 
                         Validate APIs, authentication, data and application behaviour.
 
@@ -3400,23 +2666,20 @@
                 </div>
 
 
-                <div
-                    class="reveal rounded-3xl border border-line bg-panel p-6">
+                <div class="reveal rounded-2xl border border-line bg-panel p-5">
 
-                    <span class="font-mono text-xs text-orange">
+                    <span class="font-mono text-xs text-zinc-500">
                         04
                     </span>
 
-                    <i
-                        class="fa-solid fa-rocket mt-6 text-xl text-zinc-400">
+                    <i class="fa-solid fa-rocket mt-6 text-xl text-zinc-400">
                     </i>
 
                     <h3 class="mt-4 font-bold">
                         Ship
                     </h3>
 
-                    <p
-                        class="mt-2 text-xs leading-6 text-zinc-600">
+                    <p class="mt-2 text-xs leading-6 text-zinc-500">
 
                         Containerize, deploy and keep improving the product.
 
@@ -3434,28 +2697,25 @@
              CONTACT
         ========================================================== -->
 
-        <section id="contact"
-            class="border-t border-line py-24">
+        <section id="contact" class="border-t border-line py-24">
 
             <div
-                class="reveal mx-auto max-w-4xl overflow-hidden rounded-3xl border border-orange/20 bg-gradient-to-br from-orange/10 via-panel to-panel p-8 text-center sm:p-12">
+                class="reveal mx-auto max-w-4xl overflow-hidden rounded-3xl border border-zinc-300/20 bg-gradient-to-br from-orange/10 via-panel to-panel p-8 text-center sm:p-12">
 
                 <div
-                    class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-orange text-white shadow-glow">
+                    class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-700 text-zinc-900 shadow-glow">
 
                     <i class="fa-solid fa-paper-plane"></i>
 
                 </div>
 
 
-                <p
-                    class="mt-6 font-mono text-[10px] uppercase tracking-[.2em] text-orange">
+                <p class="mt-6 font-mono text-[10px] uppercase tracking-[.2em] text-zinc-500">
                     // Let's build
                 </p>
 
 
-                <h2
-                    class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+                <h2 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
 
                     Have an idea?
 
@@ -3466,8 +2726,7 @@
                 </h2>
 
 
-                <p
-                    class="mx-auto mt-5 max-w-xl text-sm leading-7 text-zinc-500">
+                <p class="mx-auto mt-5 max-w-xl text-sm leading-7 text-zinc-500">
 
                     Open to software development opportunities,
                     internships, freelance projects and meaningful
@@ -3476,12 +2735,10 @@
                 </p>
 
 
-                <div
-                    class="mt-8 flex flex-wrap justify-center gap-3">
+                <div class="mt-8 flex flex-wrap justify-center gap-3">
 
-                    <a
-                        href="mailto:vishnuradhakrishnan595@gmail.com"
-                        class="inline-flex items-center gap-2 rounded-xl bg-orange px-5 py-3 text-xs font-bold text-white transition hover:bg-orange2">
+                    <a href="mailto:vishnuradhakrishnan595@gmail.com"
+                        class="inline-flex items-center gap-2 rounded-xl bg-zinc-700 px-5 py-3 text-xs font-bold text-zinc-900 transition hover:bg-zinc-7002">
 
                         <i class="fa-solid fa-envelope"></i>
 
@@ -3490,11 +2747,8 @@
                     </a>
 
 
-                    <a
-                        href="https://github.com/vishnuradhakrishnan595-cloud"
-                        target="_blank"
-                        rel="noopener"
-                        class="inline-flex items-center gap-2 rounded-xl border border-line bg-panel px-5 py-3 text-xs font-bold text-zinc-300 transition hover:border-zinc-500 hover:text-white">
+                    <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener"
+                        class="inline-flex items-center gap-2 rounded-xl border border-line bg-panel px-5 py-3 text-xs font-bold text-zinc-300 transition hover:border-zinc-500 hover:text-zinc-900">
 
                         <i class="fa-brands fa-github"></i>
 
@@ -3542,8 +2796,10 @@
                     <div class="footer-column">
                         <span class="footer-label">Get in touch</span>
                         <a href="mailto:vishnuradhakrishnan595@gmail.com">Email me</a>
-                        <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener">GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/vishnuradhakrishnan595-cloud" target="_blank" rel="noopener">GitHub
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         <span>Kochi, Kerala, India</span>
                     </div>
                 </div>
